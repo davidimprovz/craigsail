@@ -406,6 +406,30 @@ class RVs(Search):
 
 
 
+class Properties(Search):
+    """
+    Parsing and cleaning functionality
+    for the 'properties' search category.
+    """
+
+    def combine_city_property_data(self, df, eval_cols=()):
+        """
+        """
+
+        pass
+
+    def clean_city_property_data(self, df, clean_up=[]):
+        """
+        """
+
+        pass
+
+    def prep_daily_property_data(self):
+        """
+        """
+
+        pass
+
 # to do: take best of github and incorporate it
 
 # web app
