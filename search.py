@@ -1,7 +1,6 @@
 """
 Craigsail
 multi-city search and asset price tracking
-©2020 Improvz, Inc. All Rights Reserved.
 
 https://github.com/juliomalegria/python-craigslist
 """
@@ -14,11 +13,11 @@ from globals import CRAIGSLIST_CITIES, SALE_CATEGORIES, FILTER_OPTIONS
 class Search():
     """
     Generic hooks for the python-craigslist 
-    library. Combines that API with pandas 
+    library. Combines the API with pandas 
     and database functionality. Subclass
-    this class with one of the search 
-    categories provided in the url string
-    of any craigslist top-level category. 
+    with one of the search categories provided 
+    in the url string of any craigslist 
+    top-level category.
     """
 
     def __init__(

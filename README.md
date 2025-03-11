@@ -8,8 +8,6 @@ Have you ever wanted to use Craigslist to:
 - benchmark prices for the same or similar products in your area?
 - talk to a craigslist expert to find deals or post your items for sale?
 
-Now you can.
-
 Craigsail will let you do all of this with the added benefit of visualizing prices and locations on a map. Use the AI chat bot to interact with Craigslist postings and get AI-recommended buy / sell info. You are in the driver's seat now.
 
 Hooks in to https://github.com/juliomalegria/python-craigslist API with added capabilities.
