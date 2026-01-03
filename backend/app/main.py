@@ -1,0 +1,155 @@
+from fastapi import FastAPI, HTTPException
+from app.models import SearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing
+from app.scraper import CraigslistScraper
+from app.agent import CraigAgent
+import os
+import aiohttp
+import asyncio
+import json
+from typing import List, Optional
+from pydantic import BaseModel
+
+from fastapi.middleware.cors import CORSMiddleware
+
+app = FastAPI(title="Craigsail API")
+
+app.add_middleware(
+    CORSMiddleware,
+    allow_origins=["*"], # For development convenience. In production restrict this.
+    allow_credentials=True,
+    allow_methods=["*"],
+    allow_headers=["*"],
+)
+
+# scraper = CraigslistScraper() # Instantiate per request for safety or keep global? Global is fine for stateless.
+agent = CraigAgent()
+
+# Debug Configuration
+DEBUG = os.getenv("DEBUG", "false").lower() == "true"
+
+def log_debug(message: str):
+    if DEBUG:
+        print(f"[DEBUG] {message}")
+
+@app.get("/health")
+def health_check():
+    return {"status": "ok"}
+
+@app.get("/api/cities")
+def get_cities():
+    """Returns the list of scraped US cities."""
+    log_debug("Fetching city list...")
+    try:
+        path = "/app/src/data/cities.json"
+        
+        # improving local dev support:
+        if not os.path.exists(path):
+            # Try relative
+            path = "src/data/cities.json"
+            
+        if os.path.exists(path):
+            log_debug(f"Loading cities from {path}")
+            with open(path, 'r') as f:
+                data = json.load(f)
+                log_debug(f"Loaded {len(data)} cities.")
+                return data
+        else:
+            log_debug(f"Cities file not found at {path}")
+            return []
+    except Exception as e:
+        print(f"Error loading cities: {e}")
+        return []
+
+@app.get("/api/models")
+async def get_models():
+    """Fetches available models from Ollama."""
+    log_debug("Fetching models from Ollama...")
+    try:
+        base_url = os.getenv("OLLAMA_BASE_URL", "http://host.docker.internal:11434")
+        url = f"{base_url}/api/tags"
+        
+        async with aiohttp.ClientSession() as session:
+            try:
+                async with session.get(url, timeout=2) as resp:
+                    if resp.status == 200:
+                        data = await resp.json()
+                        models = [m["name"] for m in data.get("models", [])]
+                        log_debug(f"Found models: {models}")
+                        return {"models": models}
+            except:
+                log_debug("Failed to connect to Ollama.")
+                pass
+                
+        # Fallback if connection fails
+        return {"models": ["mistral", "gemma:2b", "llama3"]}
+    except Exception as e:
+        print(f"Error fetching models: {e}")
+        return {"models": ["mistral", "gemma:2b"]} 
+
+class ParseRequest(BaseModel):
+    listings: List[Listing]
+    model: str = "mistral"
+
+@app.post("/api/parse", response_model=SearchResponse)
+async def parse_data(request: ParseRequest):
+    """
+    Lazily parses a batch of listings using the selected AI model.
+    """
+    from app.parser import parser
+
+    log_debug(f"Parse request: {len(request.listings)} items, model={request.model}")
+
+    parsed_listings = []
+    parsed_count = 0
+    changed_count = 0
+
+    for item in request.listings:
+        if item.raw_location:
+            parsed_count += 1
+            original_location = item.location
+            p_data = await parser.parse_listing_fragment(item.raw_location, item.date_posted or "")
+
+            item.location = p_data.get("location", item.location)
+            item.date_posted = p_data.get("date_posted", item.date_posted)
+            item.date_updated = p_data.get("date_updated", item.date_updated)
+
+            if item.location != original_location:
+                changed_count += 1
+
+        parsed_listings.append(item)
+
+    log_debug(f"Parse complete: {parsed_count} processed, {changed_count} changed")
+    return SearchResponse(results=parsed_listings)
+
+@app.post("/api/search", response_model=SearchResponse)
+async def search_listings(request: SearchRequest):
+    log_debug(f"Searching request: City={request.city}, Query={request.query}, Category={request.category}")
+    scraper = CraigslistScraper()
+    
+    # Handle multi-city: city string might be "sfbay,sacramento,stockton"
+    # Filter empty strings
+    cities = [c.strip() for c in request.city.split(',') if c.strip()]
+    
+    all_results = []
+    
+    # Run concurrent searches
+    tasks = [scraper.search(city, request.query, request.category) for city in cities]
+    results_list = await asyncio.gather(*tasks)
+    
+    for res in results_list:
+        all_results.extend(res)
+        
+    log_debug(f"Search complete. Found {len(all_results)} total results.")
+    return SearchResponse(results=all_results)
+
+@app.post("/api/analyze", response_model=AiAnalysisResponse)
+async def analyze_listing(request: AiAnalysisRequest):
+    scraper = CraigslistScraper()
+    try:
+        # First scrape the details
+        details = await scraper.get_details(request.listing_url)
+        # Then analyze with AI
+        analysis = await agent.analyze(details, request.user_query)
+        return {"analysis": analysis}
+    except Exception as e:
+        raise HTTPException(status_code=500, detail=str(e))
