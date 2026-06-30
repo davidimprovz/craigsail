@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing
 from app.scraper import CraigslistScraper
 from app.agent import CraigAgent
@@ -120,6 +120,38 @@ async def parse_data(request: ParseRequest):
 
     log_debug(f"Parse complete: {parsed_count} processed, {changed_count} changed")
     return SearchResponse(results=parsed_listings)
+
+@app.get("/api/search/price-limited", response_model=SearchResponse)
+async def price_limited_search(
+    city: str = Query(..., description="Craigslist city slug (e.g. sfbay)"),
+    query: str = Query(..., description="Search query string"),
+    category: Optional[str] = Query("sss", description="Craigslist category"),
+    max_price: Optional[float] = Query(None, ge=0, description="Maximum price filter"),
+):
+    """
+    Price-limited search endpoint. Returns listings whose parsed price is at most max_price.
+    Accepts query parameters matching SearchRequest fields so callers don't need a JSON body.
+    """
+    log_debug(f"Price-limited search: City={city}, Query={query}, Category={category}, MaxPrice={max_price}")
+
+    scraper = CraigslistScraper()
+
+    # Handle multi-city: city string might be "sfbay,sacramento,stockton"
+    cities = [c.strip() for c in city.split(',') if c.strip()]
+
+    all_results = []
+
+    tasks = [scraper.search(c, query, category or "sss", max_price=max_price) for c in cities]
+    results_list = await asyncio.gather(*tasks)
+
+    for res in results_list:
+        all_results.extend(res)
+
+    # Auto-deduplicate listings based on title and location combination
+    deduplicated_results = _dedup_listings(all_results)
+
+    log_debug(f"Price-limited search complete. Found {len(deduplicated_results)} results.")
+    return SearchResponse(results=deduplicated_results)
 
 @app.post("/api/search", response_model=SearchResponse)
 async def search_listings(request: SearchRequest):

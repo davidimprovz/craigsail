@@ -10,3 +10,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-06-30T15:43:52.990405 — Auto-deduplicate search results  [MERGED] (49f1356)
+- why useful: Removes duplicate Craigslist postings that appear across multiple searches, giving users a cleaner, faster overview and preventing confusion when reviewing results.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
