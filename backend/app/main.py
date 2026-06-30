@@ -192,6 +192,38 @@ async def search_stats(
     log_debug(f"Search stats complete. Count={listing_count}, AveragePrice={average_price}")
     return {"count": listing_count, "average_price": average_price}
 
+@app.get("/api/price-stats")
+async def price_stats(
+    cities: Optional[List[str]] = Query(None),
+    query: str = Query(...),
+    category: Optional[str] = Query("sss"),
+    max_price: Optional[float] = Query(None),
+):
+    """
+    Returns average price and listing count for a search query.
+    Provides an instant snapshot of market pricing so users can benchmark deals.
+    """
+    log_debug(f"Price stats: Cities={cities}, Query={query}, Category={category}, MaxPrice={max_price}")
+
+    # Normalize input to a list of city names
+    city_list = cities if isinstance(cities, list) else [cities] if cities else []
+    all_listings = []
+    for city in city_list:
+        scraper = CraigslistScraper()
+        listings = await scraper.search(
+            city=city,
+            query=query,
+            category=category,
+            max_price=max_price,
+        )
+        all_listings.extend(listings)
+    if not all_listings:
+        return {"avg_price": None, "total_listings": 0}
+    # Extract numeric prices from the returned Listing objects
+    valid_prices = [float(l.price.replace('$', '').replace(',', '')) for l in all_listings if l.price]
+    avg_price = round(sum(valid_prices) / len(valid_prices), 2)
+    return {"avg_price": avg_price, "total_listings": len(all_listings)}
+
 @app.post("/api/search", response_model=SearchResponse)
 async def search_listings(request: SearchRequest):
     log_debug(f"Searching request: City={request.city}, Query={request.query}, Category={request.category}, MaxPrice={request.max_price}")
