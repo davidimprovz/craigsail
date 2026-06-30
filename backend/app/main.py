@@ -1,4 +1,8 @@
 from fastapi import FastAPI, HTTPException, Query
+from fastapi.responses import StreamingResponse
+import csv
+import io
+from typing import List, Optional
 from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing
 from app.scraper import CraigslistScraper
 from app.agent import CraigAgent
@@ -6,7 +10,6 @@ import os
 import aiohttp
 import asyncio
 import json
-from typing import List, Optional
 from pydantic import BaseModel
 
 from fastapi.middleware.cors import CORSMiddleware
@@ -289,6 +292,55 @@ async def analyze_listing(request: AiAnalysisRequest):
         return {"analysis": analysis}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+async def _listings_to_csv_rows(listings: List[Listing]) -> List[List[str]]:
+    """Convert a list of Listing objects to CSV rows (with header)."""
+    rows = [['title', 'price', 'location', 'url']]  # header
+    for l in listings:
+        rows.append([l.title, l.price, l.location, l.url])
+    return rows
+
+@app.get("/api/search/csv")
+async def export_search_csv(
+    city: str = Query(None),
+    query: str = Query(...),
+    category: Optional[str] = Query("sss"),
+    max_price: Optional[float] = Query(None)
+):
+    """
+    Export search results as a downloadable CSV file.
+    Reuses the existing scraper/search logic to fetch raw listings,
+    then converts them into a CSV for easy analysis, archiving, or sharing.
+    """
+    log_debug(f"CSV export: City={city}, Query={query}, Category={category}, MaxPrice={max_price}")
+
+    scraper = CraigslistScraper()
+    raw_results = await scraper.search(city, query, category, max_price)
+
+    # Convert each raw result into a Listing model instance (only needed fields).
+    listings: List[Listing] = []
+    for r in raw_results:
+        listings.append(
+            Listing(
+                title=r.get("title", ""),
+                price=str(r.get("price", "")),
+                location=r.get("location", ""),
+                url=r.get("url", ""),
+            )
+        )
+
+    # Build CSV in memory
+    rows = await _listings_to_csv_rows(listings)
+    output = io.StringIO()
+    writer = csv.writer(output)
+    writer.writerows(rows)
+    csv_bytes = output.getvalue().encode("utf-8")
+
+    return StreamingResponse(
+        iter([csv_bytes]),
+        media_type="text/csv",
+        headers={"Content-Disposition": f'attachment; filename="{city or "results"}_search.csv"'}
+    )
 
 def _dedup_listings(listings: List[Listing]) -> List[Listing]:
     """
