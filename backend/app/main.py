@@ -34,9 +34,20 @@ def log_debug(message: str):
     if DEBUG:
         print(f"[DEBUG] {message}")
 
+# Persisted saved search definitions (in-memory store).
+SAVED_SEARCHES = {}
+
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+@app.post('/api/saved-searches')
+async def save_search(payload: dict):
+    """Persist a saved search definition and return its generated id."""
+    log_debug(f"Saving search payload: {payload}")
+    new_id = len(SAVED_SEARCHES) + 1
+    SAVED_SEARCHES[new_id] = payload
+    return {'id': new_id}
 
 @app.get("/api/cities")
 def get_cities():
