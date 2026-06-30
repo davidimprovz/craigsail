@@ -25,3 +25,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-06-30T17:55:28.584861 — Add /api/search/summary endpoint returning count & average price  [kept-unmerged] (bca8881)
+- why useful: Users get an instant market snapshot—how many listings match a query and what the average price is—so they can decide quickly whether to buy, sell, or negotiate without manually scanning dozens of results.
+- tests: 0 passed / 3 failed
+- note: no progress between attempts — stopped early
+
