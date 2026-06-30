@@ -5,3 +5,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-06-30T15:28:00.673595 — Deduplicate Craigslist Search Results  [kept-unmerged] (58d9585)
+- why useful: Removes duplicate listings that appear across multiple searches, saving users time and preventing confusion when reviewing results.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+

@@ -139,8 +139,11 @@ async def search_listings(request: SearchRequest):
     for res in results_list:
         all_results.extend(res)
         
-    log_debug(f"Search complete. Found {len(all_results)} total results.")
-    return SearchResponse(results=all_results)
+    # Auto-deduplicate listings based on title and location combination
+    deduplicated_results = _dedup_listings(all_results)
+    
+    log_debug(f"Search complete. Found {len(all_results)} total results, {len(deduplicated_results)} after deduplication.")
+    return SearchResponse(results=deduplicated_results)
 
 @app.post("/multi_search", response_model=SearchResponse)
 async def multi_city_search(request: MultiSearchRequest):
@@ -183,3 +186,21 @@ async def analyze_listing(request: AiAnalysisRequest):
         return {"analysis": analysis}
     except Exception as e:
         raise HTTPException(status_code=500, detail=str(e))
+
+def _dedup_listings(listings: List[Listing]) -> List[Listing]:
+    """
+    Filters out duplicate listings based on the combination of title and location.
+    Preserves the first occurrence of each unique title+location pair.
+    """
+    seen = set()
+    deduplicated = []
+    
+    for listing in listings:
+        # Create a tuple key from title and location for deduplication
+        key = (listing.title, listing.location)
+        
+        if key not in seen:
+            seen.add(key)
+            deduplicated.append(listing)
+    
+    return deduplicated
