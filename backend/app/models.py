@@ -7,6 +7,12 @@ class SearchRequest(BaseModel):
     category: Optional[str] = "sss" # default: for sale
     max_price: Optional[float] = None
 
+class MultiSearchRequest(BaseModel):
+    cities: List[str]
+    query: str
+    category: Optional[str] = "sss"
+    max_price: Optional[float] = None
+
 class Listing(BaseModel):
     title: str
     price: str

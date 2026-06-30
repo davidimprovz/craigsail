@@ -1,5 +1,6 @@
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
+from typing import Optional
 from app.models import Listing
 from app.parser import parser
 import asyncio

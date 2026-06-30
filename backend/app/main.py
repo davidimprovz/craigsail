@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-from app.models import SearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing
+from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing
 from app.scraper import CraigslistScraper
 from app.agent import CraigAgent
 import os
@@ -140,6 +140,36 @@ async def search_listings(request: SearchRequest):
         all_results.extend(res)
         
     log_debug(f"Search complete. Found {len(all_results)} total results.")
+    return SearchResponse(results=all_results)
+
+@app.post("/multi_search", response_model=SearchResponse)
+async def multi_city_search(request: MultiSearchRequest):
+    """
+    Searches Craigslist across multiple cities in a single request.
+    Returns combined results from all specified cities.
+    """
+    log_debug(f"Multi-city search: Cities={request.cities}, Query={request.query}, Category={request.category}, MaxPrice={request.max_price}")
+    
+    scraper = CraigslistScraper()
+    all_results = []
+    
+    # Create tasks for each city, catching errors individually
+    async def safe_search(city: str):
+        try:
+            return await scraper.search(city, request.query, request.category, max_price=request.max_price)
+        except Exception as e:
+            log_debug(f"Error searching {city}: {e}")
+            return []
+    
+    # Run all city searches concurrently with error handling
+    tasks = [safe_search(city) for city in request.cities]
+    results_list = await asyncio.gather(*tasks, return_exceptions=False)
+    
+    for res in results_list:
+        if isinstance(res, list):
+            all_results.extend(res)
+    
+    log_debug(f"Multi-city search complete. Found {len(all_results)} total results across {len(request.cities)} cities.")
     return SearchResponse(results=all_results)
 
 @app.post("/api/analyze", response_model=AiAnalysisResponse)
