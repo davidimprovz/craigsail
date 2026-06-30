@@ -15,3 +15,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-06-30T16:05:59.755141 — Add /api/price-stats endpoint to provide average price and listing count for a search query  [kept-unmerged] (63b8c1c)
+- why useful: Users can instantly see the typical market price for a product in a city, enabling faster buying/selling decisions and better benchmarking without manually scanning dozens of listings.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+

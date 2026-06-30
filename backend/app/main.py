@@ -153,6 +153,45 @@ async def price_limited_search(
     log_debug(f"Price-limited search complete. Found {len(deduplicated_results)} results.")
     return SearchResponse(results=deduplicated_results)
 
+@app.get("/api/search/stats")
+async def search_stats(
+    city: str = Query(..., description="Craigslist city slug (e.g. sfbay)"),
+    query: str = Query(..., description="Search query string"),
+    category: Optional[str] = Query("sss", description="Craigslist category"),
+    max_price: Optional[float] = Query(None, ge=0, description="Maximum price filter"),
+):
+    """
+    Returns average price and listing count for a search query.
+    Provides an instant snapshot of market pricing so users can benchmark deals.
+    """
+    log_debug(f"Search stats: City={city}, Query={query}, Category={category}, MaxPrice={max_price}")
+
+    scraper = CraigslistScraper()
+
+    # Handle multi-city: city string might be "sfbay,sacramento,stockton"
+    cities = [c.strip() for c in city.split(',') if c.strip()]
+
+    all_results = []
+
+    tasks = [scraper.search(c, query, category or "sss", max_price=max_price) for c in cities]
+    results_list = await asyncio.gather(*tasks)
+
+    for res in results_list:
+        all_results.extend(res)
+
+    # Extract numeric prices using _parse_price, ignore None
+    prices = []
+    for listing in all_results:
+        parsed = CraigslistScraper._parse_price(listing.price)
+        if parsed is not None:
+            prices.append(parsed)
+
+    listing_count = len(prices)
+    average_price = round(sum(prices) / listing_count, 2) if listing_count > 0 else None
+
+    log_debug(f"Search stats complete. Count={listing_count}, AveragePrice={average_price}")
+    return {"count": listing_count, "average_price": average_price}
+
 @app.post("/api/search", response_model=SearchResponse)
 async def search_listings(request: SearchRequest):
     log_debug(f"Searching request: City={request.city}, Query={request.query}, Category={request.category}, MaxPrice={request.max_price}")
