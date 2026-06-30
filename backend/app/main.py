@@ -123,7 +123,7 @@ async def parse_data(request: ParseRequest):
 
 @app.post("/api/search", response_model=SearchResponse)
 async def search_listings(request: SearchRequest):
-    log_debug(f"Searching request: City={request.city}, Query={request.query}, Category={request.category}")
+    log_debug(f"Searching request: City={request.city}, Query={request.query}, Category={request.category}, MaxPrice={request.max_price}")
     scraper = CraigslistScraper()
     
     # Handle multi-city: city string might be "sfbay,sacramento,stockton"
@@ -132,8 +132,8 @@ async def search_listings(request: SearchRequest):
     
     all_results = []
     
-    # Run concurrent searches
-    tasks = [scraper.search(city, request.query, request.category) for city in cities]
+    # Run concurrent searches with max_price filter
+    tasks = [scraper.search(city, request.query, request.category, max_price=request.max_price) for city in cities]
     results_list = await asyncio.gather(*tasks)
     
     for res in results_list:

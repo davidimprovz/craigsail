@@ -5,6 +5,7 @@ class SearchRequest(BaseModel):
     city: str
     query: str
     category: Optional[str] = "sss" # default: for sale
+    max_price: Optional[float] = None
 
 class Listing(BaseModel):
     title: str
