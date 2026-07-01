@@ -92,3 +92,10 @@ async def generate_forecast(listings: List) -> dict:
         "predicted_high": predicted_high,
         "recommendation": recommendation,
     }
+
+
+def prioritize_listings(listings: List) -> List:
+    """Return listings sorted by priority_score (or price if not set)."""
+    from app.models import Listing
+
+    return sorted(listings, key=lambda l: getattr(l, 'priority_score', float('inf')))
