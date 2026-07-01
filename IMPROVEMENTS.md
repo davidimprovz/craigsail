@@ -55,3 +55,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T16:12:16.230556 — Define SavedSearch Pydantic model  [kept-unmerged] (d379aa0)
+- why useful: Creates a data structure to store user‑defined search criteria (city, query, price cap, etc.) that will be used by later alert logic.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
