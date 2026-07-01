@@ -88,11 +88,26 @@ async def run_saved_alerts():
 
 @app.post('/api/saved-searches')
 async def save_search(search: SavedSearch):
-    """Persist a saved search definition and return its generated id."""
-    log_debug(f"Saving search: {search}")
-    new_id = str(uuid.uuid4())[:8]
-    SAVED_SEARCHES[new_id] = search
-    return {'id': new_id}
+    """Persist a saved search definition to the database and return its generated id."""
+    log_debug(f"Saving search (DB): {search}")
+    new_id = str(uuid.uuid4())
+    db_session = SessionLocal()
+    try:
+        db_record = DBSavedSearch(
+            id=new_id,
+            query=search.query,
+            cities=json.dumps(search.cities) if isinstance(search.cities, list) else search.cities,
+            category=search.category or "sss",
+            max_price=str(search.max_price) if search.max_price is not None else None,
+        )
+        db_session.add(db_record)
+        db_session.commit()
+        return {'id': new_id}
+    except Exception as exc:
+        db_session.rollback()
+        raise HTTPException(status_code=500, detail=f"Failed to persist saved search: {exc}")
+    finally:
+        db_session.close()
 
 @app.post('/api/saved-searches/create')
 async def create_saved_search(payload: SavedSearch):
