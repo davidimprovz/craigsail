@@ -145,3 +145,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T23:11:42.840604 — Repair the failing pytest suite so it runs green  [kept-unmerged] (d899fa3)
+- why useful: a green suite turns the tests gate into a real regression signal for every future merge
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
