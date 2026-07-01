@@ -165,3 +165,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-01T23:48:01.111140 — Add endpoint to fetch aggregated price trend and priority score  [kept-unmerged] (698efdf)
+- why useful: Provides the dashboard with predicted low/high prices and a recommendation based on recent listings.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
