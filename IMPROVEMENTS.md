@@ -60,3 +60,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T16:16:34.869661 — Add POST /api/saved-searches/create endpoint  [MERGED] (23e65ed)
+- why useful: Allows users to register a new saved search via an HTTP call, persisting it (initially in memory) so it can be monitored for alerts.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

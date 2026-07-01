@@ -42,6 +42,9 @@ SAVED_SEARCHES: Dict[str, SavedSearch] = {}
 # Module-level list of generated alerts.
 ALERTS: List[Alert] = []
 
+# Global placeholder store for saved search definitions used by the alert runner.
+SAVED_SEARCH_STORE = []
+
 
 def _store_alert(alert: Alert) -> None:
     """Append an alert to the module-level ALERTS list."""
@@ -51,6 +54,35 @@ def _store_alert(alert: Alert) -> None:
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+@app.post('/api/alerts/run-saved')
+async def run_saved_alerts():
+    """Check all enabled saved searches against fresh Craigslist listings, use the AI agent to generate a recommendation for each match, and return matching items."""
+    log_debug("POST /api/alerts/run-saved: running saved alerts")
+
+    results = []
+    scraper = CraigslistScraper()
+
+    for ss in SAVED_SEARCH_STORE:
+        if not getattr(ss, "enabled", False):
+            continue
+
+        query_str = getattr(ss, "query", "") or ""
+        max_price = getattr(ss, "max_price", None)
+
+        cities = getattr(ss, "cities", []) or []
+        for city in cities:
+            listings = await scraper.search(city, query_str, max_price=max_price)
+            for lst in listings:
+                analysis = await agent.analyze(
+                    {"title": lst.title, "price": lst.price, "url": lst.url},
+                    f"Buy {lst.title} at ${lst.price}",
+                )
+                results.append({"listing": lst, "recommendation": analysis})
+
+    log_debug(f"run_saved_alerts complete: {len(results)} matching items")
+    return results
+
 
 @app.post('/api/saved-searches')
 async def save_search(search: SavedSearch):
