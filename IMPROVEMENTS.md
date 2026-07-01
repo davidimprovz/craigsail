@@ -155,3 +155,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T23:29:37.004167 — Expose POST /api/saved-searches endpoint to persist saved search  [MERGED] (f3e8ee8)
+- why useful: Allows a user to create and store a SmartSearchTemplate with its parameters.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

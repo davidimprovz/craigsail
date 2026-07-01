@@ -34,6 +34,13 @@
    "symbol": "models.SavedSearch.price_alert_min attribute exists",
    "sha": "f5c8eca",
    "ts": "2026-07-01T22:58:14.547553"
+  },
+  {
+   "name": "Expose POST /api/saved-searches endpoint to persist saved search",
+   "epic": "SmartSearchTemplates",
+   "symbol": "POST /api/saved-searches route exists",
+   "sha": "3365b99",
+   "ts": "2026-07-01T23:29:10.817016"
   }
  ]
 }
