@@ -80,3 +80,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T17:48:52.856720 — Add schedule_cron field to SavedSearch model  [kept-unmerged] (2005efd)
+- why useful: Stores the cron expression users specify for daily or periodic execution, enabling later automated runs.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+

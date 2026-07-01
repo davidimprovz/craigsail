@@ -22,6 +22,7 @@ class SavedSearch(Base):
     category = Column(String, default="sss")
     max_price = Column(String, nullable=True)
     is_active = Column(Boolean, default=True)
+    schedule_cron = Column(String, nullable=True)
 
 
 def get_db():
