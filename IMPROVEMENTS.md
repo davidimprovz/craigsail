@@ -130,3 +130,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T22:44:08.210340 — Add prioritize_listings function to rank listings by priority_score  [MERGED] (2092299)
+- why useful: Creates a sorted list of listings that can be exposed as recommended items.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

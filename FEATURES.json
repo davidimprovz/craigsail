@@ -20,6 +20,13 @@
    "symbol": "Listing",
    "sha": "07ddc92",
    "ts": "2026-07-01T22:36:42.592377"
+  },
+  {
+   "name": "Add prioritize_listings function to rank listings by priority_score",
+   "epic": "DealScout",
+   "symbol": "prioritize_listings",
+   "sha": "cdd41a5",
+   "ts": "2026-07-01T22:43:40.453994"
   }
  ]
 }
