@@ -30,3 +30,8 @@
 - tests: 0 passed / 3 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T01:37:34.646988 — Schedule periodic alert evaluation  [kept-unmerged] (6587b74)
+- why useful: Automatically search saved alerts at intervals and trigger notifications when matches appear.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
