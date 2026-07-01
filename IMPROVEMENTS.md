@@ -65,3 +65,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T17:05:23.537769 — Add is_active flag to SavedSearch model  [kept-unmerged] (4b9343b)
+- why useful: Enables individual saved searches to be toggled on/off for scheduled alerts without deleting them.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
