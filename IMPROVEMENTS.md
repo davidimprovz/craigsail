@@ -85,3 +85,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T18:20:46.551357 — Add notification helper for new listings  [kept-unmerged] (eb4ae83)
+- why useful: Sends email or in‑app alerts when a scheduled search finds fresh listings.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
