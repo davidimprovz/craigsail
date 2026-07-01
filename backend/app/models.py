@@ -30,6 +30,7 @@ class Listing(BaseModel):
     location: str
     label: Optional[str] = None  # Added for multi-city support if needed
     url: str
+    priority_score: Optional[float] = None
     raw_location: Optional[str] = None  # Store raw string for lazy parsing
     image_url: Optional[str] = None
     description: Optional[str] = None
@@ -49,6 +50,7 @@ class Listing(BaseModel):
 Listing.ai_recommendation = None  # type: ignore[assignment]
 Listing.ai_priority = None  # type: ignore[assignment]
 Listing.forecast = None  # type: ignore[assignment]
+Listing.priority_score = None  # type: ignore[assignment]
 
 
 class SearchResponse(BaseModel):
