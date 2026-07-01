@@ -30,6 +30,7 @@ class Listing(BaseModel):
     location: str
     label: Optional[str] = None  # Added for multi-city support if needed
     url: str
+    priority_score: Optional[float] = None
     raw_location: Optional[str] = None  # Store raw string for lazy parsing
     image_url: Optional[str] = None
     description: Optional[str] = None
