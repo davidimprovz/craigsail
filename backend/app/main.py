@@ -15,6 +15,8 @@ from app.agent import CraigAgent
 import os
 
 from fastapi.middleware.cors import CORSMiddleware
+from sqlalchemy.orm import Session as DBSession
+from app.db import SessionLocal, SavedSearch as DBSavedSearch
 
 app = FastAPI(title="Craigsail API")
 
@@ -99,10 +101,15 @@ async def create_saved_search(payload: SavedSearch):
     return payload
 
 @app.get('/api/saved-searches')
-async def get_saved_searches():
-    """Placeholder endpoint — returns an empty list. The dashboard can later call this to list saved searches."""
-    log_debug("GET /api/saved-searches: returning placeholder empty list")
-    return []
+async def list_saved_searches():
+    """List all saved searches from the database, exposing the is_active flag."""
+    log_debug("GET /api/saved-searches: listing saved searches")
+    sess = SessionLocal()
+    try:
+        searches = sess.query(DBSavedSearch).all()
+        return [s.dict() for s in searches]
+    finally:
+        sess.close()
 
 @app.post('/api/saved-searches/{saved_search_id}/run')
 async def run_saved_search(saved_search_id: str):
