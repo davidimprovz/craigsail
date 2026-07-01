@@ -3,7 +3,7 @@ from fastapi.responses import StreamingResponse
 import csv
 import io
 from typing import List, Optional
-from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing
+from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing, Alert
 from app.scraper import CraigslistScraper
 from app.agent import CraigAgent
 import os
