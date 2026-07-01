@@ -100,3 +100,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T21:21:40.652891 — Add simple notification side‑effect to alert endpoint  [kept-unmerged] (fcf8cb9)
+- why useful: Provides immediate feedback (console print) when an alert is triggered, satisfying the minimal end‑to‑end notification requirement.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
