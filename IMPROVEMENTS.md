@@ -50,3 +50,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T16:00:47.079839 — Add delete endpoint to cancel a saved search  [kept-unmerged] (53bf659)
+- why useful: Completes the tracking loop by allowing users to remove alerts they no longer need, fulfilling the 'adjust or cancel alerts' requirement.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+

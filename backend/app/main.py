@@ -60,6 +60,12 @@ async def save_search(search: SavedSearch):
     SAVED_SEARCHES[new_id] = search
     return {'id': new_id}
 
+@app.get('/api/saved-searches')
+async def get_saved_searches():
+    """Placeholder endpoint — returns an empty list. The dashboard can later call this to list saved searches."""
+    log_debug("GET /api/saved-searches: returning placeholder empty list")
+    return []
+
 @app.post('/api/saved-searches/{saved_search_id}/run')
 async def run_saved_search(saved_search_id: str):
     """Run a saved search against Craigslist and create Alert records for each listing found."""
