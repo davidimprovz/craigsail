@@ -434,6 +434,36 @@ async def export_search_csv(
         headers={"Content-Disposition": f'attachment; filename="{city or "results"}_search.csv"'}
     )
 
+@app.get("/api/alerts/check")
+async def alerts_check_route(
+    city: str = Query(..., description="Craigslist city slug (e.g. sfbay)"),
+    query: str = Query(..., description="Search query string"),
+    threshold: Optional[int] = Query(None, ge=0, description="Price threshold — return listings below this price"),
+):
+    """
+    Price-drop alert checking endpoint. Fetches recent listings for the given city/query
+    and returns those whose parsed price is below the user-specified threshold.
+    If no threshold is provided, returns an empty list (no alerts to fire).
+    """
+    log_debug(f"Alerts check: City={city}, Query={query}, Threshold={threshold}")
+
+    scraper = CraigslistScraper()
+    listings = await scraper.search(city, query)
+
+    if threshold is None:
+        log_debug("No threshold provided — returning empty list.")
+        return {"alerts": [], "count": 0}
+
+    # Filter listings whose parsed price is below the threshold
+    matching = []
+    for listing in listings:
+        parsed_price = CraigslistScraper._parse_price(listing.price)
+        if parsed_price is not None and parsed_price < threshold:
+            matching.append(listing)
+
+    log_debug(f"Alerts check complete. Found {len(matching)} listings below threshold={threshold}.")
+    return {"alerts": matching, "count": len(matching)}
+
 def _dedup_listings(listings: List[Listing]) -> List[Listing]:
     """
     Filters out duplicate listings based on the combination of title and location.

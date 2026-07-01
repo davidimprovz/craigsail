@@ -45,3 +45,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T15:03:17.163779 — Add price trend statistics to search endpoint  [MERGED] (fbc5102)
+- why useful: Enables comparison of the current price against average, high, and low trends required for the chart.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
