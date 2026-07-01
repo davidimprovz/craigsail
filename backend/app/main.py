@@ -2,15 +2,17 @@ from fastapi import FastAPI, HTTPException, Query
 from fastapi.responses import StreamingResponse
 import csv
 import io
-from typing import List, Optional
-from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing, Alert
-from app.scraper import CraigslistScraper
-from app.agent import CraigAgent
-import os
+from typing import List, Optional, Dict
+import uuid
 import aiohttp
 import asyncio
 import json
 from pydantic import BaseModel
+
+from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing, Alert, SavedSearch
+from app.scraper import CraigslistScraper
+from app.agent import CraigAgent
+import os
 
 from fastapi.middleware.cors import CORSMiddleware
 
@@ -34,19 +36,19 @@ def log_debug(message: str):
     if DEBUG:
         print(f"[DEBUG] {message}")
 
-# Persisted saved search definitions (in-memory store).
-SAVED_SEARCHES = {}
+# In-memory storage for saved searches.
+SAVED_SEARCHES: Dict[str, SavedSearch] = {}
 
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
 
 @app.post('/api/saved-searches')
-async def save_search(payload: dict):
+async def save_search(search: SavedSearch):
     """Persist a saved search definition and return its generated id."""
-    log_debug(f"Saving search payload: {payload}")
-    new_id = len(SAVED_SEARCHES) + 1
-    SAVED_SEARCHES[new_id] = payload
+    log_debug(f"Saving search: {search}")
+    new_id = str(uuid.uuid4())[:8]
+    SAVED_SEARCHES[new_id] = search
     return {'id': new_id}
 
 @app.get("/api/cities")
