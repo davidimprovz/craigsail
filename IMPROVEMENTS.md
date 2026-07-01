@@ -70,3 +70,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T17:10:34.134893 — Expose GET /api/saved-searches endpoint  [MERGED] (bf57159)
+- why useful: Allows users (and other services) to retrieve a list of all saved searches, confirming the new `is_active` flag is visible.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

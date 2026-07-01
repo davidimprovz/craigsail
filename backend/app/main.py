@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Query
+from fastapi import FastAPI, HTTPException, Query, Path
 from fastapi.responses import StreamingResponse
 import csv
 import io
@@ -108,6 +108,22 @@ async def list_saved_searches():
     try:
         searches = sess.query(DBSavedSearch).all()
         return [s.dict() for s in searches]
+    finally:
+        sess.close()
+
+@app.post('/api/saved-searches/toggle')
+async def toggle_saved_search(id: str = Path(..., description="UUID of the saved search")):
+    """Toggle the is_active flag on a saved search by ID."""
+    log_debug(f"POST /api/saved-searches/toggle: toggling id={id}")
+
+    sess = SessionLocal()
+    try:
+        search_obj = sess.query(DBSavedSearch).get(id)
+        if not search_obj:
+            raise HTTPException(status_code=404, detail="Not found")
+        search_obj.is_active = not search_obj.is_active
+        sess.commit()
+        return {"id": id, "is_active": search_obj.is_active}
     finally:
         sess.close()
 
