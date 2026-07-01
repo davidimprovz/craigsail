@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException, Query, Path
+from fastapi import FastAPI, HTTPException, Query, Path, Depends
 from fastapi.responses import StreamingResponse
 import csv
 import io
@@ -16,7 +16,7 @@ import os
 
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session as DBSession
-from app.db import SessionLocal, SavedSearch as DBSavedSearch
+from app.db import SessionLocal, SavedSearch as DBSavedSearch, get_db
 
 app = FastAPI(title="Craigsail API")
 
@@ -126,6 +126,20 @@ async def toggle_saved_search(id: str = Path(..., description="UUID of the saved
         return {"id": id, "is_active": search_obj.is_active}
     finally:
         sess.close()
+
+@app.post('/api/saved-searches/schedule')
+async def schedule_search(schedule_req: dict, db: DBSession = Depends(get_db)):
+    """Set the cron schedule for a saved search."""
+    log_debug(f"POST /api/saved-searches/schedule: {schedule_req}")
+
+    search_id = schedule_req['search_id']
+    cron = schedule_req['cron']
+    saved = db.query(DBSavedSearch).filter_by(id=search_id).first()
+    if not saved:
+        raise HTTPException(status_code=404, detail='SavedSearch not found')
+    saved.schedule_cron = cron
+    db.commit()
+    return {'status': 'scheduled'}
 
 @app.post('/api/saved-searches/{saved_search_id}/run')
 async def run_saved_search(saved_search_id: str):
