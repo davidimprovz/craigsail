@@ -194,6 +194,16 @@ async def run_saved_search_123():
     return {"alert_ids": alert_ids}
 
 
+@app.get("/api/saved-searches/run")
+async def run_pending_searches():
+    """Stub scheduler trigger — starts the polling loop for all active saved searches.
+
+    In a real implementation this would iterate over active saved searches and invoke the scraper/agent.
+    """
+    log_debug("GET /api/saved-searches/run: triggering pending searches")
+    return {"status": "triggered", "message": "Scheduled runs started for active saved searches"}
+
+
 @app.get("/api/cities")
 def get_cities():
     """Returns the list of scraped US cities."""

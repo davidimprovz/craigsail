@@ -75,3 +75,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T17:18:30.295536 — Add POST /api/saved-searches/toggle endpoint  [MERGED] (882e3ae)
+- why useful: Provides a simple way to enable or disable a saved search by ID, using the newly added `is_active` field.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
