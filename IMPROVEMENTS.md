@@ -110,3 +110,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-01T22:06:26.933038 — Add Forecast field to Listing model  [MERGED] (b9c2925)
+- why useful: Stores AI-generated price forecasts alongside each listing so downstream logic can reference them without extra DB migrations.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

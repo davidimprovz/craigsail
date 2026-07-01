@@ -1,0 +1,11 @@
+{
+ "features": [
+  {
+   "name": "Add Forecast field to Listing model",
+   "epic": "price-history-and-prediction",
+   "symbol": "Listing.forecast",
+   "sha": "99eda6e",
+   "ts": "2026-07-01T22:05:33.561089"
+  }
+ ]
+}
