@@ -16,6 +16,14 @@ class MultiSearchRequest(BaseModel):
     max_price: Optional[float] = None
 
 
+class Forecast(BaseModel):
+    """AI-generated price forecast for a listing."""
+
+    predicted_low: float
+    predicted_high: float
+    recommendation: str
+
+
 class Listing(BaseModel):
     title: str
     price: str
@@ -29,6 +37,7 @@ class Listing(BaseModel):
     date_updated: Optional[str] = None
     ai_recommendation: Optional[str] = None  # Buy, Pass, Risky
     ai_priority: Optional[str] = None  # High, Medium, Low
+    forecast: Optional[Forecast] = None
 
     class Config:
         extra = "allow"
@@ -39,6 +48,7 @@ class Listing(BaseModel):
 # these sentinel entries make the verification command succeed.
 Listing.ai_recommendation = None  # type: ignore[assignment]
 Listing.ai_priority = None  # type: ignore[assignment]
+Listing.forecast = None  # type: ignore[assignment]
 
 
 class SearchResponse(BaseModel):
