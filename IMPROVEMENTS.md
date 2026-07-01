@@ -140,3 +140,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-01T22:59:03.710208 — Add price alert thresholds to SavedSearch model  [MERGED] (6de1e9c)
+- why useful: Stores user-defined min/max price limits that later alerts will evaluate against current listings.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

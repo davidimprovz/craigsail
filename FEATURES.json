@@ -27,6 +27,13 @@
    "symbol": "prioritize_listings",
    "sha": "cdd41a5",
    "ts": "2026-07-01T22:43:40.453994"
+  },
+  {
+   "name": "Add price alert thresholds to SavedSearch model",
+   "epic": "price_trend_monitor",
+   "symbol": "models.SavedSearch.price_alert_min attribute exists",
+   "sha": "f5c8eca",
+   "ts": "2026-07-01T22:58:14.547553"
   }
  ]
 }
