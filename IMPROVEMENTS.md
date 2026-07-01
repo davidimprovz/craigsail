@@ -160,3 +160,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T23:39:43.724724 — Schedule daily execution of saved search checks  [kept-unmerged] (231f257)
+- why useful: Runs the scraper on each saved search every day and triggers notifications when matches appear.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
