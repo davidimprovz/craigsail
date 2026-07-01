@@ -90,3 +90,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T19:46:39.566198 — Add notification trigger endpoint for AI insights  [kept-unmerged] (80c57d8)
+- why useful: Sends email or in‑app notifications containing matching listings and AI recommendations when a scheduled run completes.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
