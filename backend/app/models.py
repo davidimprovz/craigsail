@@ -50,6 +50,7 @@ class Listing(BaseModel):
 Listing.ai_recommendation = None  # type: ignore[assignment]
 Listing.ai_priority = None  # type: ignore[assignment]
 Listing.forecast = None  # type: ignore[assignment]
+Listing.priority_score = None  # type: ignore[assignment]
 
 
 class SearchResponse(BaseModel):
