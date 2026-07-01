@@ -2,6 +2,8 @@ from langchain_openai import ChatOpenAI
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.output_parsers import StrOutputParser
 import os
+from typing import List
+
 
 class CraigAgent:
     def __init__(self):
@@ -50,3 +52,43 @@ class CraigAgent:
             "user_query": user_query
         })
         return response
+
+
+async def generate_forecast(listings: List) -> dict:
+    """Compute a deterministic price-trend forecast from a collection of listings.
+
+    Extracts integer prices from the provided listings, computes min/max/avg, and
+    returns a recommendation based on whether the average is below a threshold.
+    """
+    # Extract numeric prices using the scraper's parser
+    prices = []
+    from app.scraper import CraigslistScraper
+
+    for listing in listings:
+        parsed = CraigslistScraper._parse_price(listing.price)
+        if parsed is not None:
+            prices.append(parsed)
+
+    if not prices:
+        return {
+            "predicted_low": 0,
+            "predicted_high": 0,
+            "recommendation": "No price data available.",
+        }
+
+    predicted_low = min(prices)
+    predicted_high = max(prices)
+    avg_price = sum(prices) / len(prices)
+
+    # Threshold: if average price is below $500, recommend buying now.
+    threshold = 500
+    if avg_price < threshold:
+        recommendation = "Buy"
+    else:
+        recommendation = "Wait"
+
+    return {
+        "predicted_low": predicted_low,
+        "predicted_high": predicted_high,
+        "recommendation": recommendation,
+    }
