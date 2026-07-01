@@ -36,3 +36,12 @@ class AiAnalysisRequest(BaseModel):
 
 class AiAnalysisResponse(BaseModel):
     analysis: str
+
+class Alert(BaseModel):
+    id: str
+    city: str
+    query: str
+    category: Optional[str] = None
+    max_price: Optional[float] = None
+    threshold: float
+    enabled: bool = True
