@@ -120,3 +120,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T22:22:09.587854 — Add /api/forecast endpoint  [kept-unmerged] (85a4d21)
+- why useful: Exposes the forecast capability to the frontend, allowing interactive price‑trend charts and alert triggers to be built on top of real API data.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
