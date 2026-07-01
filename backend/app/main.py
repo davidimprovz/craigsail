@@ -246,7 +246,7 @@ async def price_limited_search(
     return SearchResponse(results=deduplicated_results)
 
 @app.get("/api/search/stats")
-async def search_stats(
+async def stats_route(
     city: str = Query(..., description="Craigslist city slug (e.g. sfbay)"),
     query: str = Query(..., description="Search query string"),
     category: Optional[str] = Query("sss", description="Craigslist category"),
@@ -255,6 +255,7 @@ async def search_stats(
     """
     Returns average price and listing count for a search query.
     Provides an instant snapshot of market pricing so users can benchmark deals.
+    Computes avg_price, high_price, and low_price from the returned listings.
     """
     log_debug(f"Search stats: City={city}, Query={query}, Category={category}, MaxPrice={max_price}")
 
@@ -279,10 +280,12 @@ async def search_stats(
             prices.append(parsed)
 
     listing_count = len(prices)
-    average_price = round(sum(prices) / listing_count, 2) if listing_count > 0 else None
+    avg_price = round(sum(prices) / listing_count, 2) if listing_count > 0 else None
+    high_price = max(prices) if prices else None
+    low_price = min(prices) if prices else None
 
-    log_debug(f"Search stats complete. Count={listing_count}, AveragePrice={average_price}")
-    return {"count": listing_count, "average_price": average_price}
+    log_debug(f"Search stats complete. Count={listing_count}, AvgPrice={avg_price}, HighPrice={high_price}, LowPrice={low_price}")
+    return {"count": listing_count, "avg_price": avg_price, "high_price": high_price, "low_price": low_price}
 
 @app.get("/api/price-stats")
 async def price_stats(

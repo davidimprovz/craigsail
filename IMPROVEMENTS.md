@@ -40,3 +40,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T14:58:11.044906 — Expose recent listing timeline endpoint  [kept-unmerged] (739f2fa)
+- why useful: Provides chronological data needed for the price‑trend chart; without a dedicated endpoint there is no way to retrieve historical listings.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
