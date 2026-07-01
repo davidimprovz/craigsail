@@ -115,3 +115,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-01T22:12:45.329835 — Add generate_forecast utility function  [MERGED] (6c36da0)
+- why useful: Provides a deterministic way to compute a price‑trend forecast from a collection of listings, enabling the new endpoint to return meaningful predictions.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
