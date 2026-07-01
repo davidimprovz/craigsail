@@ -125,3 +125,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-01T22:38:04.110179 — Add priority_score field to Listing model  [MERGED] (1aa40fb)
+- why useful: Provides a place to store the ranking value that will be used to prioritize recommended listings.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

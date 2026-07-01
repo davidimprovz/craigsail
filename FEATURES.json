@@ -13,6 +13,13 @@
    "symbol": "generate_forecast",
    "sha": "78f6e6e",
    "ts": "2026-07-01T22:12:12.394029"
+  },
+  {
+   "name": "Add priority_score field to Listing model",
+   "epic": "DealScout",
+   "symbol": "Listing",
+   "sha": "07ddc92",
+   "ts": "2026-07-01T22:36:42.592377"
   }
  ]
 }
