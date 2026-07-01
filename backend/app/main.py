@@ -60,6 +60,12 @@ async def save_search(search: SavedSearch):
     SAVED_SEARCHES[new_id] = search
     return {'id': new_id}
 
+@app.post('/api/saved-searches/create')
+async def create_saved_search(payload: SavedSearch):
+    """Register a new saved search. In-memory for now; echoes the payload back."""
+    log_debug(f"Creating saved search via /create: {payload}")
+    return payload
+
 @app.get('/api/saved-searches')
 async def get_saved_searches():
     """Placeholder endpoint — returns an empty list. The dashboard can later call this to list saved searches."""
