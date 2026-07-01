@@ -150,3 +150,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-01T23:22:16.046862 — Add SavedSearch query parameters to DB model  [kept-unmerged] (289b322)
+- why useful: Stores the search criteria (city, query, category, max_price) so they can be reused for alerts and trend analysis.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
