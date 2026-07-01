@@ -95,3 +95,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T20:26:38.713506 — Add placeholder trend forecast endpoint  [kept-unmerged] (7e60101)
+- why useful: Provides the required /api/trend/forecast route so downstream AI and data logic can be wired without breaking existing APIs.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+

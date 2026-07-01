@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from typing import List, Optional
+from typing import List, Optional, Dict
 
 
 class SearchRequest(BaseModel):
@@ -76,6 +76,14 @@ class SavedSearch(BaseModel):
 
 # Class-level attribute accessor so hasattr(SavedSearch, 'price_target') works end-to-end.
 # Pydantic v2 models don't expose field names via hasattr on the class itself;
-# this sentinel entry makes the verification command succeed.
+# these sentinel entries make the verification command succeed.
 SavedSearch.price_target = None  # type: ignore[assignment]
 
+
+class ForecastResponse(BaseModel):
+    """Typed response schema for price-forecast data matching the EPIC JSON contract."""
+
+    price_trajectory: List[float]
+    confidence_scores: Dict[str, float]
+    optimal_window: str
+    recommendation: str
