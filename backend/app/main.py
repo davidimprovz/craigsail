@@ -9,7 +9,7 @@ import asyncio
 import json
 from pydantic import BaseModel
 
-from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing, Alert, SavedSearch
+from app.models import SearchRequest, MultiSearchRequest, SearchResponse, AiAnalysisRequest, AiAnalysisResponse, Listing, Alert, SavedSearch, ForecastResponse
 from app.scraper import CraigslistScraper
 from app.agent import CraigAgent
 import os
@@ -554,6 +554,71 @@ async def alerts_check_route(
 
     log_debug(f"Alerts check complete. Found {len(matching)} listings below threshold={threshold}.")
     return {"alerts": matching, "count": len(matching)}
+
+
+@app.get("/api/forecast", response_model=ForecastResponse)
+async def forecast_route(
+    city: str = Query(..., description="Craigslist city slug (e.g. sfbay)"),
+    query: str = Query(..., description="Search query string"),
+):
+    """
+    Returns a price-forecast summary for the given city/query combination.
+
+    Uses historical pricing data to project a price trajectory, compute confidence
+    scores per category, suggest an optimal buying window, and provide an overall
+    recommendation (Buy Now / Wait / Monitor).
+    """
+    log_debug(f"Forecast: City={city}, Query={query}")
+
+    scraper = CraigslistScraper()
+    listings = await scraper.search(city, query)
+
+    # Extract numeric prices for trajectory computation
+    prices = []
+    for listing in listings:
+        parsed = CraigslistScraper._parse_price(listing.price)
+        if parsed is not None:
+            prices.append(parsed)
+
+    if len(prices) < 2:
+        return ForecastResponse(
+            price_trajectory=prices or [0.0],
+            confidence_scores={"overall": 0.0},
+            optimal_window="unknown",
+            recommendation="Not enough data to forecast.",
+        )
+
+    # Simple linear-trend trajectory (last N prices projected forward)
+    n = min(len(prices), 10)
+    recent = prices[-n:]
+    slope = (recent[-1] - recent[0]) / max(n - 1, 1)
+    trajectory = [recent[-1] + slope * i for i in range(5)]
+
+    # Confidence scores per signal source
+    confidence_scores = {
+        "volume": min(len(prices) / 20.0, 1.0),
+        "trend_consistency": max(0.0, 1.0 - abs(slope) / (recent[-1] or 1)),
+        "overall": round((confidence_scores["volume"] + confidence_scores["trend_consistency"]) / 2, 3),
+    }
+
+    # Optimal window heuristic
+    if slope < 0:
+        optimal_window = "buy_now"
+        recommendation = "Prices trending down — buy now before they drop further."
+    elif slope > 0:
+        optimal_window = "wait"
+        recommendation = "Prices trending up — consider waiting for a dip."
+    else:
+        optimal_window = "monitor"
+        recommendation = "Prices stable — monitor for a better deal."
+
+    return ForecastResponse(
+        price_trajectory=trajectory,
+        confidence_scores=confidence_scores,
+        optimal_window=optimal_window,
+        recommendation=recommendation,
+    )
+
 
 def _dedup_listings(listings: List[Listing]) -> List[Listing]:
     """
