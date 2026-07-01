@@ -35,3 +35,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-01T02:04:46.567284 — Expose GET saved search by id  [kept-unmerged] (807b208)
+- why useful: Allows retrieval of stored criteria before running alerts or displaying them to the user.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
