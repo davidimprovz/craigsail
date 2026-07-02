@@ -645,3 +645,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T17:03:17.997398 — Implement notification dispatch for matched alerts  [kept-unmerged] (1936da0)
+- why useful: Sends an email or webhook to the user when a listing meets the deviation criteria, fulfilling the alerting requirement.
+- tests: 28 passed / 1 failed
+- note: tool-gates failed
+
