@@ -410,3 +410,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T07:39:51.132597 — Add aggregates report endpoint  [kept-unmerged] (aab0c50)
+- why useful: Provides a dedicated API to return aggregated listing counts and average prices per category and city, which is the foundation for any further reporting (CSV, forecast, alerts).
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
