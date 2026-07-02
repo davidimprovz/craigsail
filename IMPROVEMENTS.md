@@ -375,3 +375,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T06:29:43.160091 — Add ordering support (position field) to SavedSearch  [kept-unmerged] (48a7eaf)
+- why useful: Drag‑and‑drop reordering of saved search groups requires a stable position column; this endpoint provides the backend contract for UI to send new positions and persist them.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
