@@ -475,3 +475,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T09:34:26.980218 — Add export data builder function  [MERGED] (641327a)
+- why useful: Creates a reusable function that fetches all alerts, their forecasts and listings from the DB and returns a list of dictionaries matching ExportItem.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

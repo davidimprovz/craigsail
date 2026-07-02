@@ -118,6 +118,13 @@
    "symbol": "ExportItem",
    "sha": "9e9d928",
    "ts": "2026-07-02T09:27:23.372897"
+  },
+  {
+   "name": "Add export data builder function",
+   "epic": "bulk_export_reports",
+   "symbol": "build_export_records",
+   "sha": "4b38031",
+   "ts": "2026-07-02T09:33:59.183661"
   }
  ]
 }
