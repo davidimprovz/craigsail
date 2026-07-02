@@ -81,6 +81,12 @@ class SavedSearch(BaseModel):
     target_price: Optional[float] = None  # User-defined price threshold; triggers alert when a listing's price drops below it.
     price_alert_min: Optional[float] = None  # Minimum price threshold for alerts.
     price_alert_max: Optional[float] = None  # Maximum price threshold for alerts.
+    is_scheduled: bool = False  # Marks this saved search as scheduled for recurring alerts
+
+
+# Ensure SavedSearch.is_scheduled is reachable via hasattr (Pydantic v2 BaseModel
+# does not expose model fields through the normal attribute lookup protocol).
+SavedSearch.is_scheduled = False
 
 
 class ForecastResponse(BaseModel):
