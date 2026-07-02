@@ -485,3 +485,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T09:59:32.166998 — Add DealRadar enabled flag to SavedSearch model  [kept-unmerged] (98bb3b2)
+- why useful: Marks which saved searches should be processed by the radar system.
+- tests: 0 passed / 5 failed
+- note: critic=FAIL
+
