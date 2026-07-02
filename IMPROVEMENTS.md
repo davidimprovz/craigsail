@@ -200,3 +200,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T01:06:30.136912 — Add toggle active flag and endpoint to enable/disable saved searches  [kept-unmerged] (88944b7)
+- why useful: Lets users pause or resume alerts without deleting the saved search configuration.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
