@@ -735,3 +735,8 @@
 - tests: 30 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-02T21:26:58.351183 — Rewrite saved search scheduled tests to assert behavior directly  [kept-unmerged] (2b6db4d)
+- why useful: Replaces fragile hasattr/model_fields introspection with explicit assertions about the `is_scheduled` attribute, making the test suite robust and aligned with Loop_Tuning.
+- tests: 30 passed / 0 failed
+- note: no progress between attempts — stopped early
+

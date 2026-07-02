@@ -75,9 +75,31 @@
     }
    ],
    "status": "MERGED"
+  },
+  {
+   "epic": "review-cleanup-jul2",
+   "title": "Rewrite saved search scheduled tests to assert behavior directly",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": false,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
- "generated": "2026-07-02T21:20:35.586819",
+ "generated": "2026-07-02T21:26:58.351745",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -85,6 +107,7 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 1
+  "smoke": 1,
+  "test_files": 1
  }
 }
