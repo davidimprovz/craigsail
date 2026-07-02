@@ -4,6 +4,8 @@ from langchain_core.output_parsers import StrOutputParser
 import os
 from typing import List
 
+from app.models import Listing, PricingAdvice
+
 
 class CraigAgent:
     def __init__(self):
@@ -52,6 +54,14 @@ class CraigAgent:
             "user_query": user_query
         })
         return response
+
+    async def generate_advice(self, listing: Listing) -> PricingAdvice:
+        # Placeholder implementation – will be expanded later.
+        return PricingAdvice(
+            recommended_price=0.0,
+            optimal_posting_time="any",
+            alert_trigger=False
+        )
 
 
 async def generate_forecast(listings: List) -> dict:
