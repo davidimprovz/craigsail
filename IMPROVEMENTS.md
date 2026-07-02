@@ -465,3 +465,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T09:17:53.853346 — Wire endpoint to return aggregated report  [kept-unmerged] (6535126)
+- why useful: Connects the new service method to the previously created route and returns JSON that matches the EPIC spec.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
