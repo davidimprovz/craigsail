@@ -565,3 +565,8 @@
 - tests: 28 passed / 0 failed
 - note: tool-gates failed
 
+## 2026-07-02T13:23:10.508258 — Add /api/saved-searches/{ss_id}/run-clean endpoint to trigger cleaning pipeline  [kept-unmerged] (b9f171d)
+- why useful: Completes the end‑to‑end flow where a saved search can be automatically cleaned, stored with standardized fields, and made available for alerts and reporting.
+- tests: 15 passed / 13 failed
+- note: no progress between attempts — stopped early
+
