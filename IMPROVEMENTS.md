@@ -595,3 +595,8 @@
 - tests: 28 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T14:45:23.691600 — Add price_delta field to SavedSearch model  [kept-unmerged] (cc3b964)
+- why useful: Enables users to specify a price deviation threshold for saved searches, which is required for alert generation and history tracking.
+- tests: 29 passed / 0 failed
+- note: no progress between attempts — stopped early
+
