@@ -295,3 +295,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T04:19:39.946765 — Add target_price field to saved searches for price‑alert thresholds  [kept-unmerged] (ce97b34)
+- why useful: Users want alerts only when a listing reaches a specific target price, not just any price change.
+- tests: 25 passed / 1 failed
+- note: no-op attempt (no write) — retrying with nudge
+
