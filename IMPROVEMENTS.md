@@ -610,3 +610,8 @@
 - tests: 28 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T15:31:50.384796 — Add PriceHistory model and /api/price-history/{listing_id}/csv endpoint  [kept-unmerged] (34b2c11)
+- why useful: Stores historical price recordings for listings, enabling the UI to download a CSV of price history and complete the price‑history tracking loop.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
