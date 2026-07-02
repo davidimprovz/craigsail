@@ -125,6 +125,13 @@
    "symbol": "build_export_records",
    "sha": "4b38031",
    "ts": "2026-07-02T09:33:59.183661"
+  },
+  {
+   "name": "Add schedule flag to SavedSearch model",
+   "epic": "PersistAlertScheduler",
+   "symbol": "SavedSearch.is_scheduled attribute exists",
+   "sha": "e9e97e9",
+   "ts": "2026-07-02T12:06:10.516364"
   }
  ]
 }

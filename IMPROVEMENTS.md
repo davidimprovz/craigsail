@@ -535,3 +535,8 @@
 - tests: 0 passed / 5 failed
 - note: time budget hit mid-subtask
 
+## 2026-07-02T12:07:00.601179 — Add schedule flag to SavedSearch model  [MERGED] (a4a1b2e)
+- why useful: Introduces a persistent boolean field that marks a saved search as scheduled for alerts, enabling the system to remember user preferences across server restarts.
+- tests: 28 passed / 0 failed
+- note: gates+critic passed
+
