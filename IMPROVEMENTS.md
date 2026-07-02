@@ -405,3 +405,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T07:26:06.992681 — Auto‑disable alerts when purchase occurs  [kept-unmerged] (9d6e719)
+- why useful: Closes the loop of the workflow by automatically turning off an alert once its associated item is purchased.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
