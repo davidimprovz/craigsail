@@ -3,11 +3,6 @@
 from typing import List, Dict
 from sqlalchemy.orm import Session as DBSession
 
-try:
-    from app.models import ExportItem, AlertORM
-except ImportError:
-    from backend.app.models import ExportItem, AlertORM
-
 
 def build_export_records(db: DBSession) -> List[dict]:
     """Fetch all alerts and their associated data from the DB and return a list of dicts matching ExportItem.
@@ -45,5 +40,12 @@ def compute_price_deviation(listing: dict, ss_avg_price: float) -> float:
     Returns (listing.price - ss_avg_price) / ss_avg_price * 100.
     A positive value means the listing is above the historical average;
     negative means it's below (a potential deal).
+    Returns 0.0 when either the listing price or the average price is zero,
+    to avoid division by zero and undefined deviation.
     """
-    return (listing["price"] - ss_avg_price) / ss_avg_price * 100
+    if ss_avg_price == 0:
+        return 0.0
+    price = listing.get("price", 0) if isinstance(listing, dict) else 0
+    if price == 0:
+        return 0.0
+    return (price - ss_avg_price) / ss_avg_price * 100
