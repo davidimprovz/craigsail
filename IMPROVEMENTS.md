@@ -310,3 +310,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T04:54:44.466778 — Add SavedSearchGroup model  [kept-unmerged] (5bcc488)
+- why useful: Introduces the Group concept that saved searches can belong to, enabling grouping and bulk operations.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
