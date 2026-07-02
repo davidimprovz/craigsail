@@ -785,3 +785,8 @@
 - tests: 30 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-02T23:34:54.050763 — Replace third test body in test_saved_search_scheduled.py  [MERGED] (e494b03)
+- why useful: Ensures the scheduled saved search test validates behavior directly without introspecting model_fields, matching the required assertion pattern.
+- tests: 30 passed / 0 failed
+- note: gates+critic passed
+
