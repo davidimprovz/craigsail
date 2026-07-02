@@ -315,3 +315,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T04:59:02.634084 — Expose POST /api/groups endpoint  [kept-unmerged] (030a24e)
+- why useful: Allows the frontend or API client to create a new group, which is the first functional step for grouping saved searches.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
