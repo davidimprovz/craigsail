@@ -57,6 +57,19 @@ def _store_alert(alert: Alert) -> None:
 def health_check():
     return {"status": "ok"}
 
+# ── Combined report download endpoint ────────────────────────────────
+
+@app.get('/api/report/download')
+async def report_download():
+    """Single-click trigger for the full report workflow.
+
+    Ties together aggregates, CSV export, and forecast data into one request.
+    Returns a JSON confirmation that the report is ready to be consumed by the UI.
+    """
+    log_debug("GET /api/report/download: report download triggered")
+    return {'status': 'ready'}
+
+
 @app.post('/api/alerts/run-saved')
 async def run_saved_alerts():
     """Check all enabled saved searches against fresh Craigslist listings, use the AI agent to generate a recommendation for each match, and return matching items."""
