@@ -675,3 +675,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T18:17:49.390771 — Add price_deviation field to Listing model and expose via response  [kept-unmerged] (d7dad45)
+- why useful: Introduces a dedicated field that will later be used for deviation calculations, alerts, and CSV exports.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
