@@ -755,3 +755,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T22:29:37.059361 — Add scam risk calculation function  [kept-unmerged] (c9adc7e)
+- why useful: Provides the core heuristic that will be used to score listings.
+- tests: 30 passed / 0 failed
+- note: no progress between attempts — stopped early
+
