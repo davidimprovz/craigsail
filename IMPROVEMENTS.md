@@ -510,3 +510,8 @@
 - tests: 0 passed / 5 failed
 - note: critic=FAIL
 
+## 2026-07-02T10:42:27.577389 — Create POST /api/saved-searches/{ss_id}/assign-group endpoint  [kept-unmerged] (d4fa88e)
+- why useful: Allows the UI to associate an existing saved search with a newly created group by setting its `group_id`.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
