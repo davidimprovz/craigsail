@@ -770,3 +770,8 @@
 - tests: 30 passed / 1 failed
 - note: time budget hit mid-subtask
 
+## 2026-07-02T23:03:19.545893 — Add scheduler.select_scheduled function  [kept-unmerged] (3e392a6)
+- why useful: Provides the backend logic to retrieve saved searches marked for recurring execution, enabling later scheduling pass.
+- tests: 30 passed / 1 failed
+- note: tool-gates failed
+
