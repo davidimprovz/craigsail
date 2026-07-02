@@ -1,5 +1,5 @@
 """Minimal SQLAlchemy session factory for CraigSail."""
-from sqlalchemy import Column, String, Boolean, create_engine
+from sqlalchemy import Column, String, Boolean, Float, create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
 SQLALCHEMY_DATABASE_URL = "sqlite:///./craigsail.db"
@@ -21,6 +21,7 @@ class SavedSearch(Base):
     cities = Column(String, default="[]")  # JSON-encoded list of city slugs
     category = Column(String, default="sss")
     max_price = Column(String, nullable=True)
+    target_price = Column(Float, nullable=True)  # User-defined price threshold for alerts.
     is_active = Column(Boolean, default=True)
     schedule_cron = Column(String, nullable=True)
 

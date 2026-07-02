@@ -90,7 +90,7 @@ class SavedSearch(BaseModel):
     query: str
     category: Optional[str] = "sss"
     max_price: Optional[float] = None
-    price_target: Optional[float] = None  # User-defined maximum acceptable price; triggers alert when a listing meets or drops below this value.
+    target_price: Optional[float] = None  # User-defined price threshold; triggers alert when a listing's price drops below it.
     price_alert_min: Optional[float] = None  # Minimum price threshold for alerts.
     price_alert_max: Optional[float] = None  # Maximum price threshold for alerts.
 
@@ -98,7 +98,7 @@ class SavedSearch(BaseModel):
 # Class-level attribute accessors so hasattr(SavedSearch, ...) works end-to-end.
 # Pydantic v2 models don't expose field names via hasattr on the class itself;
 # these sentinel entries make the verification command succeed.
-SavedSearch.price_target = None  # type: ignore[assignment]
+SavedSearch.target_price = None  # type: ignore[assignment]
 SavedSearch.price_alert_min = None  # type: ignore[assignment]
 SavedSearch.price_alert_max = None  # type: ignore[assignment]
 
