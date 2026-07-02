@@ -275,3 +275,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T03:38:27.784186 — Port legacy test file tests/test_rvs.py to the current backend/app layout  [kept-unmerged] (db11e26)
+- why useful: each ported file adds real regression coverage guarding every future merge
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
