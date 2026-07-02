@@ -305,3 +305,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T04:40:26.356888 — Add reorder endpoint to change saved‑search ordering  [kept-unmerged] (5fad749)
+- why useful: Users must rearrange the displayed order of their saved searches (e.g., priority) without recreating them.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
