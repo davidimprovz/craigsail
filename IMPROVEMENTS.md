@@ -195,3 +195,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T00:54:37.668373 — Expose endpoint to run a saved search and return listings  [kept-unmerged] (0322bd9)
+- why useful: Allows one‑click retrieval of fresh results based on previously stored criteria.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
