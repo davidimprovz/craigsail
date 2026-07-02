@@ -225,3 +225,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T02:01:51.357765 — Add target_price field to SavedSearch model  [MERGED] (f17f6c6)
+- why useful: Stores the user-defined price threshold that triggers alerts when a listing’s price drops below it.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

@@ -48,6 +48,13 @@
    "symbol": "RecommendationResult",
    "sha": "6b9eebb",
    "ts": "2026-07-02T00:05:11.659132"
+  },
+  {
+   "name": "Add target_price field to SavedSearch model",
+   "epic": "auto-saved-search-scheduler",
+   "symbol": "target_price",
+   "sha": "b345a65",
+   "ts": "2026-07-02T02:00:54.512699"
   }
  ]
 }
