@@ -345,3 +345,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T05:44:33.259529 — Add PATCH /api/groups/{group_id} endpoint (toggle alert)  [kept-unmerged] (7872ce8)
+- why useful: Enables toggling the alert_enabled flag of an existing group, fulfilling the EPIC’s toggle requirement.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
