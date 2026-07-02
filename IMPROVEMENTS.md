@@ -350,3 +350,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T05:54:00.946577 — Add DELETE /api/groups/{group_id} endpoint (delete group)  [kept-unmerged] (cc420cb)
+- why useful: Allows removal of a saved-search group, completing the CRUD surface described in the EPIC.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
