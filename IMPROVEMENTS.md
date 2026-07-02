@@ -170,3 +170,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T00:06:02.614965 — Add RecommendationResult model  [MERGED] (dcf9947)
+- why useful: Provides a typed schema for the price recommendation output that the API and frontend will use.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
