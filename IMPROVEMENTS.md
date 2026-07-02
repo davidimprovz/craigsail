@@ -590,3 +590,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T14:31:17.011753 — Add deviation filter parameter and alert trigger logic  [kept-unmerged] (bbb54a4)
+- why useful: Enables the engine to automatically flag listings whose price deviates beyond a user‑defined threshold, fulfilling the core comparable‑listings use case.
+- tests: 28 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
