@@ -652,3 +652,18 @@ def _dedup_listings(listings: List[Listing]) -> List[Listing]:
             deduplicated.append(listing)
     
     return deduplicated
+
+
+# ── One-click delete endpoint for saved searches ──────────────────────
+
+@app.delete('/api/saved-searches/{ss_id}')
+async def delete_saved_search(ss_id: int, db: DBSession = Depends(get_db)):
+    """Remove a saved search (or its group) from the dashboard with a single DELETE call."""
+    log_debug(f"DELETE /api/saved-searches/{ss_id}")
+
+    ss = db.query(DBSavedSearch).filter_by(id=ss_id).first()
+    if not ss:
+        raise HTTPException(status_code=404, detail='SavedSearch not found')
+    db.delete(ss)
+    db.commit()
+    return {'detail': 'Deleted'}
