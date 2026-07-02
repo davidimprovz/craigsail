@@ -655,3 +655,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T17:29:42.427877 — Add price_history CSV generator utility  [kept-unmerged] (4456fbe)
+- why useful: Provides a reusable function that can produce CSV content for any listing ID, laying the groundwork for the export endpoint.
+- tests: 28 passed / 0 failed
+- note: tool-gates failed
+
