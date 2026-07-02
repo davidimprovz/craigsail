@@ -10,5 +10,5 @@ def test_compute_price_deviation_negative():
 def test_compute_price_deviation_zero():
     """Assert the function returns 0.0 when the average price is zero."""
     from backend.app.reports import compute_price_deviation
-    dev = compute_price_deviation(0, 5)
+    dev = compute_price_deviation({'price': 10}, 0)
     assert dev == 0.0
