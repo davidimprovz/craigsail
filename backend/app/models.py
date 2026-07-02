@@ -111,3 +111,9 @@ class Group(Base):
     user_id = Column(Integer, index=True)
     name = Column(String, nullable=False)
     alert_enabled = Column(Boolean, default=False)
+
+
+class PricingAdvice(BaseModel):
+    recommended_price: float
+    optimal_posting_time: str
+    alert_trigger: bool
