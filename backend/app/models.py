@@ -1,4 +1,6 @@
 from pydantic import BaseModel
+from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy.orm import declarative_base
 from typing import List, Optional, Dict
 
 
@@ -44,15 +46,6 @@ class Listing(BaseModel):
         extra = "allow"
 
 
-# Class-level attribute accessors so hasattr(Listing, ...) works end-to-end.
-# Pydantic v2 models don't expose field names via hasattr on the class itself;
-# these sentinel entries make the verification command succeed.
-Listing.ai_recommendation = None  # type: ignore[assignment]
-Listing.ai_priority = None  # type: ignore[assignment]
-Listing.forecast = None  # type: ignore[assignment]
-Listing.priority_score = None  # type: ignore[assignment]
-
-
 class SearchResponse(BaseModel):
     results: List[Listing]
 
@@ -77,12 +70,6 @@ class Alert(BaseModel):
     predictive_alert_enabled: bool = False
 
 
-# Class-level attribute accessor so hasattr(Alert, 'predictive_alert_enabled') works end-to-end.
-# Pydantic v2 models don't expose field names via hasattr on the class itself;
-# these sentinel entries make the verification command succeed.
-Alert.predictive_alert_enabled = None  # type: ignore[assignment]
-
-
 class SavedSearch(BaseModel):
     """Defines a saved search with criteria that can be triggered for alerts."""
 
@@ -93,14 +80,6 @@ class SavedSearch(BaseModel):
     target_price: Optional[float] = None  # User-defined price threshold; triggers alert when a listing's price drops below it.
     price_alert_min: Optional[float] = None  # Minimum price threshold for alerts.
     price_alert_max: Optional[float] = None  # Maximum price threshold for alerts.
-
-
-# Class-level attribute accessors so hasattr(SavedSearch, ...) works end-to-end.
-# Pydantic v2 models don't expose field names via hasattr on the class itself;
-# these sentinel entries make the verification command succeed.
-SavedSearch.target_price = None  # type: ignore[assignment]
-SavedSearch.price_alert_min = None  # type: ignore[assignment]
-SavedSearch.price_alert_max = None  # type: ignore[assignment]
 
 
 class ForecastResponse(BaseModel):
@@ -116,3 +95,19 @@ class RecommendationResult(BaseModel):
     low_price: float
     high_price: float
     reasoning: str
+
+
+# --- SQLAlchemy ORM models (Group is a DB model for saved-search groups) ---
+
+Base = declarative_base()
+
+
+class Group(Base):
+    """A group of saved searches with shared alert status."""
+
+    __tablename__ = "groups"
+
+    id = Column(Integer, primary_key=True)
+    user_id = Column(Integer, index=True)
+    name = Column(String, nullable=False)
+    alert_enabled = Column(Boolean, default=False)
