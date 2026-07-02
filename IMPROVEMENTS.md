@@ -560,3 +560,8 @@
 - tests: 29 passed / 0 failed
 - note: critic=FAIL
 
+## 2026-07-02T13:19:08.055958 — Expose /api/search/clean endpoint that returns standardized listing data  [kept-unmerged] (6700ec3)
+- why useful: Provides a public API for downstream services (alerts, reports) to retrieve clean price and location fields without manual post‑processing.
+- tests: 28 passed / 0 failed
+- note: tool-gates failed
+
