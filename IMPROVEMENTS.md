@@ -415,3 +415,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T07:49:40.750451 — Add CSV streaming endpoint  [kept-unmerged] (137b6d3)
+- why useful: Enables the UI to download a CSV report with one click; the endpoint will stream generated CSV data derived from the aggregates endpoint.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
