@@ -240,3 +240,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T02:27:14.105046 — Add price forecast generation for new listings  [kept-unmerged] (0ec0895)
+- why useful: Generates AI‑driven low/high price forecasts for each newly discovered listing so they can be displayed on the dashboard.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
