@@ -430,3 +430,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T08:20:47.327087 — Add alert evaluation endpoint  [kept-unmerged] (73fc78b)
+- why useful: Kicks off the alert pipeline by processing saved searches and creating Alert records, which all downstream features (priority management, advice, export) will act upon.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
