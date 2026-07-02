@@ -97,6 +97,13 @@
    "symbol": "/api/report/download",
    "sha": "14a4f0b",
    "ts": "2026-07-02T08:09:11.791605"
+  },
+  {
+   "name": "Add priority_score field to Alert model",
+   "epic": "smart_alert_manager",
+   "symbol": "Alert.priority_score",
+   "sha": "2a1f215",
+   "ts": "2026-07-02T08:27:03.257916"
   }
  ]
 }

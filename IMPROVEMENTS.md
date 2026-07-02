@@ -435,3 +435,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T08:27:34.559360 — Add priority_score field to Alert model  [MERGED] (83061ac)
+- why useful: Allows the system to rank alerts and let users prioritize them, enabling the one‑click UI management described in the EPIC.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
