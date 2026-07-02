@@ -650,3 +650,8 @@
 - tests: 28 passed / 1 failed
 - note: tool-gates failed
 
+## 2026-07-02T17:15:40.567918 — Add CSV download of historical price data per tracked listing  [kept-unmerged] (573faba)
+- why useful: Provides users with a downloadable CSV containing the full price history for any listed item, completing the reporting requirement.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
