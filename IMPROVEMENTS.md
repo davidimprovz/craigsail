@@ -390,3 +390,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T07:02:10.596048 — Expose listing priority score in search response  [kept-unmerged] (6a6a750)
+- why useful: Provides a ranked value needed for bulk alert prioritization and later AI script generation.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
