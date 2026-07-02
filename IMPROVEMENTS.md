@@ -540,3 +540,8 @@
 - tests: 28 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-02T12:15:50.008439 — Expose endpoint to enable scheduling for a saved search  [kept-unmerged] (72add4c)
+- why useful: Provides a user-facing API to turn on scheduling for any saved search, setting the new `is_scheduled` flag and persisting it.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
