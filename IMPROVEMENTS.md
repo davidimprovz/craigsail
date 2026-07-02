@@ -450,3 +450,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T08:54:00.917377 — Add analysis router and stub endpoint  [kept-unmerged] (c82d98e)
+- why useful: Creates a concrete URL that the UI button can call and registers a place for later logic.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
