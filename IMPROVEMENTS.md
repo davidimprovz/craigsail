@@ -420,3 +420,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T08:01:38.171342 — Add forecast aggregation endpoint  [kept-unmerged] (1cb4be3)
+- why useful: Supplies the AI‑generated price forecasts per category and city that the final report will visualize; this endpoint will be reused by later reporting features.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
