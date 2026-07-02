@@ -11,3 +11,7 @@
   hasattr(...), never model_fields introspection, never asserts inside `if` blocks.
 - Guard every division by a value that can be 0 (return a defined default).
 - Prefer extending an existing module over creating a new one; one concern per file.
+- When told "the implementation works, only a test is missing": write ONLY the new test
+  file — do not re-edit app code, do not re-explore. Adapt the skeleton you are given.
+- When removing a bad import pattern, KEEP the import the code needs (simplify it,
+  never delete symbols that are still referenced).
