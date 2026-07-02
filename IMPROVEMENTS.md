@@ -695,3 +695,8 @@
 - tests: 29 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T19:09:19.209100 — Expose deviation alerts via CSV export  [kept-unmerged] (8de7fe0)
+- why useful: Completes the EPIC by ensuring exported CSVs contain both price deviation and any related alert messages.
+- tests: 29 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
