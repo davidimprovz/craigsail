@@ -340,3 +340,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T05:39:03.043833 — Add POST /api/groups endpoint (create group)  [kept-unmerged] (e03e3e3)
+- why useful: Allows a user to create a new saved-search group via the API.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
