@@ -98,6 +98,21 @@ class RecommendationResult(BaseModel):
     reasoning: str
 
 
+# ── Export model ─────────────────────────────────────────────────────
+
+class ExportItem(BaseModel):
+    """Defines the exact shape of data to be exported so downstream code can type-check and serialize correctly."""
+
+    title: str
+    price: str
+    location: str
+    forecast_low: float
+    forecast_high: float
+    recommendation: str
+    priority_score: Optional[float] = None
+    url: str
+
+
 # --- SQLAlchemy ORM models (Group is a DB model for saved-search groups) ---
 
 Base = declarative_base()
