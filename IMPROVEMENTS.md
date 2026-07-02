@@ -705,3 +705,8 @@
 - tests: 29 passed / 0 failed
 - note: tool-gates failed
 
+## 2026-07-02T19:35:37.362320 — Implement price_history_csv function  [kept-unmerged] (9d0fba6)
+- why useful: Creates the backend logic that will generate CSV content for a given listing_id, preparing it for exposure via an API endpoint.
+- tests: 29 passed / 0 failed
+- note: no progress between attempts — stopped early
+
