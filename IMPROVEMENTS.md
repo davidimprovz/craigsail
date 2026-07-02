@@ -605,3 +605,8 @@
 - tests: 28 passed / 0 failed
 - note: tool-gates failed
 
+## 2026-07-02T15:19:33.066343 — Add /api/alerts/list endpoint for consolidated alerts  [kept-unmerged] (e06478f)
+- why useful: Allows the UI to retrieve a unified list of all active alerts, satisfying the reporting requirement.
+- tests: 28 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
