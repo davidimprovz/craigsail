@@ -730,3 +730,8 @@
 - tests: 29 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T21:20:35.586472 — Add zero‑average test case for price deviation  [MERGED] (1efcbe1)
+- why useful: Ensures the newly guarded behavior is covered by a concrete test that asserts the function returns 0.0 when the average price is zero.
+- tests: 30 passed / 0 failed
+- note: gates+critic passed
+

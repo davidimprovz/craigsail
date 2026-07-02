@@ -43,9 +43,41 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "review-cleanup-jul2",
+   "title": "Add zero\u2011average test case for price deviation",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "FAIL"
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "PASS"
+    }
+   ],
+   "status": "MERGED"
   }
  ],
- "generated": "2026-07-02T21:11:02.845533",
+ "generated": "2026-07-02T21:20:35.586819",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
