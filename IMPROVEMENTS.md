@@ -760,3 +760,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T22:43:03.369732 — Add scam_risk_score field and annotation helper  [kept-unmerged] (f4ac5c9)
+- why useful: Stores the computed risk score on each Listing instance.
+- tests: 30 passed / 0 failed
+- note: no progress between attempts — stopped early
+

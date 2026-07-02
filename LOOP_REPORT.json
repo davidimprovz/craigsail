@@ -191,9 +191,31 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "scam-risk-score",
+   "title": "Add scam_risk_score field and annotation helper",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
- "generated": "2026-07-02T22:29:37.059721",
+ "generated": "2026-07-02T22:43:03.370074",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -201,8 +223,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 3,
+  "smoke": 4,
   "test_files": 1,
-  "tests": 4
+  "tests": 5
  }
 }
