@@ -97,9 +97,34 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "background-jobs-runner",
+   "title": "Add is_scheduled flag to SavedSearch model",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
- "generated": "2026-07-02T21:26:58.351745",
+ "generated": "2026-07-02T21:51:50.964019",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -107,7 +132,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 1,
-  "test_files": 1
+  "smoke": 2,
+  "test_files": 1,
+  "tests": 1
  }
 }

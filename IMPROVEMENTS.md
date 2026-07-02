@@ -740,3 +740,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T21:51:50.963632 — Add is_scheduled flag to SavedSearch model  [kept-unmerged] (4cf6579)
+- why useful: The scheduler needs a boolean column to identify which saved searches should be executed. Adding the field establishes the persistence primitive required for phase‑2 scheduling.
+- tests: 30 passed / 0 failed
+- note: no progress between attempts — stopped early
+
