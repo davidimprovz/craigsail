@@ -1,0 +1,15 @@
+fastapi
+uvicorn
+playwright
+beautifulsoup4
+langchain
+langchain-community
+langchain-openai
+langchain-google-genai
+langchain-groq
+ollama
+pandas
+pydantic
+python-dotenv
+langchain-ollama
+aiohttp
