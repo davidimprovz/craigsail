@@ -425,3 +425,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T08:09:35.895087 — Add combined download endpoint (single‑click UI trigger)  [MERGED] (b921bac)
+- why useful: Provides the final API surface that the UI will call to obtain a full report; this endpoint ties together aggregates, CSV, and forecast data into one request.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
