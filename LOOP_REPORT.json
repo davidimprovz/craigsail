@@ -213,9 +213,28 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "scam-risk-score",
+   "title": "Expose risk-score endpoint",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
- "generated": "2026-07-02T22:43:03.370074",
+ "generated": "2026-07-02T22:47:19.173174",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -225,6 +244,7 @@
  "gate_fail_histogram": {
   "smoke": 4,
   "test_files": 1,
-  "tests": 5
+  "tests": 6,
+  "probe": 1
  }
 }

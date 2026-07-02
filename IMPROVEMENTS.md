@@ -765,3 +765,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T22:47:19.172909 — Expose risk-score endpoint  [kept-unmerged] (f226c48)
+- why useful: Allows clients to query the scam risk of a specific listing.
+- tests: 30 passed / 1 failed
+- note: time budget hit mid-subtask
+
