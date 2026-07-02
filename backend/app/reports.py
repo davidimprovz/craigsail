@@ -3,8 +3,10 @@
 from typing import List, Dict
 from sqlalchemy.orm import Session as DBSession
 
-from app.models import ExportItem
-from app.db import AlertORM
+try:
+    from app.models import ExportItem, AlertORM
+except ImportError:
+    from backend.app.models import ExportItem, AlertORM
 
 
 def build_export_records(db: DBSession) -> List[dict]:
