@@ -220,3 +220,8 @@
 - tests: 22 passed / 4 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T01:51:31.278283 — Trigger AI analysis for a saved search via one‑click endpoint  [kept-unmerged] (98dd259)
+- why useful: Enables the dashboard’s “Analyze” button to launch an AI‑driven price forecast and recommendation with a single request.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
