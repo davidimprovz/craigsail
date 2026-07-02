@@ -300,3 +300,8 @@
 - tests: 25 passed / 1 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T04:30:24.809501 — Add deactivate flag and toggle endpoint for saved searches  [kept-unmerged] (2dd349e)
+- why useful: Users need to temporarily hide or permanently remove a saved search without deleting it, enabling clean UI management.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
