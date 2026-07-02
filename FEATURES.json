@@ -139,6 +139,13 @@
    "symbol": "compute_price_deviation",
    "sha": "056ee90",
    "ts": "2026-07-02T18:41:24.927545"
+  },
+  {
+   "name": "Remove stray is_scheduled assignment from SavedSearch model",
+   "epic": "review-cleanup-jul2",
+   "symbol": "SavedSearch",
+   "sha": "31a03e9",
+   "ts": "2026-07-02T20:56:42.169361"
   }
  ]
 }

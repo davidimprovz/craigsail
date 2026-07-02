@@ -720,3 +720,8 @@
 - tests: 29 passed / 0 failed
 - note: time budget hit mid-subtask
 
+## 2026-07-02T20:57:36.106881 — Remove stray is_scheduled assignment from SavedSearch model  [MERGED] (1b5fe34)
+- why useful: Eliminates the erroneous post‑class attribute that causes false hasattr checks and aligns with Loop_Tuning rule against assigning to classes after definition.
+- tests: 29 passed / 0 failed
+- note: gates+critic passed
+
