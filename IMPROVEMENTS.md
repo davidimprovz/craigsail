@@ -470,3 +470,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T09:29:18.004458 — Add ExportItem model  [MERGED] (2e11eb2)
+- why useful: Defines the exact shape of data to be exported so downstream code can type-check and serialize correctly.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

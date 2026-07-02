@@ -111,6 +111,13 @@
    "symbol": "method CraigAgent.analyze_saved_search exists",
    "sha": "00b567f",
    "ts": "2026-07-02T09:09:47.514268"
+  },
+  {
+   "name": "Add ExportItem model",
+   "epic": "bulk_export_reports",
+   "symbol": "ExportItem",
+   "sha": "9e9d928",
+   "ts": "2026-07-02T09:27:23.372897"
   }
  ]
 }
