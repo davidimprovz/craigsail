@@ -680,3 +680,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T18:30:58.074574 — Expose price_deviation in search endpoint  [kept-unmerged] (05f51e3)
+- why useful: Makes the new field available to callers so downstream logic can use it.
+- tests: 28 passed / 0 failed
+- note: tool-gates failed
+
