@@ -440,3 +440,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T08:36:29.992958 — Add AI negotiation advice endpoint for alerts  [kept-unmerged] (1ac632e)
+- why useful: Provides the AI‑driven negotiation advice per alert, fulfilling a core requirement of the EPIC and using the existing CraigAgent.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
