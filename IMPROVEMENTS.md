@@ -715,3 +715,8 @@
 - tests: 29 passed / 0 failed
 - note: tool-gates failed
 
+## 2026-07-02T19:54:27.005679 — Add pytest test for the new endpoint  [kept-unmerged] (7b49549)
+- why useful: Guarantees that the endpoint returns a properly formatted CSV response, satisfying the merge requirement of at least one new passing test.
+- tests: 29 passed / 0 failed
+- note: time budget hit mid-subtask
+
