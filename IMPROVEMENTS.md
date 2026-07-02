@@ -585,3 +585,8 @@
 - tests: 28 passed / 0 failed
 - note: tool-gates failed
 
+## 2026-07-02T14:19:11.291809 — Add ComparableItem response model with price_deviation field  [kept-unmerged] (7ebe0cd)
+- why useful: Introduces the standardized output structure (price, deviation) required for downstream ranking and alerting.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
