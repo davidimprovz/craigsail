@@ -205,3 +205,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T01:16:28.305444 — Expose saved-searches list via /api/dashboard/saved-searches  [kept-unmerged] (892695a)
+- why useful: Provides the data source for the dashboard to render a list of all saved searches, enabling the UI to display them in a single view.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
