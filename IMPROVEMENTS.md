@@ -280,3 +280,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T03:44:38.798465 — Port legacy test file tests/test_search.py to the current backend/app layout  [kept-unmerged] (ccd8df5)
+- why useful: each ported file adds real regression coverage guarding every future merge
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
