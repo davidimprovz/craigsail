@@ -355,3 +355,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T06:06:12.694827 — Add a new API route for pricing advice  [kept-unmerged] (fc12870)
+- why useful: Creates the public endpoint that will eventually return ranked items with price, time and alert recommendations. This is the smallest unit of work that introduces the required URL without any logic yet.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
