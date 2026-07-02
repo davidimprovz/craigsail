@@ -620,3 +620,8 @@
 - tests: 30 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T16:04:00.743962 — Add endpoint to toggle tracking flag  [kept-unmerged] (55d796c)
+- why useful: Provides a public API that callers can use to set `tracked=True` (or False) on a specific listing, making the new field actionable.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
