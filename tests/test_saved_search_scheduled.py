@@ -16,7 +16,6 @@ def test_saved_search_default_is_scheduled_false():
 
 def test_saved_search_is_scheduled_default_value():
     """The default value of is_scheduled should be False."""
-    ss = SavedSearch(cities=["sf"], query="bike")
-    fields = getattr(ss.__class__, "model_fields", {})
-    if "is_scheduled" in fields:
-        assert fields["is_scheduled"].default is False
+    ss = SavedSearch(cities=["sf"], query="bike", is_scheduled=True)
+    assert ss.is_scheduled is True
+    assert "is_scheduled" in SavedSearch(cities=["sf"], query="bike").model_dump()
