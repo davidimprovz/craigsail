@@ -625,3 +625,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T16:14:38.781923 — Add pytest test for tracking toggle  [kept-unmerged] (fcb8956)
+- why useful: Ensures the newly added endpoint correctly updates the `tracked` field, giving a concrete verification that the feature works end-to-end.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
