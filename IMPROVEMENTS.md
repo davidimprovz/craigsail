@@ -325,3 +325,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T05:13:05.306590 — Expose DELETE /api/groups/{group_id} endpoint  [kept-unmerged] (e4b33cf)
+- why useful: Enables bulk disabling of a group (e.g., to pause alerts or hide its listings) as part of the required group‑wide actions.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
