@@ -515,3 +515,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T10:51:47.356848 — Add GET /api/groups/{group_id}/listings endpoint  [kept-unmerged] (139c9ec)
+- why useful: Returns a consolidated list of top listings with AI price forecasts for all saved searches that belong to the specified group – the core of the dashboard view.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
