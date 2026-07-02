@@ -320,3 +320,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T05:04:08.850210 — Expose GET /api/groups endpoint  [kept-unmerged] (3353124)
+- why useful: Provides a way to list existing groups, which is required before any bulk actions or alerts can be shown on the dashboard.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
