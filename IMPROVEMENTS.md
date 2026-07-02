@@ -490,3 +490,8 @@
 - tests: 0 passed / 5 failed
 - note: critic=FAIL
 
+## 2026-07-02T10:09:10.548501 — Add POST endpoint to enable DealRadar for a saved search  [kept-unmerged] (afc96ae)
+- why useful: Allows the UI or API client to turn radar on for a specific saved search.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
