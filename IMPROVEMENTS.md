@@ -380,3 +380,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T06:38:44.199264 — Add bulk toggle‑alert endpoint  [kept-unmerged] (7e73088)
+- why useful: Users need to enable/disable multiple alerts at once; a dedicated POST route that accepts a list of alert IDs and a target state fulfills this single concern.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
