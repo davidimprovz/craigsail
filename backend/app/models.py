@@ -1,5 +1,5 @@
 from pydantic import BaseModel
-from sqlalchemy import Column, Integer, String, Boolean, ForeignKey
+from sqlalchemy import Column, Integer, String, Boolean, Float
 from sqlalchemy.orm import declarative_base
 from typing import List, Optional, Dict
 
@@ -68,6 +68,7 @@ class Alert(BaseModel):
     threshold: float
     enabled: bool = True
     predictive_alert_enabled: bool = False
+    priority_score: Optional[int] = None
 
 
 class SavedSearch(BaseModel):
@@ -111,6 +112,22 @@ class Group(Base):
     user_id = Column(Integer, index=True)
     name = Column(String, nullable=False)
     alert_enabled = Column(Boolean, default=False)
+
+
+class AlertORM(Base):
+    """SQLAlchemy ORM model for alerts generated from saved searches."""
+
+    __tablename__ = "alerts"
+
+    id = Column(String, primary_key=True)
+    city = Column(String, nullable=False)
+    query = Column(String, nullable=False)
+    category = Column(String, nullable=True)
+    max_price = Column(Integer, nullable=True)
+    threshold = Column(Float, default=0.0)
+    enabled = Column(Boolean, default=True)
+    predictive_alert_enabled = Column(Boolean, default=False)
+    priority_score = Column(Integer, nullable=True)
 
 
 class PricingAdvice(BaseModel):
