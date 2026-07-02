@@ -1,0 +1,158 @@
+{
+ "features": [
+  {
+   "name": "Add Forecast field to Listing model",
+   "epic": "price-history-and-prediction",
+   "symbol": "Listing.forecast",
+   "sha": "99eda6e",
+   "ts": "2026-07-01T22:05:33.561089"
+  },
+  {
+   "name": "Add generate_forecast utility function",
+   "epic": "price-history-and-prediction",
+   "symbol": "generate_forecast",
+   "sha": "78f6e6e",
+   "ts": "2026-07-01T22:12:12.394029"
+  },
+  {
+   "name": "Add priority_score field to Listing model",
+   "epic": "DealScout",
+   "symbol": "Listing",
+   "sha": "07ddc92",
+   "ts": "2026-07-01T22:36:42.592377"
+  },
+  {
+   "name": "Add prioritize_listings function to rank listings by priority_score",
+   "epic": "DealScout",
+   "symbol": "prioritize_listings",
+   "sha": "cdd41a5",
+   "ts": "2026-07-01T22:43:40.453994"
+  },
+  {
+   "name": "Add price alert thresholds to SavedSearch model",
+   "epic": "price_trend_monitor",
+   "symbol": "models.SavedSearch.price_alert_min attribute exists",
+   "sha": "f5c8eca",
+   "ts": "2026-07-01T22:58:14.547553"
+  },
+  {
+   "name": "Expose POST /api/saved-searches endpoint to persist saved search",
+   "epic": "SmartSearchTemplates",
+   "symbol": "POST /api/saved-searches route exists",
+   "sha": "3365b99",
+   "ts": "2026-07-01T23:29:10.817016"
+  },
+  {
+   "name": "Add RecommendationResult model",
+   "epic": "price_recommendation_engine",
+   "symbol": "RecommendationResult",
+   "sha": "6b9eebb",
+   "ts": "2026-07-02T00:05:11.659132"
+  },
+  {
+   "name": "Add target_price field to SavedSearch model",
+   "epic": "auto-saved-search-scheduler",
+   "symbol": "target_price",
+   "sha": "b345a65",
+   "ts": "2026-07-02T02:00:54.512699"
+  },
+  {
+   "name": "Add Group model",
+   "epic": "saved-search-groups",
+   "symbol": "Group class in app.models",
+   "sha": "57ab000",
+   "ts": "2026-07-02T05:26:35.572445"
+  },
+  {
+   "name": "Expose Group to SQLAlchemy metadata",
+   "epic": "saved-search-groups",
+   "symbol": "import of Group in app.db",
+   "sha": "e55c46a",
+   "ts": "2026-07-02T05:30:09.315349"
+  },
+  {
+   "name": "Define the response model for pricing advice",
+   "epic": "smart_pricing_advisor",
+   "symbol": "PricingAdvice",
+   "sha": "3cb1bda",
+   "ts": "2026-07-02T06:09:01.515756"
+  },
+  {
+   "name": "Add advice generation method to the CraigAgent",
+   "epic": "smart_pricing_advisor",
+   "symbol": "generate_advice",
+   "sha": "7dd2283",
+   "ts": "2026-07-02T06:13:56.601900"
+  },
+  {
+   "name": "Add one\u2011click delete endpoint for saved searches",
+   "epic": "saved-search-group-dashboard",
+   "symbol": "/api/saved-searches/{ss_id}",
+   "sha": "76ec05d",
+   "ts": "2026-07-02T06:50:19.882207"
+  },
+  {
+   "name": "Add combined download endpoint (single\u2011click UI trigger)",
+   "epic": "MarketTrendReport",
+   "symbol": "/api/report/download",
+   "sha": "14a4f0b",
+   "ts": "2026-07-02T08:09:11.791605"
+  },
+  {
+   "name": "Add priority_score field to Alert model",
+   "epic": "smart_alert_manager",
+   "symbol": "Alert.priority_score",
+   "sha": "2a1f215",
+   "ts": "2026-07-02T08:27:03.257916"
+  },
+  {
+   "name": "Implement analysis logic in CraigAgent",
+   "epic": "AutoAnalyzeSavedSearches",
+   "symbol": "method CraigAgent.analyze_saved_search exists",
+   "sha": "00b567f",
+   "ts": "2026-07-02T09:09:47.514268"
+  },
+  {
+   "name": "Add ExportItem model",
+   "epic": "bulk_export_reports",
+   "symbol": "ExportItem",
+   "sha": "9e9d928",
+   "ts": "2026-07-02T09:27:23.372897"
+  },
+  {
+   "name": "Add export data builder function",
+   "epic": "bulk_export_reports",
+   "symbol": "build_export_records",
+   "sha": "4b38031",
+   "ts": "2026-07-02T09:33:59.183661"
+  },
+  {
+   "name": "Add schedule flag to SavedSearch model",
+   "epic": "PersistAlertScheduler",
+   "symbol": "SavedSearch.is_scheduled attribute exists",
+   "sha": "e9e97e9",
+   "ts": "2026-07-02T12:06:10.516364"
+  },
+  {
+   "name": "Compute price deviation using saved-search statistics",
+   "epic": "parser_enhanced",
+   "symbol": "compute_price_deviation",
+   "sha": "056ee90",
+   "ts": "2026-07-02T18:41:24.927545"
+  },
+  {
+   "name": "Remove stray is_scheduled assignment from SavedSearch model",
+   "epic": "review-cleanup-jul2",
+   "symbol": "SavedSearch",
+   "sha": "31a03e9",
+   "ts": "2026-07-02T20:56:42.169361"
+  },
+  {
+   "name": "Add zero\u2011average test case for price deviation",
+   "epic": "review-cleanup-jul2",
+   "symbol": "tests.test_deviation_calculation",
+   "sha": "1b75fb7",
+   "ts": "2026-07-02T21:19:46.936379"
+  }
+ ]
+}
