@@ -580,3 +580,8 @@
 - tests: 28 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T14:10:14.940083 — Implement comparable retrieval using saved search ID  [kept-unmerged] (2efaaaa)
+- why useful: Begins pulling real listings from the database, turning the stub into a functional endpoint that can later be filtered or ranked.
+- tests: 28 passed / 0 failed
+- note: tool-gates failed
+
