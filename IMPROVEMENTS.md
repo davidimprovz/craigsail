@@ -395,3 +395,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T07:10:21.475504 — Bulk priority & negotiation script API  [kept-unmerged] (a7594cb)
+- why useful: Implements the core user-facing endpoint that returns ranked alerts together with AI‑generated negotiation scripts.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
