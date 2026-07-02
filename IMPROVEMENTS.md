@@ -640,3 +640,8 @@
 - tests: 27 passed / 2 failed
 - note: tool-gates failed
 
+## 2026-07-02T16:54:54.357274 — Expose endpoint to run saved search with deviation filtering  [kept-unmerged] (ab2deba)
+- why useful: Runs a saved search and returns only listings that fall within the stored price‑deviation threshold, enabling downstream alert logic.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
