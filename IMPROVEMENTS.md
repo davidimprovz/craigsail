@@ -745,3 +745,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T22:00:10.967359 — Implement scheduler module with scheduling pass function  [kept-unmerged] (1b6e142)
+- why useful: Provides the core logic that finds scheduled saved searches, executes their scraper, and records alert hits. This single‑function module will be reused by the endpoint.
+- tests: 30 passed / 0 failed
+- note: no progress between attempts — stopped early
+
