@@ -635,3 +635,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T16:44:45.690422 — Add price deviation threshold field to SavedSearch model  [kept-unmerged] (8cb316b)
+- why useful: Stores a user-defined tolerance so the system can later filter listings by how much their price deviates from a saved baseline.
+- tests: 27 passed / 2 failed
+- note: tool-gates failed
+
