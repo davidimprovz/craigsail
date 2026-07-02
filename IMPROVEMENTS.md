@@ -630,3 +630,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T16:25:05.651096 — Add endpoint to report tracked-listing count  [kept-unmerged] (203723c)
+- why useful: Lets users query how many listings are currently marked as tracked, enabling a simple reporting metric that builds on the tracking feature.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
