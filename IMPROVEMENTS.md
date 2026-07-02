@@ -175,3 +175,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T00:13:31.223945 — Create recommendation router with stub endpoint  [kept-unmerged] (e876408)
+- why useful: Introduces the /recommendation route so that later code can be wired to it without further file changes.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
