@@ -725,3 +725,8 @@
 - tests: 29 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-02T21:11:02.845217 — Replace ImportError fallback and guard division in compute_price_deviation  [kept-unmerged] (737899e)
+- why useful: Removes the prohibited try/except ImportError import pattern and adds a safe default for division by zero, ensuring the function behaves predictably.
+- tests: 29 passed / 0 failed
+- note: no progress between attempts — stopped early
+

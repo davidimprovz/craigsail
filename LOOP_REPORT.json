@@ -20,14 +20,39 @@
     }
    ],
    "status": "MERGED"
+  },
+  {
+   "epic": "review-cleanup-jul2",
+   "title": "Replace ImportError fallback and guard division in compute_price_deviation",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": false
+     },
+     "critic": "FAIL"
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
- "generated": "2026-07-02T20:57:36.107409",
+ "generated": "2026-07-02T21:11:02.845533",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
   "write_scope": "backend",
   "entry": "backend/app/main.py"
  },
- "gate_fail_histogram": {}
+ "gate_fail_histogram": {
+  "smoke": 1
+ }
 }
