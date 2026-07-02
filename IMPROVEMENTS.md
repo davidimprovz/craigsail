@@ -750,3 +750,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T22:13:33.747958 — Add POST endpoint to trigger a single scheduling pass  [kept-unmerged] (2ad5055)
+- why useful: Exposes a testable, on‑demand entry point that runs the scheduler without background threads. This makes the whole flow verifiable in unit tests.
+- tests: 30 passed / 0 failed
+- note: no progress between attempts — stopped early
+
