@@ -83,6 +83,13 @@
    "symbol": "generate_advice",
    "sha": "7dd2283",
    "ts": "2026-07-02T06:13:56.601900"
+  },
+  {
+   "name": "Add one\u2011click delete endpoint for saved searches",
+   "epic": "saved-search-group-dashboard",
+   "symbol": "/api/saved-searches/{ss_id}",
+   "sha": "76ec05d",
+   "ts": "2026-07-02T06:50:19.882207"
   }
  ]
 }

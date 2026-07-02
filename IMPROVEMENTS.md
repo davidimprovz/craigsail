@@ -385,3 +385,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T06:50:49.261561 — Add one‑click delete endpoint for saved searches  [MERGED] (714e069)
+- why useful: A single DELETE call removes a saved search (or its group) from the dashboard, completing the minimal CRUD operation needed for bulk management.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
