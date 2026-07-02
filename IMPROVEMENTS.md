@@ -500,3 +500,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T10:20:32.289195 — Add POST endpoint to generate AI negotiation message for a listing  [kept-unmerged] (01a5acb)
+- why useful: Optionally returns an AI‑crafted negotiation message when a listing matches radar criteria.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
