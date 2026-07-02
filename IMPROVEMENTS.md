@@ -290,3 +290,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T04:06:22.151889 — Add alert toggle (enable/disable) for saved searches  [kept-unmerged] (0d8b2a9)
+- why useful: Users must be able to turn price‑alert notifications on or off per saved search without deleting the search.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
