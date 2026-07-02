@@ -445,3 +445,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T08:45:46.962916 — Add CSV export endpoint for all alerts  [kept-unmerged] (fb794af)
+- why useful: Completes the one‑click UI management by letting users download every alert in a machine‑readable format, enabling easy reporting and further processing.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
