@@ -1,32 +1,32 @@
-# CraigSail Agent Run — Summary (2026-07-01T22:44:08.273183)
+# CraigSail Agent Run — Summary (2026-07-02T11:16:48.852591)
 
-- cycles: 6 | merged: 4 | kept-unmerged (review): 2
+- cycles: 55 | merged: 10 | kept-unmerged (review): 45
 - final tests on agent/overnight: 0 passed / 5 failed
-- feature ledger: 4 shipped features (FEATURES.json)
+- feature ledger: 18 shipped features (FEATURES.json)
 - calibration (broke a route, loop must re-fix it): PASS
 
 ## Branch log
 ```
-6fa2a8e agent: ledger/log update
-cdd41a5 merge: Add prioritize_listings function to rank listings by priority_score
-2092299 agent attempt 1: Add prioritize_listings function to rank listings by priority_score
-3245982 agent: ledger/log update
-07ddc92 merge: Add priority_score field to Listing model
-1aa40fb agent attempt 2: Add priority_score field to Listing model
-f8e2d47 agent attempt 1: Add priority_score field to Listing model
-7effc97 agent: ledger/log update
-85a4d21 agent: ledger/log update
-78f6e6e merge: Add generate_forecast utility function
-6c36da0 agent attempt 2: Add generate_forecast utility function
-77eb2ac agent: ledger/log update
-99eda6e merge: Add Forecast field to Listing model
-b9c2925 agent attempt 1: Add Forecast field to Listing model
-069c2f9 agent: ledger/log update
-b792de8 snapshot: starting state
-833a692 merge: Add predictive_alert_enabled flag to Alert model
-e799e23 agent: Add predictive_alert_enabled flag to Alert model
-c80b3b0 merge: Define ForecastResponse Pydantic model
-300724f agent: Define ForecastResponse Pydantic model
+759dbcc agent: ledger/log update
+30ae303 agent: ledger/log update
+ee982cb agent: ledger/log update
+fed75be agent: ledger/log update
+a63db65 agent: ledger/log update
+6ba26e9 agent: ledger/log update
+5d21f7c agent: ledger/log update
+e6bfdac agent: ledger/log update
+7f92496 agent: ledger/log update
+74fe5a7 agent: ledger/log update
+543deba agent: ledger/log update
+fd5e1eb agent: ledger/log update
+4b38031 merge: Add export data builder function
+641327a agent attempt 1: Add export data builder function
+e605518 agent: ledger/log update
+9e9d928 merge: Add ExportItem model
+2e11eb2 agent attempt 1: Add ExportItem model
+a2a7b72 agent: ledger/log update
+6535126 agent: ledger/log update
+00b567f merge: Implement analysis logic in CraigAgent
 ```
 
 Each improvement was gated by syntax+test-files+integration+dup-routes+tests+probe, then an adversarial critic.
