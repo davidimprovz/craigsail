@@ -245,3 +245,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T02:46:17.931352 — Add GET /api/saved-searches/list endpoint  [kept-unmerged] (5e823c1)
+- why useful: Provides the dashboard with a complete inventory of saved searches so it can render the list of queries, their current filters, and activation state.
+- tests: 21 passed / 5 failed
+- note: tool-gates failed
+
