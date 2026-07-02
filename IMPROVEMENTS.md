@@ -215,3 +215,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T01:41:36.928521 — Expose price‑trend data for a saved search  [kept-unmerged] (04b6a0d)
+- why useful: The dashboard needs trend information to draw price‑trend graphs for each saved search.
+- tests: 22 passed / 4 failed
+- note: no-op attempt (no write) — retrying with nudge
+
