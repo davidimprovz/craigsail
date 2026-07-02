@@ -330,3 +330,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T05:27:25.558217 — Add Group model  [MERGED] (f145986)
+- why useful: Provides the data structure needed to represent a saved-search group and store its alert status.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
