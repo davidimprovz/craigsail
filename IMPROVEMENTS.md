@@ -710,3 +710,8 @@
 - tests: 29 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T19:50:22.670578 — Expose endpoint in main FastAPI app  [kept-unmerged] (efc2ac6)
+- why useful: Makes the newly created CSV generator accessible to clients via the required URL pattern.
+- tests: 29 passed / 0 failed
+- note: tool-gates failed
+
