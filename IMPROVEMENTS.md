@@ -480,3 +480,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T09:43:25.410836 — Add /api/report/export endpoint  [kept-unmerged] (fd5e1eb)
+- why useful: Exposes a downloadable CSV stream that clients can call to get every active alert with its forecast, priority score and listing details.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
