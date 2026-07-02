@@ -530,3 +530,8 @@
 - tests: 0 passed / 5 failed
 - note: critic=FAIL
 
+## 2026-07-02T11:16:47.012484 — Implement endpoint that returns AI‑generated price forecast for a saved search  [kept-unmerged] (30ae303)
+- why useful: Provides the core predictive data (low/high range and recommendation) needed by the alert system.
+- tests: 0 passed / 5 failed
+- note: time budget hit mid-subtask
+
