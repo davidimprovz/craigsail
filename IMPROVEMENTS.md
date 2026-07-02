@@ -360,3 +360,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T06:09:33.623765 — Define the response model for pricing advice  [MERGED] (33febe9)
+- why useful: Introduces a concrete Pydantic schema that later will carry recommended_price, optimal_posting_time and alert_trigger fields. This makes downstream code type‑safe and testable.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
