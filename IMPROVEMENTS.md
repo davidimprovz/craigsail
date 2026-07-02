@@ -365,3 +365,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T06:14:23.543208 — Add advice generation method to the CraigAgent  [MERGED] (055f752)
+- why useful: Provides the first piece of actual logic that turns a raw listing into a `PricingAdvice` object. Keeping it isolated allows independent testing.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

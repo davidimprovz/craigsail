@@ -76,6 +76,13 @@
    "symbol": "PricingAdvice",
    "sha": "3cb1bda",
    "ts": "2026-07-02T06:09:01.515756"
+  },
+  {
+   "name": "Add advice generation method to the CraigAgent",
+   "epic": "smart_pricing_advisor",
+   "symbol": "generate_advice",
+   "sha": "7dd2283",
+   "ts": "2026-07-02T06:13:56.601900"
   }
  ]
 }
