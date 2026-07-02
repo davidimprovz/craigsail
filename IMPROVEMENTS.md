@@ -400,3 +400,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T07:17:15.438267 — Add dynamic alert threshold field  [kept-unmerged] (5a80ecc)
+- why useful: Allows users to set rule‑based activation limits that later steps will respect when enabling or disabling alerts.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
