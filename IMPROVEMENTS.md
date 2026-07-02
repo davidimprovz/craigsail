@@ -495,3 +495,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T10:15:27.870256 — Add GET endpoint to return DealRadar top listings with forecasts  [kept-unmerged] (7fbab00)
+- why useful: Provides the ranked list of best deals together with price forecasts and recommended actions.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
