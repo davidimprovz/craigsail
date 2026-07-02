@@ -775,3 +775,8 @@
 - tests: 30 passed / 1 failed
 - note: tool-gates failed
 
+## 2026-07-02T23:26:54.958191 — Add missing imports to reports.py  [MERGED] (d2d4110)
+- why useful: Ensures that the existing export functionality can import ExportItem and AlertORM, allowing build_export_records to run without ImportError.
+- tests: 30 passed / 0 failed
+- note: gates+critic passed
+
