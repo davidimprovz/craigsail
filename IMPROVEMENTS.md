@@ -660,3 +660,8 @@
 - tests: 28 passed / 0 failed
 - note: tool-gates failed
 
+## 2026-07-02T17:42:13.158975 — Expose CSV export endpoint  [kept-unmerged] (13f87ce)
+- why useful: Provides the public API route that callers will hit to download price history as CSV.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
