@@ -210,3 +210,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T01:24:50.169674 — Add parameter update endpoint for saved searches  [kept-unmerged] (b11bfb9)
+- why useful: Allows the dashboard to modify query parameters (e.g., max_price, category) of an existing saved search without creating a new one.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
