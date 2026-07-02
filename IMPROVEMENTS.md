@@ -505,3 +505,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T10:35:07.045917 — Add group_id field to SavedSearch model  [kept-unmerged] (df54356)
+- why useful: Introduces the concept of grouping saved searches so later endpoints can associate listings with a specific group.
+- tests: 0 passed / 5 failed
+- note: critic=FAIL
+
