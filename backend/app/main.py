@@ -533,10 +533,10 @@ async def export_search_csv(
     for r in raw_results:
         listings.append(
             Listing(
-                title=r.get("title", ""),
-                price=str(r.get("price", "")),
-                location=r.get("location", ""),
-                url=r.get("url", ""),
+                title=getattr(r, "title", "") or "",
+                price=str(getattr(r, "price", "") or ""),
+                location=getattr(r, "location", "") or "",
+                url=getattr(r, "url", "") or "",
             )
         )
 
