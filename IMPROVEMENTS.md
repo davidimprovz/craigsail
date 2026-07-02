@@ -185,3 +185,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T00:28:16.936484 — Add UI button and display recommendation  [kept-unmerged] (6835dde)
+- why useful: Completes the user flow by letting a user click “Get Recommendation” on a listing grid and see the AI‑generated price range.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
