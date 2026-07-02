@@ -670,3 +670,8 @@
 - tests: 28 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T18:06:53.238452 — Add comprehensive pytest for CSV export  [kept-unmerged] (ac2c1e6)
+- why useful: Provides a test that guarantees the new functionality works end‑to‑end and will cause CI to reject merges without it.
+- tests: 28 passed / 0 failed
+- note: no progress between attempts — stopped early
+
