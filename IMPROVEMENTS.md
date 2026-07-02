@@ -570,3 +570,8 @@
 - tests: 15 passed / 13 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T13:35:02.133520 — Add smoke‑test command verification for all new routes  [kept-unmerged] (743f9aa)
+- why useful: Ensures CI will only merge when each subtask has been correctly wired into the application, preventing incomplete merges.
+- tests: 28 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
