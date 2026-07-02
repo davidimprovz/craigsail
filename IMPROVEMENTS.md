@@ -780,3 +780,8 @@
 - tests: 30 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-02T23:30:14.467508 — Fix import path in test_deviation_calculation.py  [MERGED] (7fdc888)
+- why useful: Aligns test imports with the application's package layout, preventing ImportError when running tests.
+- tests: 30 passed / 0 failed
+- note: gates+critic passed
+

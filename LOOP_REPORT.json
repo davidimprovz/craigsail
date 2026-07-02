@@ -20,10 +20,30 @@
     }
    ],
    "status": "MERGED"
+  },
+  {
+   "epic": "cleanup-jul2-round2",
+   "title": "Fix import path in test_deviation_calculation.py",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "PASS"
+    }
+   ],
+   "status": "MERGED"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-02T23:26:54.958515",
+ "generated": "2026-07-02T23:30:14.467721",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
