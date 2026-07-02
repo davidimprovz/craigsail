@@ -230,3 +230,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T02:13:14.528978 — Expose scheduled-run endpoint for saved searches  [kept-unmerged] (b76acaf)
+- why useful: Allows the system to trigger a saved search automatically at 9 AM daily and process newly found listings.
+- tests: 0 passed / 5 failed
+- note: critic=FAIL
+
