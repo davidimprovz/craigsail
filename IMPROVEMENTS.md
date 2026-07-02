@@ -190,3 +190,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T00:42:44.233248 — Add SavedSearch creation schema and endpoint  [kept-unmerged] (8ac64ce)
+- why useful: Enables users to store multi‑city query parameters as a reusable saved search.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
