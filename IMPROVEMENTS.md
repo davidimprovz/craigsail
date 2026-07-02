@@ -545,3 +545,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T12:28:43.774788 — Add startup scheduler that runs alerts for scheduled saved searches  [kept-unmerged] (ab4b7bd)
+- why useful: Automatically checks and triggers alerts for all saved searches marked as scheduled, ensuring users receive timely notifications without manual intervention.
+- tests: 29 passed / 2 failed
+- note: no-op attempt (no write) — retrying with nudge
+
