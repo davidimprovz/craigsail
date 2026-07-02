@@ -790,3 +790,8 @@
 - tests: 30 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-02T23:58:39.527187 — Add select_scheduled pure function  [kept-unmerged] (8c77456)
+- why useful: Identifies all saved searches flagged for recurring execution so they can be processed by the scheduler.
+- tests: 30 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
