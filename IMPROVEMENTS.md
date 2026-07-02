@@ -525,3 +525,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T11:12:10.904606 — Add forecast toggle flag to SavedSearch model  [kept-unmerged] (555c297)
+- why useful: Allows saved searches to be selected for automated price‑forecast alerts.
+- tests: 0 passed / 5 failed
+- note: critic=FAIL
+
