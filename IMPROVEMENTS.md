@@ -250,3 +250,8 @@
 - tests: 21 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T02:55:49.023894 — Add PATCH /api/saved-searches/{saved_search_id} endpoint  [kept-unmerged] (8ef9bba)
+- why useful: Allows the dashboard to modify filter parameters (max_price or category) of an existing saved search without creating a new one, enabling on‑the‑fly adjustments.
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
