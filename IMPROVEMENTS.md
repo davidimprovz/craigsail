@@ -665,3 +665,8 @@
 - tests: 28 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T17:58:22.372557 — Add validation and 404 handling for missing listing  [kept-unmerged] (5f029bb)
+- why useful: Ensures the endpoint only serves valid listing IDs and returns proper HTTP errors, preventing accidental data exposure.
+- tests: 28 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
