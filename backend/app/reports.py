@@ -3,8 +3,10 @@
 from typing import List, Dict
 from sqlalchemy.orm import Session as DBSession
 
-from app.models import ExportItem
-from app.db import AlertORM
+try:
+    from app.models import ExportItem, AlertORM
+except ImportError:
+    from backend.app.models import ExportItem, AlertORM
 
 
 def build_export_records(db: DBSession) -> List[dict]:
@@ -35,3 +37,13 @@ def build_export_records(db: DBSession) -> List[dict]:
         })
 
     return records
+
+
+def compute_price_deviation(listing: dict, ss_avg_price: float) -> float:
+    """Compute the percentage price deviation of a listing relative to a saved-search average price.
+
+    Returns (listing.price - ss_avg_price) / ss_avg_price * 100.
+    A positive value means the listing is above the historical average;
+    negative means it's below (a potential deal).
+    """
+    return (listing["price"] - ss_avg_price) / ss_avg_price * 100
