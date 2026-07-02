@@ -690,3 +690,8 @@
 - tests: 29 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-02T18:56:50.782512 — Add deviation‑based alert creation endpoint  [kept-unmerged] (69110d3)
+- why useful: Automatically creates alerts when a listing's price deviates beyond a user‑defined threshold.
+- tests: 29 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
