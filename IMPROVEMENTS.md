@@ -235,3 +235,8 @@
 - tests: 0 passed / 5 failed
 - note: critic=FAIL
 
+## 2026-07-02T02:23:40.946500 — Implement price-drop alert logic  [kept-unmerged] (8cbc4bf)
+- why useful: When a listing’s price falls below the saved search’s target_price, send an email or push notification to the user.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
