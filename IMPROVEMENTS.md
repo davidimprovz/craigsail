@@ -455,3 +455,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T09:04:36.397192 — Add service function to fetch saved search listings  [kept-unmerged] (71be6c4)
+- why useful: Isolates DB access so the endpoint can retrieve the correct saved search without coupling to router logic.
+- tests: 0 passed / 5 failed
+- note: critic=FAIL
+
