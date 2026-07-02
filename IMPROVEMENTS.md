@@ -600,3 +600,8 @@
 - tests: 29 passed / 0 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T15:02:31.449022 — Expose /api/alerts/check/{saved_search_id} endpoint  [kept-unmerged] (0fcbbae)
+- why useful: Provides a way to evaluate saved searches against their price_delta and optionally create alerts, forming the core alert‑checking functionality.
+- tests: 28 passed / 0 failed
+- note: tool-gates failed
+
