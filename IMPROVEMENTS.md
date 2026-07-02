@@ -520,3 +520,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T10:55:54.887178 — Add PUT /api/groups/{group_id}/toggle-radar endpoint  [kept-unmerged] (728f246)
+- why useful: Enables the one‑click radar toggle per group, persisting the setting so the dashboard can respect it when consolidating listings.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
