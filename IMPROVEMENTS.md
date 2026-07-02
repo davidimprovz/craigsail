@@ -460,3 +460,8 @@
 - tests: 0 passed / 5 failed
 - note: critic=FAIL
 
+## 2026-07-02T09:10:17.376386 — Implement analysis logic in CraigAgent  [MERGED] (8a932ff)
+- why useful: Provides the AI aggregation that produces price ranges and recommended actions.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+

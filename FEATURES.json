@@ -104,6 +104,13 @@
    "symbol": "Alert.priority_score",
    "sha": "2a1f215",
    "ts": "2026-07-02T08:27:03.257916"
+  },
+  {
+   "name": "Implement analysis logic in CraigAgent",
+   "epic": "AutoAnalyzeSavedSearches",
+   "symbol": "method CraigAgent.analyze_saved_search exists",
+   "sha": "00b567f",
+   "ts": "2026-07-02T09:09:47.514268"
   }
  ]
 }
