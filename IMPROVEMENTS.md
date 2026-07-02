@@ -615,3 +615,8 @@
 - tests: 0 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-02T15:51:02.363156 — Add tracked flag to Listing model  [kept-unmerged] (a826696)
+- why useful: Introduces a boolean field that can be used to mark listings for later tracking, enabling subsequent tracking features.
+- tests: 30 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
