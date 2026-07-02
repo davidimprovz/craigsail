@@ -700,3 +700,8 @@
 - tests: 29 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T19:25:30.700312 — Add PriceObservation model  [kept-unmerged] (5d4268e)
+- why useful: Provides a persistent storage structure for individual price observations that will later be exported as CSV.
+- tests: 29 passed / 0 failed
+- note: tool-gates failed
+
