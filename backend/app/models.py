@@ -110,3 +110,9 @@ class ForecastResponse(BaseModel):
     confidence_scores: Dict[str, float]
     optimal_window: str
     recommendation: str
+
+
+class RecommendationResult(BaseModel):
+    low_price: float
+    high_price: float
+    reasoning: str
