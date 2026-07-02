@@ -2,6 +2,9 @@
 from sqlalchemy import Column, String, Boolean, Float, create_engine
 from sqlalchemy.orm import sessionmaker, declarative_base
 
+# Import Group so Base.metadata.create_all() creates the groups table on first run.
+from .models import Group
+
 SQLALCHEMY_DATABASE_URL = "sqlite:///./craigsail.db"
 
 engine = create_engine(
