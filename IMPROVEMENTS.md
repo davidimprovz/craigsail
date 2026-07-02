@@ -285,3 +285,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T03:59:12.222310 — Add editable filter parameters (max_price, category) to saved searches  [kept-unmerged] (524016b)
+- why useful: Users need to adjust search filters without recreating the saved search, enabling quick parameter tweaks.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
