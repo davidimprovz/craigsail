@@ -370,3 +370,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T06:20:02.058258 — Implement the endpoint logic using the new advice method  [kept-unmerged] (da8bca0)
+- why useful: Connects everything: fetches saved search results, calls `CraigAgent.generate_advice` for each listing and returns a list of `PricingAdvice` objects. This completes the minimal end‑to‑end feature.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
