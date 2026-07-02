@@ -180,3 +180,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T00:19:45.805844 — Implement recommendation logic in CraigAgent  [kept-unmerged] (7731e84)
+- why useful: Provides the actual AI‑driven price range and reasoning that the endpoint will return.
+- tests: 0 passed / 5 failed
+- note: tool-gates failed
+
