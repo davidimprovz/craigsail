@@ -234,7 +234,7 @@
    "status": "kept-unmerged"
   }
  ],
- "generated": "2026-07-02T22:47:19.173174",
+ "generated": "2026-07-02T22:47:21.129933",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -246,5 +246,14 @@
   "test_files": 1,
   "tests": 6,
   "probe": 1
- }
+ },
+ "calibration": "FAIL (Warning: OPENAI_API_KEY not set. AI features will mock response.\nPROBE FAIL: GET /api/models: NOT REGISTERED on the app (defined but not wired - forgot include_)",
+ "baseline_tests": [
+  29,
+  0
+ ],
+ "final_tests": [
+  30,
+  0
+ ]
 }
