@@ -260,3 +260,8 @@
 - tests: 0 passed / 5 failed
 - note: no progress between attempts — stopped early
 
+## 2026-07-02T03:17:23.017212 — Port legacy test file tests/test_bikes.py to the current backend/app layout  [kept-unmerged] (a4c70a9)
+- why useful: each ported file adds real regression coverage guarding every future merge
+- tests: 0 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
