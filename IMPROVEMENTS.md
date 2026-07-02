@@ -555,3 +555,8 @@
 - tests: 0 passed / 6 failed
 - note: tool-gates failed
 
+## 2026-07-02T13:09:45.897822 — Add standardized price integer field to Listing model  [kept-unmerged] (04daa23)
+- why useful: Enables downstream cleaning and analytics to work with a numeric price representation instead of raw string, which is required for accurate price history and alerts.
+- tests: 29 passed / 0 failed
+- note: critic=FAIL
+
