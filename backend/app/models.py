@@ -84,11 +84,6 @@ class SavedSearch(BaseModel):
     is_scheduled: bool = False  # Marks this saved search as scheduled for recurring alerts
 
 
-# Ensure SavedSearch.is_scheduled is reachable via hasattr (Pydantic v2 BaseModel
-# does not expose model fields through the normal attribute lookup protocol).
-SavedSearch.is_scheduled = False
-
-
 class ForecastResponse(BaseModel):
     """Typed response schema for price-forecast data matching the EPIC JSON contract."""
 
