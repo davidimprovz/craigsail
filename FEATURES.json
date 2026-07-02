@@ -132,6 +132,13 @@
    "symbol": "SavedSearch.is_scheduled attribute exists",
    "sha": "e9e97e9",
    "ts": "2026-07-02T12:06:10.516364"
+  },
+  {
+   "name": "Compute price deviation using saved-search statistics",
+   "epic": "parser_enhanced",
+   "symbol": "compute_price_deviation",
+   "sha": "056ee90",
+   "ts": "2026-07-02T18:41:24.927545"
   }
  ]
 }

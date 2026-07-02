@@ -685,3 +685,8 @@
 - tests: 28 passed / 0 failed
 - note: tool-gates failed
 
+## 2026-07-02T18:41:54.678230 — Compute price deviation using saved-search statistics  [MERGED] (e6d2c4e)
+- why useful: Provides actual deviation values based on historic averages, enabling meaningful alerts.
+- tests: 29 passed / 0 failed
+- note: gates+critic passed
+
