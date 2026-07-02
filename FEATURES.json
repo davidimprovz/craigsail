@@ -62,6 +62,13 @@
    "symbol": "Group class in app.models",
    "sha": "57ab000",
    "ts": "2026-07-02T05:26:35.572445"
+  },
+  {
+   "name": "Expose Group to SQLAlchemy metadata",
+   "epic": "saved-search-groups",
+   "symbol": "import of Group in app.db",
+   "sha": "e55c46a",
+   "ts": "2026-07-02T05:30:09.315349"
   }
  ]
 }

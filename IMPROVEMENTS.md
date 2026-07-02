@@ -335,3 +335,8 @@
 - tests: 0 passed / 5 failed
 - note: gates+critic passed
 
+## 2026-07-02T05:30:49.032921 — Expose Group to SQLAlchemy metadata  [MERGED] (5dcc5bf)
+- why useful: Ensures the ORM can create the groups table on first run.
+- tests: 0 passed / 5 failed
+- note: gates+critic passed
+
