@@ -1,13 +1,28 @@
 from playwright.async_api import async_playwright
 from bs4 import BeautifulSoup
+from typing import Optional
 from app.models import Listing
 from app.parser import parser
 import asyncio
+import re
 
 class CraigslistScraper:
-    async def search(self, city: str, query: str, category: str = "sss"):
+    @staticmethod
+    def _parse_price(price_str: str) -> Optional[int]:
+        """Convert price strings like '$1,200' to an integer."""
+        if not price_str or price_str == "N/A":
+            return None
+        # Remove $ and commas, then convert to int
+        cleaned = re.sub(r'[,$]', '', price_str)
+        try:
+            return int(cleaned)
+        except ValueError:
+            return None
+
+    async def search(self, city: str, query: str, category: str = "sss", max_price: Optional[float] = None):
         """
         Searches Craigslist using Playwright to handle dynamic content.
+        Filters results by max_price if provided.
         """
         async with async_playwright() as p:
             browser = await p.chromium.launch(headless=True)
@@ -27,7 +42,19 @@ class CraigslistScraper:
             content = await page.content()
             await browser.close()
             
-            return await self._parse_search_results(content, city)
+            results = await self._parse_search_results(content, city)
+            
+            # Filter by max_price if provided
+            if max_price is not None:
+                filtered_results = []
+                for listing in results:
+                    parsed_price = self._parse_price(listing.price)
+                    if parsed_price is not None and parsed_price <= max_price:
+                        filtered_results.append(listing)
+                print(f"Filtered by max_price={max_price}: {len(filtered_results)} of {len(results)} listings")
+                results = filtered_results
+            
+            return results
 
     async def _parse_search_results(self, html: str, city: str):
         soup = BeautifulSoup(html, 'html.parser')
@@ -126,4 +153,3 @@ class CraigslistScraper:
                 "images": images,
                 "date_updated": date_updated
             }
-
