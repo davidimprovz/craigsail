@@ -255,3 +255,8 @@
 - tests: 0 passed / 5 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T03:05:33.093162 — Add POST /api/saved-searches/{saved_search_id}/toggle-alert endpoint  [kept-unmerged] (97c544a)
+- why useful: Enables the dashboard to activate or deactivate price‑alert notifications for a saved search with a single click.
+- tests: 0 passed / 5 failed
+- note: no progress between attempts — stopped early
+
