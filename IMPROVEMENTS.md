@@ -575,3 +575,8 @@
 - tests: 28 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-02T13:56:14.017733 — Add stub comparable endpoint returning empty list  [kept-unmerged] (dfea241)
+- why useful: Creates the public API contract early, lets CI pass immediately, and provides a stable hook for later logic.
+- tests: 28 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
