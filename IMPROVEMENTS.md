@@ -1160,3 +1160,8 @@
 - tests: 42 passed / 6 failed
 - note: tool-gates failed
 
+## 2026-07-03T12:21:33.413135 — Implement compute_price_stats with safe aggregation  [kept-unmerged] (a282e11)
+- why useful: Provides the core logic that calculates average price, count, min/max and deviation for each city while handling empty or zero‑division cases.
+- tests: 46 passed / 3 failed
+- note: tool-gates failed
+

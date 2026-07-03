@@ -1607,10 +1607,52 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "multi_city_price_comparison",
+   "title": "Implement compute_price_stats with safe aggregation",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T12:14:36.538634",
+ "generated": "2026-07-03T12:21:33.413765",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1619,7 +1661,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 26,
-  "tests": 72,
+  "tests": 75,
   "probe": 25,
   "syntax": 1
  }
