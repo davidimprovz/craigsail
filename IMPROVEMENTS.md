@@ -1065,3 +1065,8 @@
 - tests: 43 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T09:54:13.782937 — Expose scored listings via search endpoint  [kept-unmerged] (824332d)
+- why useful: Allows users to see the numeric score and rationale alongside each listing in search results.
+- tests: 35 passed / 10 failed
+- note: tool-gates failed
+

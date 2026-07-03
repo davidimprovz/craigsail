@@ -1001,10 +1001,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "deal_score_engine",
+   "title": "Expose scored listings via search endpoint",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T09:46:52.408915",
+ "generated": "2026-07-03T09:54:13.783139",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1012,8 +1046,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 17,
-  "tests": 39,
-  "probe": 18
+  "smoke": 18,
+  "tests": 41,
+  "probe": 19
  }
 }
