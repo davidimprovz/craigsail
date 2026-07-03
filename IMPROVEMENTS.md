@@ -1290,3 +1290,8 @@
 - tests: 51 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T23:40:01.818310 — Delete unused deviation_target field from SavedSearch model and its test  [kept-unmerged] (772526d)
+- why useful: Removes dead code and associated test to keep the codebase clean and maintain a green test suite.
+- tests: 50 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
