@@ -215,10 +215,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "surface-cleanup-jul3",
+   "title": "Delete unused deviation_target field and its test file",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": false,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T14:11:55.842449",
+ "generated": "2026-07-03T14:23:27.884132",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -226,7 +260,9 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 5,
-  "smoke": 3
+  "tests": 7,
+  "smoke": 3,
+  "test_files": 1,
+  "probe": 1
  }
 }

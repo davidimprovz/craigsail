@@ -1210,3 +1210,8 @@
 - tests: 47 passed / 0 failed
 - note: critic=FAIL
 
+## 2026-07-03T14:23:27.883460 — Delete unused deviation_target field and its test file  [kept-unmerged] (6a3eca8)
+- why useful: Cleans up a model field that is never persisted or used, reducing schema drift and test clutter.
+- tests: 0 passed / 13 failed
+- note: tool-gates failed
+
