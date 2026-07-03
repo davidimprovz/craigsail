@@ -1,0 +1,326 @@
+{
+ "features": [
+  {
+   "name": "Add Forecast field to Listing model",
+   "epic": "price-history-and-prediction",
+   "symbol": "Listing.forecast",
+   "sha": "99eda6e",
+   "ts": "2026-07-01T22:05:33.561089"
+  },
+  {
+   "name": "Add generate_forecast utility function",
+   "epic": "price-history-and-prediction",
+   "symbol": "generate_forecast",
+   "sha": "78f6e6e",
+   "ts": "2026-07-01T22:12:12.394029"
+  },
+  {
+   "name": "Add priority_score field to Listing model",
+   "epic": "DealScout",
+   "symbol": "Listing",
+   "sha": "07ddc92",
+   "ts": "2026-07-01T22:36:42.592377"
+  },
+  {
+   "name": "Add prioritize_listings function to rank listings by priority_score",
+   "epic": "DealScout",
+   "symbol": "prioritize_listings",
+   "sha": "cdd41a5",
+   "ts": "2026-07-01T22:43:40.453994"
+  },
+  {
+   "name": "Add price alert thresholds to SavedSearch model",
+   "epic": "price_trend_monitor",
+   "symbol": "models.SavedSearch.price_alert_min attribute exists",
+   "sha": "f5c8eca",
+   "ts": "2026-07-01T22:58:14.547553"
+  },
+  {
+   "name": "Expose POST /api/saved-searches endpoint to persist saved search",
+   "epic": "SmartSearchTemplates",
+   "symbol": "POST /api/saved-searches route exists",
+   "sha": "3365b99",
+   "ts": "2026-07-01T23:29:10.817016"
+  },
+  {
+   "name": "Add RecommendationResult model",
+   "epic": "price_recommendation_engine",
+   "symbol": "RecommendationResult",
+   "sha": "6b9eebb",
+   "ts": "2026-07-02T00:05:11.659132"
+  },
+  {
+   "name": "Add target_price field to SavedSearch model",
+   "epic": "auto-saved-search-scheduler",
+   "symbol": "target_price",
+   "sha": "b345a65",
+   "ts": "2026-07-02T02:00:54.512699"
+  },
+  {
+   "name": "Add Group model",
+   "epic": "saved-search-groups",
+   "symbol": "Group class in app.models",
+   "sha": "57ab000",
+   "ts": "2026-07-02T05:26:35.572445"
+  },
+  {
+   "name": "Expose Group to SQLAlchemy metadata",
+   "epic": "saved-search-groups",
+   "symbol": "import of Group in app.db",
+   "sha": "e55c46a",
+   "ts": "2026-07-02T05:30:09.315349"
+  },
+  {
+   "name": "Define the response model for pricing advice",
+   "epic": "smart_pricing_advisor",
+   "symbol": "PricingAdvice",
+   "sha": "3cb1bda",
+   "ts": "2026-07-02T06:09:01.515756"
+  },
+  {
+   "name": "Add advice generation method to the CraigAgent",
+   "epic": "smart_pricing_advisor",
+   "symbol": "generate_advice",
+   "sha": "7dd2283",
+   "ts": "2026-07-02T06:13:56.601900"
+  },
+  {
+   "name": "Add one\u2011click delete endpoint for saved searches",
+   "epic": "saved-search-group-dashboard",
+   "symbol": "/api/saved-searches/{ss_id}",
+   "sha": "76ec05d",
+   "ts": "2026-07-02T06:50:19.882207"
+  },
+  {
+   "name": "Add combined download endpoint (single\u2011click UI trigger)",
+   "epic": "MarketTrendReport",
+   "symbol": "/api/report/download",
+   "sha": "14a4f0b",
+   "ts": "2026-07-02T08:09:11.791605"
+  },
+  {
+   "name": "Add priority_score field to Alert model",
+   "epic": "smart_alert_manager",
+   "symbol": "Alert.priority_score",
+   "sha": "2a1f215",
+   "ts": "2026-07-02T08:27:03.257916"
+  },
+  {
+   "name": "Implement analysis logic in CraigAgent",
+   "epic": "AutoAnalyzeSavedSearches",
+   "symbol": "method CraigAgent.analyze_saved_search exists",
+   "sha": "00b567f",
+   "ts": "2026-07-02T09:09:47.514268"
+  },
+  {
+   "name": "Add ExportItem model",
+   "epic": "bulk_export_reports",
+   "symbol": "ExportItem",
+   "sha": "9e9d928",
+   "ts": "2026-07-02T09:27:23.372897"
+  },
+  {
+   "name": "Add export data builder function",
+   "epic": "bulk_export_reports",
+   "symbol": "build_export_records",
+   "sha": "4b38031",
+   "ts": "2026-07-02T09:33:59.183661"
+  },
+  {
+   "name": "Add schedule flag to SavedSearch model",
+   "epic": "PersistAlertScheduler",
+   "symbol": "SavedSearch.is_scheduled attribute exists",
+   "sha": "e9e97e9",
+   "ts": "2026-07-02T12:06:10.516364"
+  },
+  {
+   "name": "Compute price deviation using saved-search statistics",
+   "epic": "parser_enhanced",
+   "symbol": "compute_price_deviation",
+   "sha": "056ee90",
+   "ts": "2026-07-02T18:41:24.927545"
+  },
+  {
+   "name": "Remove stray is_scheduled assignment from SavedSearch model",
+   "epic": "review-cleanup-jul2",
+   "symbol": "SavedSearch",
+   "sha": "31a03e9",
+   "ts": "2026-07-02T20:56:42.169361"
+  },
+  {
+   "name": "Add zero\u2011average test case for price deviation",
+   "epic": "review-cleanup-jul2",
+   "symbol": "tests.test_deviation_calculation",
+   "sha": "1b75fb7",
+   "ts": "2026-07-02T21:19:46.936379"
+  },
+  {
+   "name": "Add missing imports to reports.py",
+   "epic": "cleanup-jul2-round2",
+   "symbol": "build_export_records",
+   "sha": "346f70c",
+   "ts": "2026-07-02T23:26:11.366983"
+  },
+  {
+   "name": "Fix import path in test_deviation_calculation.py",
+   "epic": "cleanup-jul2-round2",
+   "symbol": "compute_price_deviation",
+   "sha": "402e7b4",
+   "ts": "2026-07-02T23:29:46.597656"
+  },
+  {
+   "name": "Replace third test body in test_saved_search_scheduled.py",
+   "epic": "cleanup-jul2-round2",
+   "symbol": "SavedSearch",
+   "sha": "8cff008",
+   "ts": "2026-07-02T23:34:23.952064"
+  },
+  {
+   "name": "Add compute_price_deviation utility function",
+   "epic": "deal-report-endpoint",
+   "symbol": "compute_price_deviation",
+   "sha": "384c34d",
+   "ts": "2026-07-03T01:15:38.811556"
+  },
+  {
+   "name": "Integrate price_deviation into build_export_records",
+   "epic": "deal-report-endpoint",
+   "symbol": "build_export_records",
+   "sha": "4475bac",
+   "ts": "2026-07-03T01:22:43.896574"
+  },
+  {
+   "name": "Delete literal\u2011path saved-search runner endpoint",
+   "epic": "dead-code-purge",
+   "symbol": "run_saved_search_123",
+   "sha": "aa91907",
+   "ts": "2026-07-03T04:20:04.436130"
+  },
+  {
+   "name": "Delete stub create\u2011saved-search endpoint",
+   "epic": "dead-code-purge",
+   "symbol": "create_saved_search",
+   "sha": "b156e0a",
+   "ts": "2026-07-03T04:24:13.434460"
+  },
+  {
+   "name": "Remove report_download endpoint",
+   "epic": "dead-code-purge",
+   "symbol": "/api/report/download",
+   "sha": "9d377d2",
+   "ts": "2026-07-03T04:57:50.677824"
+  },
+  {
+   "name": "Fix forecast_route confidence_scores calculation and add test",
+   "epic": "endpoint-repairs",
+   "symbol": "app.main.forecast_route",
+   "sha": "4d45b85",
+   "ts": "2026-07-03T05:11:22.266806"
+  },
+  {
+   "name": "Fix list_saved_searches to return explicit dicts",
+   "epic": "endpoint-repairs",
+   "symbol": "app.main.list_saved_searches",
+   "sha": "24e4bc8",
+   "ts": "2026-07-03T05:16:53.253513"
+  },
+  {
+   "name": "Update delete_saved_search signature to accept UUID string IDs",
+   "epic": "endpoint-repairs",
+   "symbol": "app.main.delete_saved_search",
+   "sha": "9fae27c",
+   "ts": "2026-07-03T05:21:41.705194"
+  },
+  {
+   "name": "Remove self\u2011import in reports._deviation_for_alert",
+   "epic": "endpoint-repairs",
+   "symbol": "app.reports._deviation_for_alert",
+   "sha": "42aa89b",
+   "ts": "2026-07-03T05:37:53.521010"
+  },
+  {
+   "name": "Add scheduler.select_scheduled function",
+   "epic": "run-once-scheduler",
+   "symbol": "select_scheduled",
+   "sha": "819da23",
+   "ts": "2026-07-03T06:49:26.644142"
+  },
+  {
+   "name": "Add async run_scheduling_pass function",
+   "epic": "run-once-scheduler",
+   "symbol": "run_scheduling_pass",
+   "sha": "28c5e1f",
+   "ts": "2026-07-03T06:55:07.784625"
+  },
+  {
+   "name": "Add /api/scheduler/run-once endpoint and test it",
+   "epic": "run-once-scheduler",
+   "symbol": "run_once endpoint",
+   "sha": "7eca834",
+   "ts": "2026-07-03T07:00:20.550504"
+  },
+  {
+   "name": "Add deviation_target field to SavedSearch model",
+   "epic": "price_deviation_alerts",
+   "symbol": "SavedSearch.deviation_target",
+   "sha": "eb023d1",
+   "ts": "2026-07-03T07:54:07.963479"
+  },
+  {
+   "name": "Add benchmark search route skeleton",
+   "epic": "cross_city_price_benchmark",
+   "symbol": "",
+   "sha": "4f31c46",
+   "ts": "2026-07-03T08:29:06.904562"
+  },
+  {
+   "name": "Fix/port failing test file tests/test_api_scheduler_run_once.py",
+   "epic": "epic-0",
+   "symbol": "tests/test_api_scheduler_run_once.py",
+   "sha": "0f3b1dc",
+   "ts": "2026-07-03T13:07:16.315851"
+  },
+  {
+   "name": "Bootstrap DB creation on import",
+   "epic": "db-bootstrap-and-fixtures",
+   "symbol": "Base.metadata.create_all",
+   "sha": "c56b5e6",
+   "ts": "2026-07-03T13:15:21.771827"
+  },
+  {
+   "name": "Delete unused /api/saved-searches/run endpoint",
+   "epic": "surface-cleanup-jul3",
+   "symbol": "run_pending_searches",
+   "sha": "5132c06",
+   "ts": "2026-07-03T13:41:08.148267"
+  },
+  {
+   "name": "Fix toggle_saved_search path parameter",
+   "epic": "surface-cleanup-jul3",
+   "symbol": "POST /api/saved-searches/{id}/toggle",
+   "sha": "1707f26",
+   "ts": "2026-07-03T13:56:32.319234"
+  },
+  {
+   "name": "Add pure stdlib scam risk scoring function",
+   "epic": "scam-scoring-v2",
+   "symbol": "risk_score",
+   "sha": "7b6f0ef",
+   "ts": "2026-07-03T15:42:06.440264"
+  },
+  {
+   "name": "Add build_export_records import to main.py",
+   "epic": "deals-endpoint-v2",
+   "symbol": "build_export_records",
+   "sha": "e211868",
+   "ts": "2026-07-03T16:06:18.738914"
+  },
+  {
+   "name": "Expose CSV endpoint with risk_score column",
+   "epic": "risk_score_export",
+   "symbol": "/api/search/csv",
+   "sha": "7b3b12c",
+   "ts": "2026-07-03T17:03:17.952441"
+  }
+ ]
+}

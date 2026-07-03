@@ -1,0 +1,1254 @@
+[
+  {
+    "label": "U.S. virgin islands",
+    "value": "virgin"
+  },
+  {
+    "label": "abilene",
+    "value": "abilene"
+  },
+  {
+    "label": "akron / canton",
+    "value": "akroncanton"
+  },
+  {
+    "label": "albany",
+    "value": "albanyga"
+  },
+  {
+    "label": "albany",
+    "value": "albany"
+  },
+  {
+    "label": "albuquerque",
+    "value": "albuquerque"
+  },
+  {
+    "label": "altoona-johnstown",
+    "value": "altoona"
+  },
+  {
+    "label": "amarillo",
+    "value": "amarillo"
+  },
+  {
+    "label": "anchorage / mat-su",
+    "value": "anchorage"
+  },
+  {
+    "label": "appleton-oshkosh-FDL",
+    "value": "appleton"
+  },
+  {
+    "label": "asheville",
+    "value": "asheville"
+  },
+  {
+    "label": "ashtabula",
+    "value": "ashtabula"
+  },
+  {
+    "label": "athens",
+    "value": "athensga"
+  },
+  {
+    "label": "athens",
+    "value": "athensohio"
+  },
+  {
+    "label": "atlanta",
+    "value": "atlanta"
+  },
+  {
+    "label": "auburn",
+    "value": "auburn"
+  },
+  {
+    "label": "augusta",
+    "value": "augusta"
+  },
+  {
+    "label": "austin",
+    "value": "austin"
+  },
+  {
+    "label": "bakersfield",
+    "value": "bakersfield"
+  },
+  {
+    "label": "beaumont / port arthur",
+    "value": "beaumont"
+  },
+  {
+    "label": "bellingham",
+    "value": "bellingham"
+  },
+  {
+    "label": "bend",
+    "value": "bend"
+  },
+  {
+    "label": "billings",
+    "value": "billings"
+  },
+  {
+    "label": "binghamton",
+    "value": "binghamton"
+  },
+  {
+    "label": "birmingham",
+    "value": "bham"
+  },
+  {
+    "label": "bismarck",
+    "value": "bismarck"
+  },
+  {
+    "label": "boise",
+    "value": "boise"
+  },
+  {
+    "label": "boone",
+    "value": "boone"
+  },
+  {
+    "label": "boulder",
+    "value": "boulder"
+  },
+  {
+    "label": "bozeman",
+    "value": "bozeman"
+  },
+  {
+    "label": "broward county",
+    "value": "miami"
+  },
+  {
+    "label": "brownsville",
+    "value": "brownsville"
+  },
+  {
+    "label": "brunswick",
+    "value": "brunswick"
+  },
+  {
+    "label": "buffalo",
+    "value": "buffalo"
+  },
+  {
+    "label": "butte",
+    "value": "butte"
+  },
+  {
+    "label": "catskills",
+    "value": "catskills"
+  },
+  {
+    "label": "central NJ",
+    "value": "cnj"
+  },
+  {
+    "label": "charleston",
+    "value": "charleston"
+  },
+  {
+    "label": "charleston",
+    "value": "charlestonwv"
+  },
+  {
+    "label": "charlotte",
+    "value": "charlotte"
+  },
+  {
+    "label": "charlottesville",
+    "value": "charlottesville"
+  },
+  {
+    "label": "chattanooga",
+    "value": "chattanooga"
+  },
+  {
+    "label": "chautauqua",
+    "value": "chautauqua"
+  },
+  {
+    "label": "chico",
+    "value": "chico"
+  },
+  {
+    "label": "chillicothe",
+    "value": "chillicothe"
+  },
+  {
+    "label": "cincinnati",
+    "value": "cincinnati"
+  },
+  {
+    "label": "clarksville",
+    "value": "clarksville"
+  },
+  {
+    "label": "cleveland",
+    "value": "cleveland"
+  },
+  {
+    "label": "clovis / portales",
+    "value": "clovis"
+  },
+  {
+    "label": "college station",
+    "value": "collegestation"
+  },
+  {
+    "label": "colorado springs",
+    "value": "cosprings"
+  },
+  {
+    "label": "columbia",
+    "value": "columbia"
+  },
+  {
+    "label": "columbus",
+    "value": "columbusga"
+  },
+  {
+    "label": "columbus",
+    "value": "columbus"
+  },
+  {
+    "label": "cookeville",
+    "value": "cookeville"
+  },
+  {
+    "label": "corpus christi",
+    "value": "corpuschristi"
+  },
+  {
+    "label": "corvallis/albany",
+    "value": "corvallis"
+  },
+  {
+    "label": "cumberland valley",
+    "value": "chambersburg"
+  },
+  {
+    "label": "dallas / fort worth",
+    "value": "dallas"
+  },
+  {
+    "label": "danville",
+    "value": "danville"
+  },
+  {
+    "label": "dayton / springfield",
+    "value": "dayton"
+  },
+  {
+    "label": "daytona beach",
+    "value": "daytona"
+  },
+  {
+    "label": "deep east texas",
+    "value": "nacogdoches"
+  },
+  {
+    "label": "del rio / eagle pass",
+    "value": "delrio"
+  },
+  {
+    "label": "delaware",
+    "value": "delaware"
+  },
+  {
+    "label": "denver",
+    "value": "denver"
+  },
+  {
+    "label": "dothan",
+    "value": "dothan"
+  },
+  {
+    "label": "east idaho",
+    "value": "eastidaho"
+  },
+  {
+    "label": "east oregon",
+    "value": "eastoregon"
+  },
+  {
+    "label": "eastern CO",
+    "value": "eastco"
+  },
+  {
+    "label": "eastern CT",
+    "value": "newlondon"
+  },
+  {
+    "label": "eastern NC",
+    "value": "eastnc"
+  },
+  {
+    "label": "eastern montana",
+    "value": "montana"
+  },
+  {
+    "label": "eastern panhandle",
+    "value": "martinsburg"
+  },
+  {
+    "label": "eau claire",
+    "value": "eauclaire"
+  },
+  {
+    "label": "el paso",
+    "value": "elpaso"
+  },
+  {
+    "label": "elko",
+    "value": "elko"
+  },
+  {
+    "label": "elmira-corning",
+    "value": "elmira"
+  },
+  {
+    "label": "erie",
+    "value": "erie"
+  },
+  {
+    "label": "eugene",
+    "value": "eugene"
+  },
+  {
+    "label": "fairbanks",
+    "value": "fairbanks"
+  },
+  {
+    "label": "fargo / moorhead",
+    "value": "fargo"
+  },
+  {
+    "label": "farmington",
+    "value": "farmington"
+  },
+  {
+    "label": "fayetteville",
+    "value": "fayar"
+  },
+  {
+    "label": "fayetteville",
+    "value": "fayetteville"
+  },
+  {
+    "label": "finger lakes",
+    "value": "fingerlakes"
+  },
+  {
+    "label": "flagstaff / sedona",
+    "value": "flagstaff"
+  },
+  {
+    "label": "florence",
+    "value": "florencesc"
+  },
+  {
+    "label": "florence / muscle shoals",
+    "value": "shoals"
+  },
+  {
+    "label": "florida keys",
+    "value": "keys"
+  },
+  {
+    "label": "fort collins / north CO",
+    "value": "fortcollins"
+  },
+  {
+    "label": "fort lauderdale",
+    "value": "miami"
+  },
+  {
+    "label": "fort smith",
+    "value": "fortsmith"
+  },
+  {
+    "label": "fredericksburg",
+    "value": "fredericksburg"
+  },
+  {
+    "label": "fresno / madera",
+    "value": "fresno"
+  },
+  {
+    "label": "ft myers / SW florida",
+    "value": "fortmyers"
+  },
+  {
+    "label": "gadsden-anniston",
+    "value": "gadsden"
+  },
+  {
+    "label": "gainesville",
+    "value": "gainesville"
+  },
+  {
+    "label": "galveston",
+    "value": "galveston"
+  },
+  {
+    "label": "glens falls",
+    "value": "glensfalls"
+  },
+  {
+    "label": "gold country",
+    "value": "goldcountry"
+  },
+  {
+    "label": "grand forks",
+    "value": "grandforks"
+  },
+  {
+    "label": "grand island",
+    "value": "grandisland"
+  },
+  {
+    "label": "great falls",
+    "value": "greatfalls"
+  },
+  {
+    "label": "green bay",
+    "value": "greenbay"
+  },
+  {
+    "label": "greensboro",
+    "value": "greensboro"
+  },
+  {
+    "label": "greenville / upstate",
+    "value": "greenville"
+  },
+  {
+    "label": "guam-micronesia",
+    "value": "micronesia"
+  },
+  {
+    "label": "hampton roads",
+    "value": "norfolk"
+  },
+  {
+    "label": "hanford-corcoran",
+    "value": "hanford"
+  },
+  {
+    "label": "harrisburg",
+    "value": "harrisburg"
+  },
+  {
+    "label": "harrisonburg",
+    "value": "harrisonburg"
+  },
+  {
+    "label": "hartford",
+    "value": "hartford"
+  },
+  {
+    "label": "hawaii",
+    "value": "honolulu"
+  },
+  {
+    "label": "heartland florida",
+    "value": "cfl"
+  },
+  {
+    "label": "helena",
+    "value": "helena"
+  },
+  {
+    "label": "hickory / lenoir",
+    "value": "hickory"
+  },
+  {
+    "label": "high rockies",
+    "value": "rockies"
+  },
+  {
+    "label": "hilton head",
+    "value": "hiltonhead"
+  },
+  {
+    "label": "houston",
+    "value": "houston"
+  },
+  {
+    "label": "hudson valley",
+    "value": "hudsonvalley"
+  },
+  {
+    "label": "humboldt county",
+    "value": "humboldt"
+  },
+  {
+    "label": "huntington-ashland",
+    "value": "huntington"
+  },
+  {
+    "label": "huntsville / decatur",
+    "value": "huntsville"
+  },
+  {
+    "label": "imperial county",
+    "value": "imperial"
+  },
+  {
+    "label": "inland empire",
+    "value": "inlandempire"
+  },
+  {
+    "label": "ithaca",
+    "value": "ithaca"
+  },
+  {
+    "label": "jackson",
+    "value": "jacksontn"
+  },
+  {
+    "label": "jacksonville",
+    "value": "jacksonville"
+  },
+  {
+    "label": "jacksonville",
+    "value": "onslow"
+  },
+  {
+    "label": "janesville",
+    "value": "janesville"
+  },
+  {
+    "label": "jersey shore",
+    "value": "jerseyshore"
+  },
+  {
+    "label": "jonesboro",
+    "value": "jonesboro"
+  },
+  {
+    "label": "kalispell",
+    "value": "kalispell"
+  },
+  {
+    "label": "kenai peninsula",
+    "value": "kenai"
+  },
+  {
+    "label": "kennewick-pasco-richland",
+    "value": "kpr"
+  },
+  {
+    "label": "kenosha-racine",
+    "value": "racine"
+  },
+  {
+    "label": "killeen / temple / ft hood",
+    "value": "killeen"
+  },
+  {
+    "label": "klamath falls",
+    "value": "klamath"
+  },
+  {
+    "label": "knoxville",
+    "value": "knoxville"
+  },
+  {
+    "label": "la crosse",
+    "value": "lacrosse"
+  },
+  {
+    "label": "lakeland",
+    "value": "lakeland"
+  },
+  {
+    "label": "lancaster",
+    "value": "lancaster"
+  },
+  {
+    "label": "laredo",
+    "value": "laredo"
+  },
+  {
+    "label": "las cruces",
+    "value": "lascruces"
+  },
+  {
+    "label": "las vegas",
+    "value": "lasvegas"
+  },
+  {
+    "label": "lawton",
+    "value": "lawton"
+  },
+  {
+    "label": "lehigh valley",
+    "value": "allentown"
+  },
+  {
+    "label": "lewiston / clarkston",
+    "value": "lewiston"
+  },
+  {
+    "label": "lima / findlay",
+    "value": "limaohio"
+  },
+  {
+    "label": "lincoln",
+    "value": "lincoln"
+  },
+  {
+    "label": "little rock",
+    "value": "littlerock"
+  },
+  {
+    "label": "logan",
+    "value": "logan"
+  },
+  {
+    "label": "long island",
+    "value": "longisland"
+  },
+  {
+    "label": "los angeles",
+    "value": "losangeles"
+  },
+  {
+    "label": "lubbock",
+    "value": "lubbock"
+  },
+  {
+    "label": "lynchburg",
+    "value": "lynchburg"
+  },
+  {
+    "label": "macon / warner robins",
+    "value": "macon"
+  },
+  {
+    "label": "madison",
+    "value": "madison"
+  },
+  {
+    "label": "mansfield",
+    "value": "mansfield"
+  },
+  {
+    "label": "mcallen / edinburg",
+    "value": "mcallen"
+  },
+  {
+    "label": "meadville",
+    "value": "meadville"
+  },
+  {
+    "label": "medford-ashland",
+    "value": "medford"
+  },
+  {
+    "label": "memphis",
+    "value": "memphis"
+  },
+  {
+    "label": "mendocino county",
+    "value": "mendocino"
+  },
+  {
+    "label": "merced",
+    "value": "merced"
+  },
+  {
+    "label": "miami / dade",
+    "value": "miami"
+  },
+  {
+    "label": "milwaukee",
+    "value": "milwaukee"
+  },
+  {
+    "label": "missoula",
+    "value": "missoula"
+  },
+  {
+    "label": "mobile",
+    "value": "mobile"
+  },
+  {
+    "label": "modesto",
+    "value": "modesto"
+  },
+  {
+    "label": "mohave county",
+    "value": "mohave"
+  },
+  {
+    "label": "monterey bay",
+    "value": "monterey"
+  },
+  {
+    "label": "montgomery",
+    "value": "montgomery"
+  },
+  {
+    "label": "morgantown",
+    "value": "morgantown"
+  },
+  {
+    "label": "moses lake",
+    "value": "moseslake"
+  },
+  {
+    "label": "myrtle beach",
+    "value": "myrtlebeach"
+  },
+  {
+    "label": "nashville",
+    "value": "nashville"
+  },
+  {
+    "label": "new hampshire",
+    "value": "nh"
+  },
+  {
+    "label": "new haven",
+    "value": "newhaven"
+  },
+  {
+    "label": "new river valley",
+    "value": "blacksburg"
+  },
+  {
+    "label": "new york city",
+    "value": "newyork"
+  },
+  {
+    "label": "north central FL",
+    "value": "lakecity"
+  },
+  {
+    "label": "north dakota",
+    "value": "nd"
+  },
+  {
+    "label": "north jersey",
+    "value": "newjersey"
+  },
+  {
+    "label": "north platte",
+    "value": "northplatte"
+  },
+  {
+    "label": "northeast SD",
+    "value": "nesd"
+  },
+  {
+    "label": "northern WI",
+    "value": "northernwi"
+  },
+  {
+    "label": "northern panhandle",
+    "value": "wheeling"
+  },
+  {
+    "label": "northwest CT",
+    "value": "nwct"
+  },
+  {
+    "label": "northwest GA",
+    "value": "nwga"
+  },
+  {
+    "label": "northwest OK",
+    "value": "enid"
+  },
+  {
+    "label": "ocala",
+    "value": "ocala"
+  },
+  {
+    "label": "odessa / midland",
+    "value": "odessa"
+  },
+  {
+    "label": "ogden-clearfield",
+    "value": "ogden"
+  },
+  {
+    "label": "okaloosa / walton",
+    "value": "okaloosa"
+  },
+  {
+    "label": "oklahoma city",
+    "value": "oklahomacity"
+  },
+  {
+    "label": "olympic peninsula",
+    "value": "olympic"
+  },
+  {
+    "label": "omaha / council bluffs",
+    "value": "omaha"
+  },
+  {
+    "label": "oneonta",
+    "value": "oneonta"
+  },
+  {
+    "label": "orange county",
+    "value": "orangecounty"
+  },
+  {
+    "label": "oregon coast",
+    "value": "oregoncoast"
+  },
+  {
+    "label": "orlando",
+    "value": "orlando"
+  },
+  {
+    "label": "outer banks",
+    "value": "outerbanks"
+  },
+  {
+    "label": "palm beach county",
+    "value": "miami"
+  },
+  {
+    "label": "palm springs",
+    "value": "palmsprings"
+  },
+  {
+    "label": "panama city",
+    "value": "panamacity"
+  },
+  {
+    "label": "parkersburg-marietta",
+    "value": "parkersburg"
+  },
+  {
+    "label": "pensacola",
+    "value": "pensacola"
+  },
+  {
+    "label": "philadelphia",
+    "value": "philadelphia"
+  },
+  {
+    "label": "phoenix",
+    "value": "phoenix"
+  },
+  {
+    "label": "pierre / central SD",
+    "value": "csd"
+  },
+  {
+    "label": "pittsburgh",
+    "value": "pittsburgh"
+  },
+  {
+    "label": "plattsburgh-adirondacks",
+    "value": "plattsburgh"
+  },
+  {
+    "label": "poconos",
+    "value": "poconos"
+  },
+  {
+    "label": "portland",
+    "value": "portland"
+  },
+  {
+    "label": "potsdam-canton-massena",
+    "value": "potsdam"
+  },
+  {
+    "label": "prescott",
+    "value": "prescott"
+  },
+  {
+    "label": "provo / orem",
+    "value": "provo"
+  },
+  {
+    "label": "pueblo",
+    "value": "pueblo"
+  },
+  {
+    "label": "puerto rico",
+    "value": "puertorico"
+  },
+  {
+    "label": "pullman / moscow",
+    "value": "pullman"
+  },
+  {
+    "label": "raleigh / durham / CH",
+    "value": "raleigh"
+  },
+  {
+    "label": "rapid city / west SD",
+    "value": "rapidcity"
+  },
+  {
+    "label": "reading",
+    "value": "reading"
+  },
+  {
+    "label": "redding",
+    "value": "redding"
+  },
+  {
+    "label": "reno / tahoe",
+    "value": "reno"
+  },
+  {
+    "label": "rhode island",
+    "value": "providence"
+  },
+  {
+    "label": "richmond",
+    "value": "richmond"
+  },
+  {
+    "label": "roanoke",
+    "value": "roanoke"
+  },
+  {
+    "label": "rochester",
+    "value": "rochester"
+  },
+  {
+    "label": "roseburg",
+    "value": "roseburg"
+  },
+  {
+    "label": "roswell / carlsbad",
+    "value": "roswell"
+  },
+  {
+    "label": "sacramento",
+    "value": "sacramento"
+  },
+  {
+    "label": "salem",
+    "value": "salem"
+  },
+  {
+    "label": "salt lake city",
+    "value": "saltlakecity"
+  },
+  {
+    "label": "san angelo",
+    "value": "sanangelo"
+  },
+  {
+    "label": "san antonio",
+    "value": "sanantonio"
+  },
+  {
+    "label": "san diego",
+    "value": "sandiego"
+  },
+  {
+    "label": "san francisco bay area",
+    "value": "sfbay"
+  },
+  {
+    "label": "san luis obispo",
+    "value": "slo"
+  },
+  {
+    "label": "san marcos",
+    "value": "sanmarcos"
+  },
+  {
+    "label": "sandusky",
+    "value": "sandusky"
+  },
+  {
+    "label": "santa barbara",
+    "value": "santabarbara"
+  },
+  {
+    "label": "santa fe / taos",
+    "value": "santafe"
+  },
+  {
+    "label": "santa maria",
+    "value": "santamaria"
+  },
+  {
+    "label": "sarasota-bradenton",
+    "value": "sarasota"
+  },
+  {
+    "label": "savannah / hinesville",
+    "value": "savannah"
+  },
+  {
+    "label": "scottsbluff / panhandle",
+    "value": "scottsbluff"
+  },
+  {
+    "label": "scranton / wilkes-barre",
+    "value": "scranton"
+  },
+  {
+    "label": "seattle-tacoma",
+    "value": "seattle"
+  },
+  {
+    "label": "sheboygan",
+    "value": "sheboygan"
+  },
+  {
+    "label": "show low",
+    "value": "showlow"
+  },
+  {
+    "label": "sierra vista",
+    "value": "sierravista"
+  },
+  {
+    "label": "sioux falls / SE SD",
+    "value": "siouxfalls"
+  },
+  {
+    "label": "siskiyou county",
+    "value": "siskiyou"
+  },
+  {
+    "label": "skagit / island / SJI",
+    "value": "skagit"
+  },
+  {
+    "label": "south dakota",
+    "value": "sd"
+  },
+  {
+    "label": "south florida",
+    "value": "miami"
+  },
+  {
+    "label": "south jersey",
+    "value": "southjersey"
+  },
+  {
+    "label": "southeast alaska",
+    "value": "juneau"
+  },
+  {
+    "label": "southern WV",
+    "value": "swv"
+  },
+  {
+    "label": "southwest TX",
+    "value": "bigbend"
+  },
+  {
+    "label": "southwest VA",
+    "value": "swva"
+  },
+  {
+    "label": "space coast",
+    "value": "spacecoast"
+  },
+  {
+    "label": "spokane / coeur d'alene",
+    "value": "spokane"
+  },
+  {
+    "label": "st augustine",
+    "value": "staugustine"
+  },
+  {
+    "label": "st george",
+    "value": "stgeorge"
+  },
+  {
+    "label": "state college",
+    "value": "pennstate"
+  },
+  {
+    "label": "statesboro",
+    "value": "statesboro"
+  },
+  {
+    "label": "stillwater",
+    "value": "stillwater"
+  },
+  {
+    "label": "stockton",
+    "value": "stockton"
+  },
+  {
+    "label": "susanville",
+    "value": "susanville"
+  },
+  {
+    "label": "syracuse",
+    "value": "syracuse"
+  },
+  {
+    "label": "tallahassee",
+    "value": "tallahassee"
+  },
+  {
+    "label": "tampa bay area",
+    "value": "tampa"
+  },
+  {
+    "label": "texarkana",
+    "value": "texarkana"
+  },
+  {
+    "label": "texoma",
+    "value": "texoma"
+  },
+  {
+    "label": "toledo",
+    "value": "toledo"
+  },
+  {
+    "label": "treasure coast",
+    "value": "treasure"
+  },
+  {
+    "label": "tri-cities",
+    "value": "tricities"
+  },
+  {
+    "label": "tucson",
+    "value": "tucson"
+  },
+  {
+    "label": "tulsa",
+    "value": "tulsa"
+  },
+  {
+    "label": "tuscaloosa",
+    "value": "tuscaloosa"
+  },
+  {
+    "label": "tuscarawas co",
+    "value": "tuscarawas"
+  },
+  {
+    "label": "twin falls",
+    "value": "twinfalls"
+  },
+  {
+    "label": "twin tiers NY/PA",
+    "value": "twintiers"
+  },
+  {
+    "label": "tyler / east TX",
+    "value": "easttexas"
+  },
+  {
+    "label": "utica-rome-oneida",
+    "value": "utica"
+  },
+  {
+    "label": "valdosta",
+    "value": "valdosta"
+  },
+  {
+    "label": "ventura county",
+    "value": "ventura"
+  },
+  {
+    "label": "vermont",
+    "value": "vermont"
+  },
+  {
+    "label": "victoria",
+    "value": "victoriatx"
+  },
+  {
+    "label": "visalia-tulare",
+    "value": "visalia"
+  },
+  {
+    "label": "waco",
+    "value": "waco"
+  },
+  {
+    "label": "washington",
+    "value": "washingtondc"
+  },
+  {
+    "label": "watertown",
+    "value": "watertown"
+  },
+  {
+    "label": "wausau",
+    "value": "wausau"
+  },
+  {
+    "label": "wenatchee",
+    "value": "wenatchee"
+  },
+  {
+    "label": "west virginia (old)",
+    "value": "wv"
+  },
+  {
+    "label": "western slope",
+    "value": "westslope"
+  },
+  {
+    "label": "wichita falls",
+    "value": "wichitafalls"
+  },
+  {
+    "label": "williamsport",
+    "value": "williamsport"
+  },
+  {
+    "label": "wilmington",
+    "value": "wilmington"
+  },
+  {
+    "label": "winchester",
+    "value": "winchester"
+  },
+  {
+    "label": "winston-salem",
+    "value": "winstonsalem"
+  },
+  {
+    "label": "wyoming",
+    "value": "wyoming"
+  },
+  {
+    "label": "yakima",
+    "value": "yakima"
+  },
+  {
+    "label": "york",
+    "value": "york"
+  },
+  {
+    "label": "youngstown",
+    "value": "youngstown"
+  },
+  {
+    "label": "yuba-sutter",
+    "value": "yubasutter"
+  },
+  {
+    "label": "yuma",
+    "value": "yuma"
+  },
+  {
+    "label": "zanesville / cambridge",
+    "value": "zanesville"
+  }
+]

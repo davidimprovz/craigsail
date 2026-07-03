@@ -1,18 +1,30 @@
-import pytest
-from unittest.mock import patch, MagicMock
-import pandas as pd
-from pathlib import Path
-from craigsail.search import Properties
+"""Ported from the legacy Properties placeholders: real minimal coverage for the
+properties category against the current search endpoint. Scraper mocked."""
+from unittest.mock import patch, MagicMock, AsyncMock
+from fastapi.testclient import TestClient
 
-@pytest.fixture
-def properties_instance():
-    return Properties(search_category='properties', data_path='test_path', cities=['city1'])
+from app.main import app
 
-def test_combine_city_property_data(properties_instance):
-    # Placeholder for actual test
-    pass
+client = TestClient(app, raise_server_exceptions=False)
 
-def test_clean_city_property_data(properties_instance):
-    # Placeholder for actual test
-    pass
 
+def _scraper(listings):
+    inst = MagicMock()
+    inst.search = AsyncMock(return_value=listings)
+    return inst
+
+
+def test_properties_category_passed_to_scraper():   # was: Properties(search_category='properties')
+    ms = _scraper([])
+    with patch("app.main.CraigslistScraper", return_value=ms):
+        r = client.post("/api/search", json={"city": "city1", "query": "condo",
+                                             "category": "properties"})
+    assert r.status_code == 200
+    assert ms.search.await_args.args[2] == "properties"
+
+def test_properties_empty_results_ok():
+    with patch("app.main.CraigslistScraper", return_value=_scraper([])):
+        r = client.post("/api/search", json={"city": "city1", "query": "condo",
+                                             "category": "properties"})
+    assert r.status_code == 200
+    assert r.json()["results"] == []
