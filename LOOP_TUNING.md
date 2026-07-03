@@ -21,3 +21,8 @@
   None and say so in IMPROVEMENTS.md — never hardcode 0.0/placeholder values to satisfy
   a check; hollow integrations are rejected on review.
 - When a brief says DELETE, remove the code entirely — no commented-out remains.
+- For a SMALL change in a LARGE file (>300 lines, e.g. backend/app/main.py): never
+  rewrite the whole file with write_file. Use run_shell line-surgery instead: first
+  `grep -n "<anchor>" <file>` to find the exact lines, then delete/replace with
+  `sed -i 'START,ENDd' <file>` or a short `python -c` snippet, then run_tests.
+  write_file whole-file rewrites are for small/new files only.
