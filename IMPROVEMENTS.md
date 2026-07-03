@@ -1060,3 +1060,8 @@
 - tests: 43 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T09:46:52.408367 — Add score fields and scoring method  [kept-unmerged] (da9c565)
+- why useful: Introduces the data model needed for numeric scores and rationales, providing the foundation for later scoring and alert logic.
+- tests: 43 passed / 3 failed
+- note: tool-gates failed
+
