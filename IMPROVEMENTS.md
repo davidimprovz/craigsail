@@ -1035,3 +1035,8 @@
 - tests: 45 passed / 1 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T08:59:27.777052 — Add CSV export endpoint for benchmark results  [kept-unmerged] (34ef8a7)
+- why useful: Allows users to download the aggregated price statistics as a CSV file, completing one of the core user requirements.
+- tests: 45 passed / 1 failed
+- note: no-op attempt (no write) — retrying with nudge
+
