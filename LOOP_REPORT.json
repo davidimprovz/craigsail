@@ -1275,10 +1275,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "smart_alert_throttling",
+   "title": "Integrate throttling into the alert dispatch endpoint",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T10:51:54.709143",
+ "generated": "2026-07-03T11:00:28.102328",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1287,7 +1321,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 22,
-  "tests": 53,
+  "tests": 55,
   "probe": 22
  }
 }

@@ -1110,3 +1110,8 @@
 - tests: 41 passed / 4 failed
 - note: tool-gates failed
 
+## 2026-07-03T11:00:28.102096 — Integrate throttling into the alert dispatch endpoint  [kept-unmerged] (a22ed77)
+- why useful: Ensures that only alerts meeting the cooldown condition are actually sent, reducing spam.
+- tests: 42 passed / 3 failed
+- note: tool-gates failed
+
