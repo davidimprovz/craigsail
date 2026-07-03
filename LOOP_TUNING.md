@@ -15,3 +15,9 @@
   file — do not re-edit app code, do not re-explore. Adapt the skeleton you are given.
 - When removing a bad import pattern, KEEP the import the code needs (simplify it,
   never delete symbols that are still referenced).
+- NEVER import a module from inside itself (`from app.X import f` within app/X.py) —
+  call same-module functions directly.
+- A new field/column must carry REAL data. If the data source does not exist, return
+  None and say so in IMPROVEMENTS.md — never hardcode 0.0/placeholder values to satisfy
+  a check; hollow integrations are rejected on review.
+- When a brief says DELETE, remove the code entirely — no commented-out remains.
