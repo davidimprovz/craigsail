@@ -1055,3 +1055,8 @@
 - tests: 42 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T09:31:57.540634 — Integrate filter usage into scheduled alert runs  [kept-unmerged] (44dbf5b)
+- why useful: Ensures that alerts triggered by saved searches honor the persisted price and distance limits, completing the persistence‑across‑restarts goal.
+- tests: 43 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+
