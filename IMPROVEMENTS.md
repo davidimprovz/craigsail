@@ -1095,3 +1095,8 @@
 - tests: 42 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T10:32:01.560616 — Add CSV export of price trend metrics  [kept-unmerged] (5a29291)
+- why useful: Allows users to download the full dataset—including city averages and deviation scores—as a CSV file for offline analysis.
+- tests: 42 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+

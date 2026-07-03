@@ -1181,10 +1181,36 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "price_trend_analytics",
+   "title": "Add CSV export of price trend metrics",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T10:27:05.556601",
+ "generated": "2026-07-03T10:32:01.560967",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1192,8 +1218,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 18,
-  "tests": 48,
+  "smoke": 19,
+  "tests": 49,
   "probe": 21
  }
 }
