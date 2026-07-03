@@ -195,6 +195,13 @@
    "symbol": "run_saved_search_123",
    "sha": "aa91907",
    "ts": "2026-07-03T04:20:04.436130"
+  },
+  {
+   "name": "Delete stub create\u2011saved-search endpoint",
+   "epic": "dead-code-purge",
+   "symbol": "create_saved_search",
+   "sha": "b156e0a",
+   "ts": "2026-07-03T04:24:13.434460"
   }
  ]
 }

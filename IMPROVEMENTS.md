@@ -890,3 +890,8 @@
 - tests: 34 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T04:24:37.227090 — Delete stub create‑saved-search endpoint  [MERGED] (9bca577)
+- why useful: Eliminates a duplicate route that adds no functional value.
+- tests: 34 passed / 0 failed
+- note: gates+critic passed
+
