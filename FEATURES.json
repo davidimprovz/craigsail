@@ -251,6 +251,13 @@
    "symbol": "run_scheduling_pass",
    "sha": "28c5e1f",
    "ts": "2026-07-03T06:55:07.784625"
+  },
+  {
+   "name": "Add /api/scheduler/run-once endpoint and test it",
+   "epic": "run-once-scheduler",
+   "symbol": "run_once endpoint",
+   "sha": "7eca834",
+   "ts": "2026-07-03T07:00:20.550504"
   }
  ]
 }

@@ -975,3 +975,8 @@
 - tests: 39 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T07:00:50.720376 — Add /api/scheduler/run-once endpoint and test it  [MERGED] (36fcb1a)
+- why useful: Exposes the scheduling pass via an HTTP POST, allowing a user to trigger a one‑off execution of all scheduled searches; this completes the end‑to‑end flow.
+- tests: 43 passed / 0 failed
+- note: gates+critic passed
+
