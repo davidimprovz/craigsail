@@ -663,10 +663,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "price_deviation_alerts",
+   "title": "Add deviation\u2011based alert generation in scheduler",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T08:01:24.944169",
+ "generated": "2026-07-03T08:08:25.180804",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -675,7 +709,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 15,
-  "tests": 20,
+  "tests": 22,
   "probe": 11
  }
 }

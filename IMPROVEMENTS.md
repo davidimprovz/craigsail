@@ -1015,3 +1015,8 @@
 - tests: 41 passed / 4 failed
 - note: tool-gates failed
 
+## 2026-07-03T08:08:25.180479 — Add deviation‑based alert generation in scheduler  [kept-unmerged] (7daa82a)
+- why useful: When the scheduled job runs, it will create an Alert if a listing's price deviates beyond the saved search's threshold.
+- tests: 45 passed / 5 failed
+- note: no-op attempt (no write) — retrying with nudge
+
