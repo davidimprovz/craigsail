@@ -1,21 +1,21 @@
-# ISSUES — craigsail (auto-check 2026-07-02, jetson/loop @ b5bd097)
+# ISSUES — craigsail (auto-check 2026-07-02, jetson/loop @ 914dcf9)
 
 Mechanical post-pull findings. Controller turns these into the next [maintenance]
 epic in EPICS.md; the fix cycle re-runs THIS project before the queue advances.
 
+- added a try/except ImportError fallback import (banned by LOOP_TUNING)
 - calibration FAILED this run (gates/coder self-check broken)
 
-## Controller review (deep diff, 2026-07-02 evening)
-- backend/app/reports.py: build_export_records calls db.query(AlertORM) but the module
-  no longer imports AlertORM/ExportItem (the ImportError-fallback "fix" deleted the
-  import instead of simplifying it) — latent NameError whenever the function is called.
-- tests/test_deviation_calculation.py imports `backend.app.reports` (dual module
-  identity vs the app's `app.reports`) — banned pattern, still present after merge.
-- tests/test_saved_search_scheduled.py third test still uses conditional model_fields
-  introspection (subtask 4 stalled).
-- Harness (fixed in improve.py, deployed): repeat-diff detection broke retries at
-  attempt 2, so the fresh-resample escalation never ran — killed 8/8 value subtasks;
-  now escalates instead of stopping. Test-only retries now include a code skeleton.
-- Calibration FAIL 2 runs in a row (one-shot route-repair not performed) — watch next run.
-
-All items above are encoded as epic `cleanup-jul2-round2` in EPICS.md (round-2 fix cycle).
+## Controller review round 3 (2026-07-03, jetson/loop @ 914dcf9)
+- The 'except ImportError' mechanical flag above was a FALSE POSITIVE (the check grepped
+  ledger prose naming the fixed pattern; check now scopes code patterns to *.py diffs).
+- reports.py `_deviation_for_alert` is HOLLOW: always returns 0.0 (calls the deviation
+  fn with listing=None; the None-guard returns 0.0). Its test patches the helper, so the
+  suite can't see it. Real fix = listing persistence (EPICS round-3 epic 4).
+- reports.py contains a self-import (`from app.reports import ...` inside its own
+  module) and an unused `Listing` import — repairs epic 2(e).
+- Calibration FAIL #4 in a row (GET /api/models one-shot repair never lands). Pattern,
+  not noise: single-attempt calibration under-measures; consider giving calibration the
+  retry ladder (morning item — not changed mid-experiment).
+- Legacy audit items (123-route, echo stub, theater endpoints, .dict() crash, int/UUID
+  delete, Path-param toggle, forecast NameError, three-store split) → round-3 epics 1-3.
