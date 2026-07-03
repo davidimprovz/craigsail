@@ -1270,3 +1270,8 @@
 - tests: 50 passed / 2 failed
 - note: tool-gates failed
 
+## 2026-07-03T16:24:19.465469 — Add CSV streaming support for ?format=csv  [kept-unmerged] (b357439)
+- why useful: Allows clients to download the same exported rows as a streamed CSV file.
+- tests: 0 passed / 9 failed
+- note: no-op attempt (no write) — retrying with nudge
+
