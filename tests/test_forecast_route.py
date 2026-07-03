@@ -20,8 +20,7 @@ def test_forecast_route_status_200_and_confidence_scores():
     mock_inst = MagicMock()
     mock_inst.search = AsyncMock(return_value=listings)
 
-    with patch.object(CraigslistScraper, "__init__", lambda self: None), \
-         patch("app.main.CraigslistScraper", return_value=mock_inst):
+    with patch.object(CraigslistScraper, "search", new=AsyncMock(return_value=listings)):
         r = client.get("/api/forecast?city=sfbay&query=bike")
 
     assert r.status_code == 200
@@ -36,8 +35,7 @@ def test_forecast_route_too_few_prices():
     mock_inst = MagicMock()
     mock_inst.search = AsyncMock(return_value=listings)
 
-    with patch.object(CraigslistScraper, "__init__", lambda self: None), \
-         patch("app.main.CraigslistScraper", return_value=mock_inst):
+    with patch.object(CraigslistScraper, "search", new=AsyncMock(return_value=listings)):
         r = client.get("/api/forecast?city=sfbay&query=bike")
 
     assert r.status_code == 200
@@ -48,8 +46,7 @@ def test_forecast_route_no_listings():
     mock_inst = MagicMock()
     mock_inst.search = AsyncMock(return_value=[])
 
-    with patch.object(CraigslistScraper, "__init__", lambda self: None), \
-         patch("app.main.CraigslistScraper", return_value=mock_inst):
+    with patch.object(CraigslistScraper, "search", new=AsyncMock(return_value=[])):
         r = client.get("/api/forecast?city=sfbay&query=bike")
 
     assert r.status_code == 200
