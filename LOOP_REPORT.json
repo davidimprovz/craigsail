@@ -1678,7 +1678,7 @@
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T12:28:03.702927",
+ "generated": "2026-07-03T12:31:41.722802",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1691,5 +1691,14 @@
   "probe": 25,
   "syntax": 1,
   "dup_routes": 1
- }
+ },
+ "calibration": "PASS",
+ "baseline_tests": [
+  34,
+  0
+ ],
+ "final_tests": [
+  45,
+  0
+ ]
 }
