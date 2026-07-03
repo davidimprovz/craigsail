@@ -865,3 +865,8 @@
 - tests: 34 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T03:06:49.532823 — Add hot‑zone alert scheduling endpoint  [kept-unmerged] (c6eb486)
+- why useful: Enables users to create alerts automatically when a heatmap zone is deemed 'hot' (e.g., high listing count), fulfilling the final part of the EPIC.
+- tests: 34 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
