@@ -935,3 +935,8 @@
 - tests: 37 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T05:51:08.082391 — Expose run_saved_search endpoint using DB  [kept-unmerged] (8f69c3f)
+- why useful: Persist saved searches and allow them to be executed, enabling end‑to‑end saved‑search functionality.
+- tests: 37 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+

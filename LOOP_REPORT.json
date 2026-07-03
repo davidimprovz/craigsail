@@ -204,10 +204,33 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "saved-search-store-unification",
+   "title": "Expose run_saved_search endpoint using DB",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T05:38:22.770499",
+ "generated": "2026-07-03T05:51:08.082769",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -216,6 +239,6 @@
  },
  "gate_fail_histogram": {
   "smoke": 5,
-  "tests": 1
+  "tests": 2
  }
 }
