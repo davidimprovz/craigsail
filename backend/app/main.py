@@ -17,7 +17,7 @@ import os
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session as DBSession
 from app.db import SessionLocal, SavedSearch as DBSavedSearch, get_db
-from app.scheduler import select_scheduled
+from app.scheduler import select_scheduled, run_scheduling_pass
 
 app = FastAPI(title="Craigsail API")
 
@@ -63,6 +63,13 @@ async def run_scheduled_alerts(db: DBSession = Depends(get_db)):
     """Trigger the scheduling pass — retrieve all active saved searches with a cron schedule."""
     scheduled = select_scheduled(db)
     return {"scheduled_count": len(scheduled), "ids": [s.id for s in scheduled]}
+
+@app.post('/api/alerts/run-scheduled-pass')
+async def run_scheduled_pass(db: DBSession = Depends(get_db)):
+    """Execute the scheduling pass — runs saved searches across cities and returns hit counts."""
+    scraper = CraigslistScraper()
+    results = await run_scheduling_pass(db, scraper)
+    return {"hit_counts": results}
 
 @app.post('/api/alerts/run-saved')
 async def run_saved_alerts():
