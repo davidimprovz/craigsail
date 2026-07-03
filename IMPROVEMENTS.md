@@ -1260,3 +1260,8 @@
 - tests: 49 passed / 1 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T16:07:00.333352 — Add build_export_records import to main.py  [MERGED] (02b58c2)
+- why useful: The endpoint must call this function; importing it makes it available for later wiring.
+- tests: 50 passed / 0 failed
+- note: gates+critic passed
+
