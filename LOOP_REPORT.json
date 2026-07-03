@@ -857,10 +857,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "search_refinement_filters",
+   "title": "Expose saved search filters via a detail endpoint",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T09:11:13.266505",
+ "generated": "2026-07-03T09:17:38.252975",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -869,7 +903,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 17,
-  "tests": 30,
-  "probe": 16
+  "tests": 32,
+  "probe": 17
  }
 }

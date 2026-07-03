@@ -1045,3 +1045,8 @@
 - tests: 42 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T09:17:38.252755 — Expose saved search filters via a detail endpoint  [kept-unmerged] (762d44a)
+- why useful: Making the stored filter values accessible enables downstream steps (export, alert scheduling) to read the user's price and distance constraints without re‑entering them.
+- tests: 42 passed / 5 failed
+- note: tool-gates failed
+
