@@ -895,3 +895,8 @@
 - tests: 34 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T04:29:27.482769 — Delete stub run‑pending-searches endpoint  [kept-unmerged] (22c7d6f)
+- why useful: Cleans up an unused route that contributes to dead code.
+- tests: 34 passed / 0 failed
+- note: time budget hit mid-subtask
+

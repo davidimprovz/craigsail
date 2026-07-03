@@ -46,10 +46,31 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "dead-code-purge",
+   "title": "Delete stub run\u2011pending-searches endpoint",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": false
+     },
+     "critic": "FAIL"
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "truncated"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T04:24:37.227407",
+ "generated": "2026-07-03T04:29:27.483033",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -57,6 +78,6 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 1
+  "smoke": 2
  }
 }
