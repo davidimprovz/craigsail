@@ -77,10 +77,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "db-bootstrap-and-fixtures",
+   "title": "Patch environment\u2011coupled scheduler tests to use fixture override",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T13:22:17.515553",
+ "generated": "2026-07-03T13:31:07.893435",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -88,7 +122,7 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 2,
-  "smoke": 2
+  "tests": 4,
+  "smoke": 3
  }
 }

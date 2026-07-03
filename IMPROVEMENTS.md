@@ -1185,3 +1185,8 @@
 - tests: 47 passed / 1 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T13:31:07.893188 — Patch environment‑coupled scheduler tests to use fixture override  [kept-unmerged] (de4dcbf)
+- why useful: Fixes flaky tests that fail because they rely on the real DB session; using the overridden dependency makes them deterministic.
+- tests: 0 passed / 3 failed
+- note: tool-gates failed
+
