@@ -1050,3 +1050,8 @@
 - tests: 42 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-03T09:23:24.959564 — Export CSV results using stored filters  [kept-unmerged] (4bc07f4)
+- why useful: Users can now download a CSV of listings that respect their saved price ceiling and distance radius, fulfilling the export requirement of the EPIC.
+- tests: 42 passed / 3 failed
+- note: tool-gates failed
+
