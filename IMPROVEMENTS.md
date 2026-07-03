@@ -915,3 +915,8 @@
 - tests: 37 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T05:17:28.411850 — Fix list_saved_searches to return explicit dicts  [MERGED] (8b57e86)
+- why useful: The `list_saved_searches` endpoint currently returns SQLAlchemy model objects without converting them to dictionaries, causing serialization errors when clients consume the API.
+- tests: 37 passed / 0 failed
+- note: gates+critic passed
+

@@ -216,6 +216,13 @@
    "symbol": "app.main.forecast_route",
    "sha": "4d45b85",
    "ts": "2026-07-03T05:11:22.266806"
+  },
+  {
+   "name": "Fix list_saved_searches to return explicit dicts",
+   "epic": "endpoint-repairs",
+   "symbol": "app.main.list_saved_searches",
+   "sha": "24e4bc8",
+   "ts": "2026-07-03T05:16:53.253513"
   }
  ]
 }
