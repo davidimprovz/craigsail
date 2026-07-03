@@ -243,10 +243,30 @@
     }
    ],
    "status": "MERGED"
+  },
+  {
+   "epic": "deal-report-endpoint",
+   "title": "Integrate price_deviation into build_export_records",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "PASS"
+    }
+   ],
+   "status": "MERGED"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T01:16:22.064895",
+ "generated": "2026-07-03T01:23:10.689832",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",

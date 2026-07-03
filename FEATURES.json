@@ -181,6 +181,13 @@
    "symbol": "compute_price_deviation",
    "sha": "384c34d",
    "ts": "2026-07-03T01:15:38.811556"
+  },
+  {
+   "name": "Integrate price_deviation into build_export_records",
+   "epic": "deal-report-endpoint",
+   "symbol": "build_export_records",
+   "sha": "4475bac",
+   "ts": "2026-07-03T01:22:43.896574"
   }
  ]
 }
