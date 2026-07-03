@@ -950,3 +950,8 @@
 - tests: 37 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T06:22:54.729001 — Add ListingORM model  [kept-unmerged] (98b6588)
+- why useful: Provides durable storage for scraped listings so price history and deviation can be calculated.
+- tests: 37 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
