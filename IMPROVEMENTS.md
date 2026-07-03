@@ -1285,3 +1285,8 @@
 - tests: 51 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T17:29:27.331676 — Add engine initialization and bootstrap metadata creation in db.py  [kept-unmerged] (1c57ab7)
+- why useful: Ensures that all SQLAlchemy tables (including saved_searches) are created automatically on import, fixing the OperationalError when a fresh SQLite DB is used.
+- tests: 51 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
