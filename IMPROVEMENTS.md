@@ -980,3 +980,8 @@
 - tests: 43 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T07:12:05.370502 — Add scam‑heuristic risk_score utility function  [kept-unmerged] (af0da87)
+- why useful: Provides a deterministic scam risk score that can be reused across the app.
+- tests: 0 passed / 8 failed
+- note: tool-gates failed
+
