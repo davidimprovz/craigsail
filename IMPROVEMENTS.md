@@ -860,3 +860,8 @@
 - tests: 34 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T02:55:21.949739 — Add CSV export endpoint for heatmap data  [kept-unmerged] (9a1e026)
+- why useful: Allows users to download the aggregated heatmap results as a CSV file, satisfying one part of the export requirement.
+- tests: 34 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+

@@ -404,10 +404,27 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "price_heatmap",
+   "title": "Add CSV export endpoint for heatmap data",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T02:42:23.646126",
+ "generated": "2026-07-03T02:55:21.950446",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
