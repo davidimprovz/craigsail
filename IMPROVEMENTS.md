@@ -850,3 +850,8 @@
 - tests: 34 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T02:27:50.206678 — Implement background task that executes due alerts  [kept-unmerged] (39ca90b)
+- why useful: Runs automatically and sends notifications for saved searches whose scheduled time has arrived, achieving true hands‑free deal hunting.
+- tests: 34 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+

@@ -360,10 +360,32 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "batch-scheduler",
+   "title": "Implement background task that executes due alerts",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T02:18:26.180891",
+ "generated": "2026-07-03T02:27:50.207097",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -371,8 +393,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 12,
+  "tests": 13,
   "probe": 2,
-  "smoke": 5
+  "smoke": 6
  }
 }
