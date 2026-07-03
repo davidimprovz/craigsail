@@ -1205,3 +1205,8 @@
 - tests: 46 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T14:11:55.842010 — Delete benchmark route and its test file  [kept-unmerged] (8926a6f)
+- why useful: Removes a placeholder endpoint that was never completed and eliminates associated test noise.
+- tests: 47 passed / 0 failed
+- note: critic=FAIL
+

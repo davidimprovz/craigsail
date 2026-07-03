@@ -171,10 +171,54 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "surface-cleanup-jul3",
+   "title": "Delete benchmark route and its test file",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "FAIL"
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "FAIL"
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T13:57:05.376290",
+ "generated": "2026-07-03T14:11:55.842449",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -182,7 +226,7 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 4,
+  "tests": 5,
   "smoke": 3
  }
 }
