@@ -107,10 +107,27 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "scheduler-pass-execution",
+   "title": "Expose POST /api/scheduler/run-once endpoint",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T00:11:33.625134",
+ "generated": "2026-07-03T00:24:24.931884",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",

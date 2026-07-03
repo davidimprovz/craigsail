@@ -800,3 +800,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T00:24:24.931403 — Expose POST /api/scheduler/run-once endpoint  [kept-unmerged] (b4ff391)
+- why useful: Provides a public API for triggering the scheduling pass from external tools or UI, completing the end‑to‑end flow.
+- tests: 30 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
