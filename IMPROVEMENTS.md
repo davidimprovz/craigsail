@@ -970,3 +970,8 @@
 - tests: 38 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T06:55:41.108986 — Add async run_scheduling_pass function  [MERGED] (a599e5c)
+- why useful: Executes the actual search across selected cities for each saved search, returning hit counts; this is the core logic that will be triggered by the new endpoint.
+- tests: 39 passed / 0 failed
+- note: gates+critic passed
+
