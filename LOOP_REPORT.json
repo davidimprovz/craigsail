@@ -85,10 +85,32 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "scheduler-pass-execution",
+   "title": "Add run_scheduling_pass execution function",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-02T23:58:39.527528",
+ "generated": "2026-07-03T00:11:33.625134",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -96,6 +118,6 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 1
+  "tests": 2
  }
 }

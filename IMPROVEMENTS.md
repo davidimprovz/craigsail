@@ -795,3 +795,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T00:11:33.624514 — Add run_scheduling_pass execution function  [kept-unmerged] (7270557)
+- why useful: Performs the actual work of running each scheduled search via a scraper and reports hit counts.
+- tests: 30 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
