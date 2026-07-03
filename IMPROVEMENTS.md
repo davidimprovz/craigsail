@@ -815,3 +815,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T00:58:51.185782 — Attach risk_score to search response  [kept-unmerged] (4d9aa92)
+- why useful: Integrates the computed risk score into every listing returned by the search endpoint.
+- tests: 30 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
