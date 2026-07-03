@@ -1145,3 +1145,8 @@
 - tests: 42 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T11:57:38.527705 — Add /api/alerts/risk-score/{listing_id} endpoint  [kept-unmerged] (5f7beab)
+- why useful: Exposes the computed risk score to callers, enabling filtering or prioritization of listings.
+- tests: 42 passed / 3 failed
+- note: tool-gates failed
+
