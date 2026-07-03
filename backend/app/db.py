@@ -36,3 +36,7 @@ def get_db():
         yield db
     finally:
         db.close()
+
+
+# Bootstrap: create all tables automatically on import so the DB is ready to use.
+Base.metadata.create_all(engine)
