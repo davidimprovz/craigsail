@@ -48,8 +48,6 @@ def _deviation_for_alert(db: DBSession, alert: AlertORM) -> float:
     returns ``0.0``. Uses :func:`compute_price_deviation` with the alert's
     max_price as the reference price.
     """
-    from app.reports import compute_price_deviation
-
     # No direct listing table exists in the current schema, so we return 0.0
     # when there is no associated listing to compute against. This keeps the
     # export records always valid and signals "no deviation data available".
