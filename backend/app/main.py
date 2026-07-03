@@ -484,15 +484,30 @@ async def analyze_listing(request: AiAnalysisRequest):
 
 async def _listings_to_csv_rows(listings: List[Listing]) -> List[List[str]]:
     """Convert a list of Listing objects to CSV rows (with header)."""
-    rows = [['title', 'price', 'location', 'url']]  # header
+    rows = [['title', 'price', 'location', 'url', 'risk_score']]  # header
     for l in listings:
-        rows.append([l.title, l.price, l.location, l.url])
+        score = risk_score({
+            "price": _parse_float(l.price),
+            "title": l.title or "",
+            "description": l.description or "",
+            "images": l.image_url,
+        })
+        rows.append([l.title, l.price, l.location, l.url, str(score)])
     return rows
+
+
+def _parse_float(val) -> Optional[float]:
+    try:
+        if val is None:
+            return None
+        return float(str(val).replace(",", ""))
+    except (ValueError, TypeError):
+        return None
 
 @app.get("/api/search/csv")
 async def export_search_csv(
     city: str = Query(None),
-    query: str = Query(...),
+    query: str = Query(default="", description="Search query string"),
     category: Optional[str] = Query("sss"),
     max_price: Optional[float] = Query(None)
 ):
