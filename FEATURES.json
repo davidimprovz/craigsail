@@ -209,6 +209,13 @@
    "symbol": "/api/report/download",
    "sha": "9d377d2",
    "ts": "2026-07-03T04:57:50.677824"
+  },
+  {
+   "name": "Fix forecast_route confidence_scores calculation and add test",
+   "epic": "endpoint-repairs",
+   "symbol": "app.main.forecast_route",
+   "sha": "4d45b85",
+   "ts": "2026-07-03T05:11:22.266806"
   }
  ]
 }

@@ -910,3 +910,8 @@
 - tests: 34 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T05:12:11.535565 — Fix forecast_route confidence_scores calculation and add test  [MERGED] (e83fae2)
+- why useful: The /api/forecast endpoint crashes with a NameError when more than one price is returned, preventing price analytics from being usable.
+- tests: 37 passed / 0 failed
+- note: gates+critic passed
+
