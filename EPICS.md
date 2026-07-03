@@ -128,3 +128,11 @@ proposed | active | shipped | rejected.
 ## 10. scheduler-pass-execution / listing-risk-scoring — rejected
    (0/6 across two runs; re-scoped as run-once-scheduler + scam-heuristics with
    embedded test skeletons)
+
+## Post-overnight statuses (controller review 2026-07-03 morning)
+- dead-code-purge — shipped-partial (3 of 4 stubs deleted; one carried to round 4)
+- endpoint-repairs — shipped-partial (4/5; toggle path-param repair carried)
+- run-once-scheduler — shipped (3/3 with tests)
+- saved-search-store-unification, listing-persistence, scam-heuristics, deals-route —
+  carried to round 4 BEHIND a new db-test-fixtures [maintenance] prerequisite epic
+  (all four died on DB test scaffolding; see NEXT_STEPS.md)
