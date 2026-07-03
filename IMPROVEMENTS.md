@@ -1130,3 +1130,8 @@
 - tests: 0 passed / 9 failed
 - note: tool-gates failed
 
+## 2026-07-03T11:32:50.568752 — Add price‑stats endpoint per location  [kept-unmerged] (c57d447)
+- why useful: Provides aggregated price trends (average, count, min, max) for a given city, supporting the 'price analytics' part of the EPIC.
+- tests: 42 passed / 3 failed
+- note: tool-gates failed
+

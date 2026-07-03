@@ -1403,10 +1403,52 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "search_geo_mapping",
+   "title": "Add price\u2011stats endpoint per location",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T11:27:00.712576",
+ "generated": "2026-07-03T11:32:50.568995",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1415,7 +1457,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 24,
-  "tests": 60,
+  "tests": 63,
   "probe": 23,
   "syntax": 1
  }
