@@ -905,3 +905,8 @@
 - tests: 34 passed / 0 failed
 - note: critic=FAIL
 
+## 2026-07-03T04:58:33.497166 — Remove report_download endpoint  [MERGED] (8e87136)
+- why useful: Removes the second dead-code stub that provides no functionality and contributes to code bloat.
+- tests: 34 passed / 0 failed
+- note: gates+critic passed
+
