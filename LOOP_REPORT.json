@@ -1343,10 +1343,36 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "search_geo_mapping",
+   "title": "Add geo-filtered search endpoint with city/radius query parameters",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T11:07:42.424430",
+ "generated": "2026-07-03T11:20:24.181441",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1355,7 +1381,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 24,
-  "tests": 57,
+  "tests": 58,
   "probe": 22
  }
 }

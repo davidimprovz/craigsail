@@ -1120,3 +1120,8 @@
 - tests: 42 passed / 4 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T11:20:24.180913 — Add geo-filtered search endpoint with city/radius query parameters  [kept-unmerged] (9d728d5)
+- why useful: Enables users to filter listings by a specific city or radius, the first step toward location-based filtering and mapping.
+- tests: 42 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+
