@@ -1140,3 +1140,8 @@
 - tests: 42 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T11:48:35.210713 — Implement risk_score calculation function  [kept-unmerged] (5a9ba0f)
+- why useful: The endpoint will delegate the actual scoring to a pure function that can be unit‑tested and reused.
+- tests: 42 passed / 3 failed
+- note: tool-gates failed
+
