@@ -1200,3 +1200,8 @@
 - tests: 46 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T13:57:05.376007 — Fix toggle_saved_search path parameter  [MERGED] (88bed6a)
+- why useful: Adds the required `{id}` path placeholder so the route can be invoked; otherwise the endpoint is unreachable.
+- tests: 46 passed / 0 failed
+- note: gates+critic passed
+

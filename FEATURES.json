@@ -293,6 +293,13 @@
    "symbol": "run_pending_searches",
    "sha": "5132c06",
    "ts": "2026-07-03T13:41:08.148267"
+  },
+  {
+   "name": "Fix toggle_saved_search path parameter",
+   "epic": "surface-cleanup-jul3",
+   "symbol": "POST /api/saved-searches/{id}/toggle",
+   "sha": "1707f26",
+   "ts": "2026-07-03T13:56:32.319234"
   }
  ]
 }
