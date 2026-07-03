@@ -1295,3 +1295,8 @@
 - tests: 50 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T23:51:19.265221 — Delete stub benchmark route from main.py and its test  [kept-unmerged] (73fcf6a)
+- why useful: Eliminates unused benchmark endpoint to reduce surface area and keep tests green.
+- tests: 50 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+

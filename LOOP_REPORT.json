@@ -27,10 +27,36 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "surface-trim",
+   "title": "Delete stub benchmark route from main.py and its test",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": false,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T23:40:01.818701",
+ "generated": "2026-07-03T23:51:19.265716",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -38,7 +64,7 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "test_files": 1,
-  "tests": 1
+  "test_files": 2,
+  "tests": 2
  }
 }
