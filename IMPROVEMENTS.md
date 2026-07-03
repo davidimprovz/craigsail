@@ -1215,3 +1215,8 @@
 - tests: 0 passed / 13 failed
 - note: tool-gates failed
 
+## 2026-07-03T14:34:05.943620 — Implement run_saved_search endpoint  [kept-unmerged] (f8fc89a)
+- why useful: Enables execution of saved searches, creates alerts, and provides the foundation for alert scheduling.
+- tests: 46 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+

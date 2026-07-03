@@ -249,10 +249,28 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "store-unification-v2",
+   "title": "Implement run_saved_search endpoint",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T14:23:27.884132",
+ "generated": "2026-07-03T14:34:05.944205",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
