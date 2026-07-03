@@ -82,6 +82,7 @@ class SavedSearch(BaseModel):
     price_alert_min: Optional[float] = None  # Minimum price threshold for alerts.
     price_alert_max: Optional[float] = None  # Maximum price threshold for alerts.
     is_scheduled: bool = False  # Marks this saved search as scheduled for recurring alerts
+    deviation_target: Optional[float] = None  # User-defined price deviation threshold that triggers alerts
 
 
 class ForecastResponse(BaseModel):

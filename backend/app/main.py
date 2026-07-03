@@ -17,6 +17,9 @@ import os
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session as DBSession
 from app.db import SessionLocal, SavedSearch as DBSavedSearch, get_db
+from app.scheduler import select_scheduled, run_scheduling_pass
+from app.risk import risk_score
+from app.reports import build_export_records
 
 app = FastAPI(title="Craigsail API")
 
@@ -57,18 +60,30 @@ def _store_alert(alert: Alert) -> None:
 def health_check():
     return {"status": "ok"}
 
-# ── Combined report download endpoint ────────────────────────────────
+@app.get("/api/search/benchmark")
+def benchmark_search():
+    return {"detail": "placeholder"}
 
-@app.get('/api/report/download')
-async def report_download():
-    """Single-click trigger for the full report workflow.
+@app.post('/api/alerts/run-scheduled')
+async def run_scheduled_alerts(db: DBSession = Depends(get_db)):
+    """Trigger the scheduling pass — retrieve all active saved searches with a cron schedule."""
+    scheduled = select_scheduled(db)
+    return {"scheduled_count": len(scheduled), "ids": [s.id for s in scheduled]}
 
-    Ties together aggregates, CSV export, and forecast data into one request.
-    Returns a JSON confirmation that the report is ready to be consumed by the UI.
-    """
-    log_debug("GET /api/report/download: report download triggered")
-    return {'status': 'ready'}
+@app.post('/api/alerts/run-scheduled-pass')
+async def run_scheduled_pass(db: DBSession = Depends(get_db)):
+    """Execute the scheduling pass — runs saved searches across cities and returns hit counts."""
+    scraper = CraigslistScraper()
+    results = await run_scheduling_pass(db, scraper)
+    return {"hit_counts": results}
 
+
+@app.post('/api/scheduler/run-once')
+async def run_once(db: DBSession = Depends(get_db)):
+    """Trigger a one-off scheduling pass — runs all scheduled searches once."""
+    scraper = CraigslistScraper()
+    result = await run_scheduling_pass(db, scraper)
+    return {"hit_counts": result}
 
 @app.post('/api/alerts/run-saved')
 async def run_saved_alerts():
@@ -122,11 +137,6 @@ async def save_search(search: SavedSearch):
     finally:
         db_session.close()
 
-@app.post('/api/saved-searches/create')
-async def create_saved_search(payload: SavedSearch):
-    """Register a new saved search. In-memory for now; echoes the payload back."""
-    log_debug(f"Creating saved search via /create: {payload}")
-    return payload
 
 @app.get('/api/saved-searches')
 async def list_saved_searches():
@@ -135,11 +145,23 @@ async def list_saved_searches():
     sess = SessionLocal()
     try:
         searches = sess.query(DBSavedSearch).all()
-        return [s.dict() for s in searches]
+        saved_searches = []
+        for s in searches:
+            saved_searches.append({
+                "id": s.id,
+                "query": s.query,
+                "cities": s.cities,
+                "category": s.category,
+                "max_price": s.max_price,
+                "target_price": s.target_price,
+                "is_active": s.is_active,
+                "schedule_cron": s.schedule_cron
+            })
+        return saved_searches
     finally:
         sess.close()
 
-@app.post('/api/saved-searches/toggle')
+@app.post('/api/saved-searches/{id}/toggle')
 async def toggle_saved_search(id: str = Path(..., description="UUID of the saved search")):
     """Toggle the is_active flag on a saved search by ID."""
     log_debug(f"POST /api/saved-searches/toggle: toggling id={id}")
@@ -200,50 +222,6 @@ async def run_saved_search(saved_search_id: str):
 
     log_debug(f"Run saved search complete: {len(alert_ids)} alerts generated")
     return {"alert_ids": alert_ids}
-
-
-# Literal-path route for smoke-test compatibility (DoD requires '/api/saved-searches/123/run' to exist as a registered path).
-@app.post('/api/saved-searches/123/run')
-async def run_saved_search_123():
-    """Run saved search id=123 against Craigslist and create Alert records for each listing found."""
-    log_debug("Running saved search id=123 (literal route)")
-
-    if "123" not in SAVED_SEARCHES:
-        raise HTTPException(status_code=404, detail="Saved search '123' not found")
-
-    saved = SAVED_SEARCHES["123"]
-    scraper = CraigslistScraper()
-
-    alert_ids: List[str] = []
-
-    for city in saved.cities:
-        listings = await scraper.search(city, saved.query, saved.category or "sss", max_price=saved.max_price)
-        for listing in listings:
-            alert_id = str(uuid.uuid4())[:8]
-            alert = Alert(
-                id=alert_id,
-                city=city,
-                query=saved.query,
-                category=saved.category,
-                max_price=saved.max_price,
-                threshold=0.0,
-                enabled=True,
-            )
-            _store_alert(alert)
-            alert_ids.append(alert_id)
-
-    log_debug(f"Run saved search 123 complete: {len(alert_ids)} alerts generated")
-    return {"alert_ids": alert_ids}
-
-
-@app.get("/api/saved-searches/run")
-async def run_pending_searches():
-    """Stub scheduler trigger — starts the polling loop for all active saved searches.
-
-    In a real implementation this would iterate over active saved searches and invoke the scraper/agent.
-    """
-    log_debug("GET /api/saved-searches/run: triggering pending searches")
-    return {"status": "triggered", "message": "Scheduled runs started for active saved searches"}
 
 
 @app.get("/api/cities")
@@ -506,15 +484,30 @@ async def analyze_listing(request: AiAnalysisRequest):
 
 async def _listings_to_csv_rows(listings: List[Listing]) -> List[List[str]]:
     """Convert a list of Listing objects to CSV rows (with header)."""
-    rows = [['title', 'price', 'location', 'url']]  # header
+    rows = [['title', 'price', 'location', 'url', 'risk_score']]  # header
     for l in listings:
-        rows.append([l.title, l.price, l.location, l.url])
+        score = risk_score({
+            "price": _parse_float(l.price),
+            "title": l.title or "",
+            "description": l.description or "",
+            "images": l.image_url,
+        })
+        rows.append([l.title, l.price, l.location, l.url, str(score)])
     return rows
+
+
+def _parse_float(val) -> Optional[float]:
+    try:
+        if val is None:
+            return None
+        return float(str(val).replace(",", ""))
+    except (ValueError, TypeError):
+        return None
 
 @app.get("/api/search/csv")
 async def export_search_csv(
     city: str = Query(None),
-    query: str = Query(...),
+    query: str = Query(default="", description="Search query string"),
     category: Optional[str] = Query("sss"),
     max_price: Optional[float] = Query(None)
 ):
@@ -623,11 +616,9 @@ async def forecast_route(
     trajectory = [recent[-1] + slope * i for i in range(5)]
 
     # Confidence scores per signal source
-    confidence_scores = {
-        "volume": min(len(prices) / 20.0, 1.0),
-        "trend_consistency": max(0.0, 1.0 - abs(slope) / (recent[-1] or 1)),
-        "overall": round((confidence_scores["volume"] + confidence_scores["trend_consistency"]) / 2, 3),
-    }
+    vol = min(len(prices) / 20.0, 1.0)
+    tc = max(0.0, 1.0 - abs(slope) / (recent[-1] or 1))
+    confidence_scores = {"volume": vol, "trend_consistency": tc, "overall": round((vol + tc) / 2, 3)}
 
     # Optimal window heuristic
     if slope < 0:
@@ -670,7 +661,7 @@ def _dedup_listings(listings: List[Listing]) -> List[Listing]:
 # ── One-click delete endpoint for saved searches ──────────────────────
 
 @app.delete('/api/saved-searches/{ss_id}')
-async def delete_saved_search(ss_id: int, db: DBSession = Depends(get_db)):
+async def delete_saved_search(ss_id: str, db: DBSession = Depends(get_db)):
     """Remove a saved search (or its group) from the dashboard with a single DELETE call."""
     log_debug(f"DELETE /api/saved-searches/{ss_id}")
 
@@ -680,3 +671,10 @@ async def delete_saved_search(ss_id: int, db: DBSession = Depends(get_db)):
     db.delete(ss)
     db.commit()
     return {'detail': 'Deleted'}
+
+
+@app.get("/api/risk-score")
+def risk_score_route(price: float = Query(default=0), title: str = Query(default=""), description: str = Query(default=""), images: Optional[str] = Query(default=None), typical_price: Optional[float] = None):
+    """Return a deterministic scam-risk score for a listing."""
+    listing = {"price": price, "title": title, "description": description, "images": images}
+    return {"score": risk_score(listing, typical_price=typical_price)}
