@@ -237,6 +237,13 @@
    "symbol": "app.reports._deviation_for_alert",
    "sha": "42aa89b",
    "ts": "2026-07-03T05:37:53.521010"
+  },
+  {
+   "name": "Add scheduler.select_scheduled function",
+   "epic": "run-once-scheduler",
+   "symbol": "select_scheduled",
+   "sha": "819da23",
+   "ts": "2026-07-03T06:49:26.644142"
   }
  ]
 }

@@ -965,3 +965,8 @@
 - tests: 37 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T06:51:17.975974 — Add scheduler.select_scheduled function  [MERGED] (cb91fde)
+- why useful: Provides a way to retrieve all active saved searches that have a schedule cron set, enabling the later scheduling pass to operate on real data.
+- tests: 38 passed / 0 failed
+- note: gates+critic passed
+
