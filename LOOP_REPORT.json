@@ -1445,10 +1445,36 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "search_geo_mapping",
+   "title": "Export geo\u2011mapped results as CSV stream",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T11:32:50.568995",
+ "generated": "2026-07-03T11:39:04.891670",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1457,7 +1483,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 24,
-  "tests": 63,
+  "tests": 64,
   "probe": 23,
   "syntax": 1
  }

@@ -1135,3 +1135,8 @@
 - tests: 42 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T11:39:04.891082 — Export geo‑mapped results as CSV stream  [kept-unmerged] (5fcfb4e)
+- why useful: Allows users to download mapped results for offline analysis, completing the export capability of the EPIC.
+- tests: 42 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+
