@@ -475,10 +475,33 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "scam-heuristics",
+   "title": "Add risk_score field to Listing model",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T07:12:05.370947",
+ "generated": "2026-07-03T07:19:09.509393",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -486,8 +509,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 8,
-  "tests": 12,
+  "smoke": 9,
+  "tests": 13,
   "probe": 4
  }
 }

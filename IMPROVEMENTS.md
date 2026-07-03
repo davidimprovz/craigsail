@@ -985,3 +985,8 @@
 - tests: 0 passed / 8 failed
 - note: tool-gates failed
 
+## 2026-07-03T07:19:09.508776 — Add risk_score field to Listing model  [kept-unmerged] (5a60b6f)
+- why useful: Stores the computed scam score on each listing for later retrieval.
+- tests: 43 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
