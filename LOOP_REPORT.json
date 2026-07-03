@@ -146,10 +146,32 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "listing-risk-scoring",
+   "title": "Add risk_score field to Listing model",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T00:37:40.024942",
+ "generated": "2026-07-03T00:48:29.142888",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -157,6 +179,6 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 3
+  "tests": 4
  }
 }

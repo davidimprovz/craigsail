@@ -810,3 +810,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T00:48:29.142457 — Add risk_score field to Listing model  [kept-unmerged] (5d9996a)
+- why useful: Allows each listing returned by the API to carry its computed risk score.
+- tests: 30 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
