@@ -263,10 +263,27 @@
     }
    ],
    "status": "MERGED"
+  },
+  {
+   "epic": "deal-report-endpoint",
+   "title": "Expose deal report endpoint",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T01:23:10.689832",
+ "generated": "2026-07-03T01:37:14.222063",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",

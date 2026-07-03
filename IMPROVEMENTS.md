@@ -830,3 +830,8 @@
 - tests: 34 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T01:37:14.221506 — Expose deal report endpoint  [kept-unmerged] (b37f729)
+- why useful: Provides the HTTP GET `/api/reports/deals` route that streams a CSV of export records enriched with price_deviation, fulfilling the EPIC outcome.
+- tests: 34 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
