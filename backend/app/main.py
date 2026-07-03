@@ -71,6 +71,14 @@ async def run_scheduled_pass(db: DBSession = Depends(get_db)):
     results = await run_scheduling_pass(db, scraper)
     return {"hit_counts": results}
 
+
+@app.post('/api/scheduler/run-once')
+async def run_once(db: DBSession = Depends(get_db)):
+    """Trigger a one-off scheduling pass — runs all scheduled searches once."""
+    scraper = CraigslistScraper()
+    result = await run_scheduling_pass(db, scraper)
+    return {"hit_counts": result}
+
 @app.post('/api/alerts/run-saved')
 async def run_saved_alerts():
     """Check all enabled saved searches against fresh Craigslist listings, use the AI agent to generate a recommendation for each match, and return matching items."""
