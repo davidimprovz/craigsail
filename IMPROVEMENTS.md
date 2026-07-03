@@ -1255,3 +1255,8 @@
 - tests: 49 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T15:57:39.171298 — Integration test for risk_score presence in API response  [kept-unmerged] (0107d2d)
+- why useful: Confirms that the end‑to‑end flow—scraper → model → response—correctly injects and exposes the scam score, satisfying the EPIC's requirement for observable risk data.
+- tests: 49 passed / 1 failed
+- note: no-op attempt (no write) — retrying with nudge
+
