@@ -230,6 +230,13 @@
    "symbol": "app.main.delete_saved_search",
    "sha": "9fae27c",
    "ts": "2026-07-03T05:21:41.705194"
+  },
+  {
+   "name": "Remove self\u2011import in reports._deviation_for_alert",
+   "epic": "endpoint-repairs",
+   "symbol": "app.reports._deviation_for_alert",
+   "sha": "42aa89b",
+   "ts": "2026-07-03T05:37:53.521010"
   }
  ]
 }

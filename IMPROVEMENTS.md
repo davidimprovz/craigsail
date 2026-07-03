@@ -930,3 +930,8 @@
 - tests: 37 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T05:38:22.770192 — Remove self‑import in reports._deviation_for_alert  [MERGED] (ed5ca33)
+- why useful: The `_deviation_for_alert` function imports itself via `from app.reports import compute_price_de`, which creates a circular import and prevents price deviation calculations from working.
+- tests: 37 passed / 0 failed
+- note: gates+critic passed
+
