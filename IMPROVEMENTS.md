@@ -990,3 +990,8 @@
 - tests: 43 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T07:25:49.747250 — Expose risk_score in search response  [kept-unmerged] (32c69d7)
+- why useful: Users can see a scam risk indicator for each result returned by the search endpoint.
+- tests: 43 passed / 2 failed
+- note: no-op attempt (no write) — retrying with nudge
+

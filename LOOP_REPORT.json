@@ -498,10 +498,36 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "scam-heuristics",
+   "title": "Expose risk_score in search response",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T07:19:09.509393",
+ "generated": "2026-07-03T07:25:49.747940",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -510,7 +536,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 9,
-  "tests": 13,
+  "tests": 14,
   "probe": 4
  }
 }
