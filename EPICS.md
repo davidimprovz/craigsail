@@ -9,13 +9,11 @@ proposed | active | shipped | rejected.
 - evidence: controller audit 2026-07-02 (ISSUES.md); no test references any of them
   (`tests/test_search.py::test_core_routes_registered` asserts only /health, /api/search,
   /multi_search).
-- outcome: four deletions in `backend/app/main.py`, ONE subtask each; suite stays green:
-  (a) DELETE the whole literal-path handler `run_saved_search_123` with its decorator
-  `@app.post('/api/saved-searches/123/run')` and the comment above it.
-  (b) DELETE the echo stub `create_saved_search` with `@app.post('/api/saved-searches/create')`
-  (the real create is `save_search`).
-  (c) DELETE the stub `run_pending_searches` with `@app.get("/api/saved-searches/run")`.
-  (d) DELETE the stub `report_download` with `@app.get('/api/report/download')`.
+- outcome: TWO remaining deletions in `backend/app/main.py`, ONE subtask each; suite
+  stays green. (The 123-run handler and the create echo stub are ALREADY DELETED —
+  merged f26e04b + 9bca577 — do not look for them.)
+  (a) DELETE the stub `run_pending_searches` with `@app.get("/api/saved-searches/run")`.
+  (b) DELETE the stub `report_download` with `@app.get('/api/report/download')`.
   Delete completely — no commented-out remains.
 
 ## 2. endpoint-repairs [maintenance] — proposed
