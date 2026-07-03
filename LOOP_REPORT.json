@@ -1035,10 +1035,36 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "deal_score_engine",
+   "title": "Create alerts for high\u2011score listings",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T09:54:13.783139",
+ "generated": "2026-07-03T09:59:01.435445",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1047,7 +1073,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 18,
-  "tests": 41,
+  "tests": 42,
   "probe": 19
  }
 }

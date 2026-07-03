@@ -1070,3 +1070,8 @@
 - tests: 35 passed / 10 failed
 - note: tool-gates failed
 
+## 2026-07-03T09:59:01.435247 — Create alerts for high‑score listings  [kept-unmerged] (2da53b4)
+- why useful: Enables automatic notifications when a listing reaches a high score, fulfilling the alerting requirement.
+- tests: 42 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+
