@@ -286,6 +286,13 @@
    "symbol": "Base.metadata.create_all",
    "sha": "c56b5e6",
    "ts": "2026-07-03T13:15:21.771827"
+  },
+  {
+   "name": "Delete unused /api/saved-searches/run endpoint",
+   "epic": "surface-cleanup-jul3",
+   "symbol": "run_pending_searches",
+   "sha": "5132c06",
+   "ts": "2026-07-03T13:41:08.148267"
   }
  ]
 }

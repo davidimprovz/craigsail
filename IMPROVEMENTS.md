@@ -1190,3 +1190,8 @@
 - tests: 0 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T13:41:55.710495 — Delete unused /api/saved-searches/run endpoint  [MERGED] (23e21ab)
+- why useful: Removes dead code that never executes and prevents accidental calls to a non‑functional route.
+- tests: 46 passed / 0 failed
+- note: gates+critic passed
+
