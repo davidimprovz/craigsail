@@ -805,3 +805,8 @@
 - tests: 30 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T00:37:40.024551 — Add pure risk_score function  [kept-unmerged] (674bba5)
+- why useful: Provides the core heuristic to compute scam risk for a listing using only local listing data.
+- tests: 30 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
