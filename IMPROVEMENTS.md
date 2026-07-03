@@ -1075,3 +1075,8 @@
 - tests: 42 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T10:05:51.172824 — Export search results as CSV with scores  [kept-unmerged] (bc4469a)
+- why useful: Allows users to download scored data for offline comparison and analysis.
+- tests: 41 passed / 5 failed
+- note: tool-gates failed
+

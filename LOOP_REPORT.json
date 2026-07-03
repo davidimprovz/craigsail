@@ -1061,10 +1061,52 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "deal_score_engine",
+   "title": "Export search results as CSV with scores",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T09:59:01.435445",
+ "generated": "2026-07-03T10:05:51.173217",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1073,7 +1115,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 18,
-  "tests": 42,
+  "tests": 45,
   "probe": 19
  }
 }
