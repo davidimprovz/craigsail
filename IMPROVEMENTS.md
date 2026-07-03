@@ -885,3 +885,8 @@
 - tests: 34 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T04:20:46.031578 — Delete literal‑path saved-search runner endpoint  [MERGED] (f26e04b)
+- why useful: Removes a dead route that misleads users and inflates the codebase.
+- tests: 34 passed / 0 failed
+- note: gates+critic passed
+
