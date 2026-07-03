@@ -19,6 +19,7 @@ from sqlalchemy.orm import Session as DBSession
 from app.db import SessionLocal, SavedSearch as DBSavedSearch, get_db
 from app.scheduler import select_scheduled, run_scheduling_pass
 from app.risk import risk_score
+from app.reports import build_export_records
 
 app = FastAPI(title="Craigsail API")
 
