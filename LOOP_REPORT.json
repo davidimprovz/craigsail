@@ -629,10 +629,44 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "price_deviation_alerts",
+   "title": "Expose API to set deviation target on saved search",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T07:54:47.622377",
+ "generated": "2026-07-03T08:01:24.944169",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -641,7 +675,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 15,
-  "tests": 18,
-  "probe": 9
+  "tests": 20,
+  "probe": 11
  }
 }

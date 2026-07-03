@@ -1010,3 +1010,8 @@
 - tests: 44 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T08:01:24.943951 — Expose API to set deviation target on saved search  [kept-unmerged] (30c0dc3)
+- why useful: Allows a client (UI or script) to configure the alert threshold for an existing saved search.
+- tests: 41 passed / 4 failed
+- note: tool-gates failed
+
