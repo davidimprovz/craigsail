@@ -880,3 +880,8 @@
 - tests: 34 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T04:07:27.738901 — Fix forecast_route confidence_scores calculation and add test  [kept-unmerged] (1336c9b)
+- why useful: The /api/forecast endpoint crashes with a NameError when more than one price is present; fixing it restores a core analytics endpoint used by downstream price‑stats and export features.
+- tests: 34 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
