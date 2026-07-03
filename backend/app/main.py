@@ -572,11 +572,9 @@ async def forecast_route(
     trajectory = [recent[-1] + slope * i for i in range(5)]
 
     # Confidence scores per signal source
-    confidence_scores = {
-        "volume": min(len(prices) / 20.0, 1.0),
-        "trend_consistency": max(0.0, 1.0 - abs(slope) / (recent[-1] or 1)),
-        "overall": round((confidence_scores["volume"] + confidence_scores["trend_consistency"]) / 2, 3),
-    }
+    vol = min(len(prices) / 20.0, 1.0)
+    tc = max(0.0, 1.0 - abs(slope) / (recent[-1] or 1))
+    confidence_scores = {"volume": vol, "trend_consistency": tc, "overall": round((vol + tc) / 2, 3)}
 
     # Optimal window heuristic
     if slope < 0:
