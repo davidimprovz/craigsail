@@ -22,12 +22,29 @@
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T17:29:27.332183",
+ "generated": "2026-07-03T17:29:27.468370",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
   "write_scope": "backend",
   "entry": "backend/app/main.py"
  },
- "gate_fail_histogram": {}
+ "gate_fail_histogram": {},
+ "epics": [
+  {
+   "epic": "db-bootstrap-and-fixtures",
+   "merged": 0,
+   "total": 3,
+   "composition": "n/a"
+  }
+ ],
+ "calibration": "skipped (no time)",
+ "baseline_tests": [
+  51,
+  0
+ ],
+ "final_tests": [
+  51,
+  0
+ ]
 }

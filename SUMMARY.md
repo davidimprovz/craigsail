@@ -1,13 +1,15 @@
-# CraigSail Agent Run — Summary (2026-07-03T17:03:46.749874)
+# CraigSail Agent Run — Summary (2026-07-03T17:29:27.468806)
 
-- cycles: 23 | merged: 7 | kept-unmerged (review): 16
+- cycles: 1 | merged: 0 | kept-unmerged (review): 1
 - final tests on agent/loop: 51 passed / 0 failed
 - feature ledger: 46 shipped features (FEATURES.json)
-- calibration (broke something, loop must re-fix it): PASS
+- calibration (broke something, loop must re-fix it): skipped (no time)
 - config: lang=python fastapi=True scope=backend tests=python -m pytest -q
 
 ## Branch log
 ```
+b3c3e04 agent: ledger/log update
+1c57ab7 agent: run summary
 697903b agent: ledger/log update
 7b3b12c merge: Expose CSV endpoint with risk_score column
 94934ce agent attempt 2: Expose CSV endpoint with risk_score column
@@ -26,8 +28,6 @@ fb3d99c agent attempt 1: Add pure stdlib scam risk scoring function
 e7b29e4 agent: ledger/log update
 7d7440f agent: ledger/log update
 69ff2fe agent: ledger/log update
-668db45 agent: ledger/log update
-2a1496c agent: ledger/log update
 ```
 
 Each improvement was gated by syntax+test-files+integration+dup-routes+tests+probe, then an adversarial critic.
