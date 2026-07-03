@@ -223,6 +223,13 @@
    "symbol": "app.main.list_saved_searches",
    "sha": "24e4bc8",
    "ts": "2026-07-03T05:16:53.253513"
+  },
+  {
+   "name": "Update delete_saved_search signature to accept UUID string IDs",
+   "epic": "endpoint-repairs",
+   "symbol": "app.main.delete_saved_search",
+   "sha": "9fae27c",
+   "ts": "2026-07-03T05:21:41.705194"
   }
  ]
 }

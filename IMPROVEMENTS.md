@@ -920,3 +920,8 @@
 - tests: 37 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T05:22:05.796588 — Update delete_saved_search signature to accept UUID string IDs  [MERGED] (b17ecb8)
+- why useful: Saved search IDs are generated as UUID strings, but the current `delete_saved_search` view expects an integer parameter, leading to 404 errors when trying to delete a saved search.
+- tests: 37 passed / 0 failed
+- note: gates+critic passed
+
