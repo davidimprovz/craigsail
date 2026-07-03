@@ -45,8 +45,19 @@ def compute_price_deviation(listing: Listing, reference_price: float = 0) -> flo
     if reference_price == 0:
         return 0.0
 
+    # Support both Listing model objects and raw dicts/objects with a numeric price
+    if hasattr(listing, 'price'):
+        raw = listing.price
+    else:
+        raw = listing.get('price', 0)
+
     try:
-        price = float(listing.price.replace("$", "").replace(",", "")) if listing.price else 0.0
+        if isinstance(raw, (int, float)):
+            price = float(raw)
+        elif isinstance(raw, str):
+            price = float(raw.replace("$", "").replace(",", ""))
+        else:
+            return 0.0
     except (ValueError, AttributeError):
         return 0.0
 
