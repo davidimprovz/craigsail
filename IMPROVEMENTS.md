@@ -875,3 +875,8 @@
 - tests: 34 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T03:46:53.553435 — Delete literal-path handler run_saved_search_123  [kept-unmerged] (0dbdd94)
+- why useful: Removes a misleading endpoint that no longer exists, preventing user confusion and reducing code bloat.
+- tests: 34 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
