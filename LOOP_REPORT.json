@@ -22,10 +22,31 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "db-bootstrap-and-fixtures",
+   "title": "Bootstrap DB creation on import",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "PASS"
+    }
+   ],
+   "status": "MERGED",
+   "end": "merged"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T13:07:43.165024",
+ "generated": "2026-07-03T13:16:02.308436",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",

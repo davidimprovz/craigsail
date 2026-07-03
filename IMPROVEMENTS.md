@@ -1175,3 +1175,8 @@
 - tests: 46 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T13:16:02.308092 — Bootstrap DB creation on import  [MERGED] (9bbd2a9)
+- why useful: Ensures tables are created automatically so tests and production start without manual migrations.
+- tests: 46 passed / 0 failed
+- note: gates+critic passed
+

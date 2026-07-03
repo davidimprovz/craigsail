@@ -279,6 +279,13 @@
    "symbol": "tests/test_api_scheduler_run_once.py",
    "sha": "0f3b1dc",
    "ts": "2026-07-03T13:07:16.315851"
+  },
+  {
+   "name": "Bootstrap DB creation on import",
+   "epic": "db-bootstrap-and-fixtures",
+   "symbol": "Base.metadata.create_all",
+   "sha": "c56b5e6",
+   "ts": "2026-07-03T13:15:21.771827"
   }
  ]
 }
