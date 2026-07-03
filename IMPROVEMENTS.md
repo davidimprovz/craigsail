@@ -1170,3 +1170,8 @@
 - tests: 41 passed / 4 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T13:07:43.164741 — Fix/port failing test file tests/test_api_scheduler_run_once.py  [MERGED] (300df00)
+- why useful: each fixed file adds real regression coverage guarding every future merge
+- tests: 46 passed / 0 failed
+- note: gates+critic passed
+

@@ -272,6 +272,13 @@
    "symbol": "",
    "sha": "4f31c46",
    "ts": "2026-07-03T08:29:06.904562"
+  },
+  {
+   "name": "Fix/port failing test file tests/test_api_scheduler_run_once.py",
+   "epic": "epic-0",
+   "symbol": "tests/test_api_scheduler_run_once.py",
+   "sha": "0f3b1dc",
+   "ts": "2026-07-03T13:07:16.315851"
   }
  ]
 }
