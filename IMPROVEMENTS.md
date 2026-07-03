@@ -1230,3 +1230,8 @@
 - tests: 49 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T15:19:03.878849 — Add ListingORM model and DB fixture  [kept-unmerged] (7f80ab2)
+- why useful: Create a persistent table for listings so that future analytics (price deviation) can query real data instead of using hardcoded zero.
+- tests: 46 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
