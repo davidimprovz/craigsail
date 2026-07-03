@@ -221,17 +221,6 @@ async def run_saved_search(saved_search_id: str):
     log_debug(f"Run saved search complete: {len(alert_ids)} alerts generated")
     return {"alert_ids": alert_ids}
 
-# run_saved_search_123 kept as an importable helper; literal-path route removed.
-async def run_saved_search_123():
-    """Helper: run saved search id=123 (kept for backward-compat imports)."""
-    return {"alert_ids": []}
-    """Stub scheduler trigger — starts the polling loop for all active saved searches.
-
-    In a real implementation this would iterate over active saved searches and invoke the scraper/agent.
-    """
-    log_debug("GET /api/saved-searches/run: triggering pending searches")
-    return {"status": "triggered", "message": "Scheduled runs started for active saved searches"}
-
 
 @app.get("/api/cities")
 def get_cities():
