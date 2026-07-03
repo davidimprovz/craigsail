@@ -258,6 +258,13 @@
    "symbol": "run_once endpoint",
    "sha": "7eca834",
    "ts": "2026-07-03T07:00:20.550504"
+  },
+  {
+   "name": "Add deviation_target field to SavedSearch model",
+   "epic": "price_deviation_alerts",
+   "symbol": "SavedSearch.deviation_target",
+   "sha": "eb023d1",
+   "ts": "2026-07-03T07:54:07.963479"
   }
  ]
 }

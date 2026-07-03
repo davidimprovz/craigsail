@@ -1005,3 +1005,8 @@
 - tests: 43 passed / 1 failed
 - note: tool-gates failed
 
+## 2026-07-03T07:54:47.621782 — Add deviation_target field to SavedSearch model  [MERGED] (64c55b0)
+- why useful: Persists the user‑defined price deviation threshold that will trigger alerts.
+- tests: 44 passed / 0 failed
+- note: gates+critic passed
+
