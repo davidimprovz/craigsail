@@ -1165,3 +1165,8 @@
 - tests: 46 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T12:28:03.702476 — Add CSV export endpoint for multi‑city stats  [kept-unmerged] (1ae84a3)
+- why useful: Completes the user story by allowing a downloadable CSV containing city, average price, count, min/max and deviation metrics.
+- tests: 41 passed / 4 failed
+- note: no-op attempt (no write) — retrying with nudge
+
