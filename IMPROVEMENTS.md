@@ -1080,3 +1080,8 @@
 - tests: 41 passed / 5 failed
 - note: tool-gates failed
 
+## 2026-07-03T10:16:51.413774 — Add price trend computation function  [kept-unmerged] (84606ae)
+- why useful: Provides the core logic to aggregate listing prices by city over the last 30 days, which is needed for heatmap and deviation calculations.
+- tests: 42 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+
