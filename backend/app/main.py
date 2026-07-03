@@ -159,7 +159,7 @@ async def list_saved_searches():
     finally:
         sess.close()
 
-@app.post('/api/saved-searches/toggle')
+@app.post('/api/saved-searches/{id}/toggle')
 async def toggle_saved_search(id: str = Path(..., description="UUID of the saved search")):
     """Toggle the is_active flag on a saved search by ID."""
     log_debug(f"POST /api/saved-searches/toggle: toggling id={id}")
