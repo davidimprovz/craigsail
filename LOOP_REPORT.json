@@ -261,10 +261,36 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "saved-search-store-unification",
+   "title": "Remove unused global store variables",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T05:58:53.396187",
+ "generated": "2026-07-03T06:11:18.990182",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -273,6 +299,6 @@
  },
  "gate_fail_histogram": {
   "smoke": 5,
-  "tests": 4
+  "tests": 5
  }
 }

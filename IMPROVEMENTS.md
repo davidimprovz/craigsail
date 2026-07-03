@@ -945,3 +945,8 @@
 - tests: 37 passed / 1 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T06:11:18.989768 — Remove unused global store variables  [kept-unmerged] (100439f)
+- why useful: Cleans up dead code and prevents accidental usage of the now‑unused globals.
+- tests: 37 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
