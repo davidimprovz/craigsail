@@ -122,11 +122,6 @@ async def save_search(search: SavedSearch):
     finally:
         db_session.close()
 
-@app.post('/api/saved-searches/create')
-async def create_saved_search(payload: SavedSearch):
-    """Register a new saved search. In-memory for now; echoes the payload back."""
-    log_debug(f"Creating saved search via /create: {payload}")
-    return payload
 
 @app.get('/api/saved-searches')
 async def list_saved_searches():
