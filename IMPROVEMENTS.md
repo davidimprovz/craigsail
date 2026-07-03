@@ -845,3 +845,8 @@
 - tests: 34 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T02:18:26.180456 — Add endpoint to schedule alerts for a saved search  [kept-unmerged] (cc5db7e)
+- why useful: Allows users to set a future time for an alert, enabling the batch scheduler to automatically send notifications.
+- tests: 34 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
