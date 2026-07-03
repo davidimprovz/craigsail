@@ -18,6 +18,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session as DBSession
 from app.db import SessionLocal, SavedSearch as DBSavedSearch, get_db
 from app.scheduler import select_scheduled, run_scheduling_pass
+from app.risk import risk_score
 
 app = FastAPI(title="Craigsail API")
 
@@ -654,3 +655,10 @@ async def delete_saved_search(ss_id: str, db: DBSession = Depends(get_db)):
     db.delete(ss)
     db.commit()
     return {'detail': 'Deleted'}
+
+
+@app.get("/api/risk-score")
+def risk_score_route(price: float = Query(default=0), title: str = Query(default=""), description: str = Query(default=""), images: Optional[str] = Query(default=None), typical_price: Optional[float] = None):
+    """Return a deterministic scam-risk score for a listing."""
+    listing = {"price": price, "title": title, "description": description, "images": images}
+    return {"score": risk_score(listing, typical_price=typical_price)}
