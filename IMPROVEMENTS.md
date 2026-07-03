@@ -1085,3 +1085,8 @@
 - tests: 42 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T10:21:30.183449 — Expose price trend endpoint  [kept-unmerged] (2b89b66)
+- why useful: Makes the aggregated city‑level price data available via a REST API, enabling downstream features like alerts and CSV export.
+- tests: 42 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+
