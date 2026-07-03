@@ -314,6 +314,13 @@
    "symbol": "build_export_records",
    "sha": "e211868",
    "ts": "2026-07-03T16:06:18.738914"
+  },
+  {
+   "name": "Expose CSV endpoint with risk_score column",
+   "epic": "risk_score_export",
+   "symbol": "/api/search/csv",
+   "sha": "7b3b12c",
+   "ts": "2026-07-03T17:03:17.952441"
   }
  ]
 }

@@ -1280,3 +1280,8 @@
 - tests: 50 passed / 0 failed
 - note: works-but-untested — test-only retry
 
+## 2026-07-03T17:03:46.624167 — Expose CSV endpoint with risk_score column  [MERGED] (94934ce)
+- why useful: The public `/api/search/csv` route must stream a CSV that now includes the new `risk_score` column.
+- tests: 51 passed / 0 failed
+- note: gates+critic passed
+
