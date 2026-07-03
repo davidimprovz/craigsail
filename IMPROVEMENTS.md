@@ -1150,3 +1150,8 @@
 - tests: 42 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T12:08:32.961518 — Add MultiCityPriceRequest model  [kept-unmerged] (6419d77)
+- why useful: Defines the input schema for a list of cities so subsequent endpoints can accept and validate multi‑city queries.
+- tests: 43 passed / 3 failed
+- note: tool-gates failed
+
