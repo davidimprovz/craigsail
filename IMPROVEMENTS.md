@@ -840,3 +840,8 @@
 - tests: 34 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T02:07:12.484027 — Add next_run_at field to SavedSearch model  [kept-unmerged] (91675f9)
+- why useful: Stores the scheduled execution time for alerts so the batch scheduler can know when to trigger notifications.
+- tests: 34 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+

@@ -305,10 +305,43 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "batch-scheduler",
+   "title": "Add next_run_at field to SavedSearch model",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": false
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T01:52:34.140265",
+ "generated": "2026-07-03T02:07:12.484435",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -316,8 +349,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 9,
-  "probe": 1,
-  "smoke": 2
+  "tests": 11,
+  "probe": 2,
+  "smoke": 4
  }
 }
