@@ -925,3 +925,8 @@
 - tests: 37 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T05:33:42.041715 — Add path parameter to toggle_saved_search route  [kept-unmerged] (f1b54ae)
+- why useful: The `toggle_saved_search` endpoint must receive the saved‑search identifier in the URL; currently it declares a Path parameter but no route includes it, causing routing failures.
+- tests: 37 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
