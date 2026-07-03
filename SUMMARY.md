@@ -1,13 +1,21 @@
-# CraigSail Agent Run — Summary (2026-07-03T04:07:29.575334)
+# CraigSail Agent Run — Summary (2026-07-03T04:29:28.142507)
 
-- cycles: 1 | merged: 0 | kept-unmerged (review): 1
+- cycles: 3 | merged: 2 | kept-unmerged (review): 1
 - final tests on agent/loop: 34 passed / 0 failed
-- feature ledger: 27 shipped features (FEATURES.json)
+- feature ledger: 29 shipped features (FEATURES.json)
 - calibration (broke something, loop must re-fix it): skipped (no time)
 - config: lang=python fastapi=True scope=backend tests=python -m pytest -q
 
 ## Branch log
 ```
+15fe1ab agent: ledger/log update
+dae107d agent: ledger/log update
+b156e0a merge: Delete stub create‑saved-search endpoint
+9bca577 agent attempt 1: Delete stub create‑saved-search endpoint
+3cce690 agent: ledger/log update
+aa91907 merge: Delete literal‑path saved-search runner endpoint
+f26e04b agent attempt 2: Delete literal‑path saved-search runner endpoint
+7199ed2 agent: run summary
 d916e8b agent: ledger/log update
 1336c9b merge: owner mac-main
 34c5170 sync: owner/control cycle files
@@ -20,14 +28,6 @@ db4478a sync: owner/control cycle files
 914dcf9 agent: run summary
 090214d agent: ledger/log update
 c022d89 agent: ledger/log update
-c6eb486 agent: ledger/log update
-9a1e026 agent: ledger/log update
-0db96eb agent: ledger/log update
-44cd1eb agent: ledger/log update
-b7b89e7 agent: ledger/log update
-32706ad agent: ledger/log update
-a986fe2 agent: ledger/log update
-b37f729 agent: ledger/log update
 ```
 
 Each improvement was gated by syntax+test-files+integration+dup-routes+tests+probe, then an adversarial critic.

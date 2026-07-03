@@ -70,7 +70,7 @@
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T04:29:27.483033",
+ "generated": "2026-07-03T04:29:28.142045",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -79,5 +79,14 @@
  },
  "gate_fail_histogram": {
   "smoke": 2
- }
+ },
+ "calibration": "skipped (no time)",
+ "baseline_tests": [
+  34,
+  0
+ ],
+ "final_tests": [
+  34,
+  0
+ ]
 }
