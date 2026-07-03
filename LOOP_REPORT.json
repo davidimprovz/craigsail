@@ -432,10 +432,33 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "scam-scoring-v2",
+   "title": "Add risk_score field to Listing model and populate per listing",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T15:42:55.496237",
+ "generated": "2026-07-03T15:51:34.207522",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -443,7 +466,7 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 13,
+  "tests": 14,
   "smoke": 3,
   "test_files": 1,
   "probe": 1

@@ -1250,3 +1250,8 @@
 - tests: 49 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T15:51:34.207041 — Add risk_score field to Listing model and populate per listing  [kept-unmerged] (0324fba)
+- why useful: Makes the scam score available to downstream API consumers and other services, enabling filtering or alerting based on risk.
+- tests: 49 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
