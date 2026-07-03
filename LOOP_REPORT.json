@@ -1241,10 +1241,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "smart_alert_throttling",
+   "title": "Implement throttling check function in scheduler",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": false
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T10:45:42.660246",
+ "generated": "2026-07-03T10:51:54.709143",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1252,8 +1286,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 21,
-  "tests": 51,
-  "probe": 21
+  "smoke": 22,
+  "tests": 53,
+  "probe": 22
  }
 }

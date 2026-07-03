@@ -1105,3 +1105,8 @@
 - tests: 50 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T10:51:54.708911 — Implement throttling check function in scheduler  [kept-unmerged] (aa89ac7)
+- why useful: Provides a reusable boolean that determines whether an alert for a saved search should be sent based on the cooldown period.
+- tests: 41 passed / 4 failed
+- note: tool-gates failed
+
