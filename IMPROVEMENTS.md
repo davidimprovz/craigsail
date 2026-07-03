@@ -1000,3 +1000,8 @@
 - tests: 43 passed / 0 failed
 - note: works-but-untested — test-only retry
 
+## 2026-07-03T07:46:19.344717 — Add CSV streaming variant to /api/reports/deals  [kept-unmerged] (5164cc0)
+- why useful: Provides the optional ?format=csv endpoint that streams the same export data as CSV, completing the deals‑report epic.
+- tests: 43 passed / 1 failed
+- note: tool-gates failed
+
