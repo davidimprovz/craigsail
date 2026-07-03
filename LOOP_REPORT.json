@@ -43,15 +43,52 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "db-bootstrap-and-fixtures",
+   "title": "Add shared test fixtures and example test",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T13:16:02.308436",
+ "generated": "2026-07-03T13:22:17.515553",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
   "write_scope": "backend",
   "entry": "backend/app/main.py"
  },
- "gate_fail_histogram": {}
+ "gate_fail_histogram": {
+  "tests": 2,
+  "smoke": 2
+ }
 }

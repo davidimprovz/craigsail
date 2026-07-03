@@ -1180,3 +1180,8 @@
 - tests: 46 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T13:22:17.515156 — Add shared test fixtures and example test  [kept-unmerged] (d119025)
+- why useful: Provides a reusable fixture that creates an in‑memory SQLite DB, creates all tables, and overrides the FastAPI get_db dependency for isolated tests.
+- tests: 47 passed / 1 failed
+- note: no-op attempt (no write) — retrying with nudge
+
