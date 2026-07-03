@@ -1125,3 +1125,8 @@
 - tests: 42 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T11:27:00.712326 — Implement radius filtering using haversine distance  [kept-unmerged] (20c24b0)
+- why useful: Adds true radius-based filtering so users can search within a given distance from a city center.
+- tests: 0 passed / 9 failed
+- note: tool-gates failed
+
