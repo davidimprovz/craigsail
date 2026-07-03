@@ -1195,3 +1195,8 @@
 - tests: 46 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T13:53:52.125865 — Delete unused /api/report/download endpoint  [kept-unmerged] (047c81b)
+- why useful: Cleans up another dead route that offers no functionality and could confuse API consumers.
+- tests: 46 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+

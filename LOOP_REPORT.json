@@ -132,10 +132,28 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "surface-cleanup-jul3",
+   "title": "Delete unused /api/report/download endpoint",
+   "mode": "normal",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T13:41:55.710947",
+ "generated": "2026-07-03T13:53:52.126475",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
