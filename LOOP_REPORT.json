@@ -309,10 +309,37 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "store-unification-v2",
+   "title": "Delete unused global collections SAVED_SEARCHES and SAVED_SEARCH_STORE",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "FAIL"
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T14:46:27.995983",
+ "generated": "2026-07-03T15:02:59.185930",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",

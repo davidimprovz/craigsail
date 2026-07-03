@@ -1225,3 +1225,8 @@
 - tests: 47 passed / 1 failed
 - note: tool-gates failed
 
+## 2026-07-03T15:02:59.185449 — Delete unused global collections SAVED_SEARCHES and SAVED_SEARCH_STORE  [kept-unmerged] (1c24abf)
+- why useful: Removes dead code that no longer serves any purpose, preventing accidental reuse and keeping the namespace clean.
+- tests: 49 passed / 0 failed
+- note: no-op attempt (no write) — retrying with nudge
+
