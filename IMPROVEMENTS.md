@@ -870,3 +870,8 @@
 - tests: 34 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T03:21:49.819933 — Add target_price to SavedSearch and expose update endpoint  [kept-unmerged] (7c1e27e)
+- why useful: Enables users to set a price threshold for alerts, which is required for the price‑fall‑below alert feature.
+- tests: 34 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+

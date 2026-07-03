@@ -438,10 +438,32 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "price_comparison_insights",
+   "title": "Add target_price to SavedSearch and expose update endpoint",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T03:06:49.533569",
+ "generated": "2026-07-03T03:21:49.820374",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -449,7 +471,7 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 14,
+  "tests": 15,
   "probe": 2,
   "smoke": 6
  }
