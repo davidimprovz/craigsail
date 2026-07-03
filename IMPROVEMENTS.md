@@ -1220,3 +1220,8 @@
 - tests: 46 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T14:46:27.995545 — Modify alerts runner to query active saved searches from DB  [kept-unmerged] (08dde6c)
+- why useful: Replaces the empty SAVED_SEARCH_STORE iteration with real active saved searches, allowing alerts to be scheduled and executed.
+- tests: 47 passed / 1 failed
+- note: tool-gates failed
+
