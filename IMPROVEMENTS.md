@@ -1275,3 +1275,8 @@
 - tests: 0 passed / 9 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T16:52:51.104364 — Add risk_score column to export records  [kept-unmerged] (24002ab)
+- why useful: The CSV export must include a computed risk_score for each listing so users can sort by safety.
+- tests: 50 passed / 0 failed
+- note: works-but-untested — test-only retry
+

@@ -570,10 +570,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "risk_score_export",
+   "title": "Add risk_score column to export records",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T16:24:19.465935",
+ "generated": "2026-07-03T16:52:51.104891",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -581,10 +615,10 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 19,
-  "smoke": 6,
+  "tests": 21,
+  "smoke": 8,
   "test_files": 1,
-  "probe": 5,
+  "probe": 6,
   "syntax": 2
  }
 }
