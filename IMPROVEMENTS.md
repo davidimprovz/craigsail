@@ -995,3 +995,8 @@
 - tests: 43 passed / 2 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T07:37:30.858682 — Expose /api/reports/deals endpoint returning JSON export records  [kept-unmerged] (6f87ccf)
+- why useful: Makes the report data reachable via HTTP for the first time, enabling downstream CSV streaming and analytics.
+- tests: 43 passed / 0 failed
+- note: works-but-untested — test-only retry
+
