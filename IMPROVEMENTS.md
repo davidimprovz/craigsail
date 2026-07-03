@@ -1115,3 +1115,8 @@
 - tests: 42 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T11:07:42.424141 — Add end‑to‑end integration test for throttling behavior  [kept-unmerged] (761a4e6)
+- why useful: Confirms the full flow from scheduler filtering to API response respects the new throttling rules.
+- tests: 42 passed / 4 failed
+- note: no-op attempt (no write) — retrying with nudge
+

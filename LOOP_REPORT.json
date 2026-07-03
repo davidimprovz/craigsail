@@ -1309,10 +1309,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "smart_alert_throttling",
+   "title": "Add end\u2011to\u2011end integration test for throttling behavior",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T11:00:28.102328",
+ "generated": "2026-07-03T11:07:42.424430",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -1320,8 +1354,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 22,
-  "tests": 55,
+  "smoke": 24,
+  "tests": 57,
   "probe": 22
  }
 }
