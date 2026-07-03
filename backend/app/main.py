@@ -629,7 +629,7 @@ def _dedup_listings(listings: List[Listing]) -> List[Listing]:
 # ── One-click delete endpoint for saved searches ──────────────────────
 
 @app.delete('/api/saved-searches/{ss_id}')
-async def delete_saved_search(ss_id: int, db: DBSession = Depends(get_db)):
+async def delete_saved_search(ss_id: str, db: DBSession = Depends(get_db)):
     """Remove a saved search (or its group) from the dashboard with a single DELETE call."""
     log_debug(f"DELETE /api/saved-searches/{ss_id}")
 
