@@ -755,10 +755,44 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "cross_city_price_benchmark",
+   "title": "Implement price aggregation helper and connect to route",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T08:29:52.484458",
+ "generated": "2026-07-03T08:39:18.559697",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -767,7 +801,7 @@
  },
  "gate_fail_histogram": {
   "smoke": 15,
-  "tests": 24,
+  "tests": 26,
   "probe": 13
  }
 }

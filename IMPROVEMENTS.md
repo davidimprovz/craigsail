@@ -1030,3 +1030,8 @@
 - tests: 45 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T08:39:18.559229 — Implement price aggregation helper and connect to route  [kept-unmerged] (01a8e8e)
+- why useful: Adds real logic to compute per‑city average price and listing count, enabling meaningful benchmark data for the endpoint.
+- tests: 45 passed / 1 failed
+- note: no-op attempt (no write) — retrying with nudge
+
