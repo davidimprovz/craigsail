@@ -58,6 +58,10 @@ def _store_alert(alert: Alert) -> None:
 def health_check():
     return {"status": "ok"}
 
+@app.get("/api/search/benchmark")
+def benchmark_search():
+    return {"detail": "placeholder"}
+
 @app.post('/api/alerts/run-scheduled')
 async def run_scheduled_alerts(db: DBSession = Depends(get_db)):
     """Trigger the scheduling pass — retrieve all active saved searches with a cron schedule."""
