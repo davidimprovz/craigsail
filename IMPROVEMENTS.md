@@ -1235,3 +1235,8 @@
 - tests: 46 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T15:26:45.459531 — Persist listings on search via upsert  [kept-unmerged] (3177d1e)
+- why useful: Store scraped results in the new ListingORM table so they survive server restarts and can be used for deviation calculations.
+- tests: 46 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
