@@ -639,7 +639,7 @@
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T17:03:46.624673",
+ "generated": "2026-07-03T17:03:46.748489",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -652,5 +652,14 @@
   "test_files": 1,
   "probe": 6,
   "syntax": 2
- }
+ },
+ "calibration": "PASS",
+ "baseline_tests": [
+  42,
+  3
+ ],
+ "final_tests": [
+  51,
+  0
+ ]
 }
