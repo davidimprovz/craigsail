@@ -201,10 +201,52 @@
     }
    ],
    "status": "kept-unmerged"
+  },
+  {
+   "epic": "deal-report-endpoint",
+   "title": "Add compute_price_deviation utility function",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "PASS"
+    }
+   ],
+   "status": "MERGED"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T00:58:51.186117",
+ "generated": "2026-07-03T01:16:22.064895",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -212,7 +254,7 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 6,
+  "tests": 8,
   "probe": 1,
   "smoke": 2
  }

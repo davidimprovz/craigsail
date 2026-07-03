@@ -820,3 +820,8 @@
 - tests: 30 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T01:16:22.064518 — Add compute_price_deviation utility function  [MERGED] (60ae6dc)
+- why useful: Provides the calculation needed for the price deviation column that will be added to export records, enabling later report enrichment.
+- tests: 31 passed / 0 failed
+- note: gates+critic passed
+

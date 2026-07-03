@@ -174,6 +174,13 @@
    "symbol": "SavedSearch",
    "sha": "8cff008",
    "ts": "2026-07-02T23:34:23.952064"
+  },
+  {
+   "name": "Add compute_price_deviation utility function",
+   "epic": "deal-report-endpoint",
+   "symbol": "compute_price_deviation",
+   "sha": "384c34d",
+   "ts": "2026-07-03T01:15:38.811556"
   }
  ]
 }
