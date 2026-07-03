@@ -1155,3 +1155,8 @@
 - tests: 43 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-03T12:14:36.538266 — Add multi‑city stats endpoint (JSON)  [kept-unmerged] (819fca0)
+- why useful: Provides the first functional API that can receive multiple cities and return aggregated price statistics, enabling downstream CSV export.
+- tests: 42 passed / 6 failed
+- note: tool-gates failed
+
