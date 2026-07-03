@@ -17,6 +17,7 @@ import os
 from fastapi.middleware.cors import CORSMiddleware
 from sqlalchemy.orm import Session as DBSession
 from app.db import SessionLocal, SavedSearch as DBSavedSearch, get_db
+from app.scheduler import select_scheduled
 
 app = FastAPI(title="Craigsail API")
 
@@ -56,6 +57,12 @@ def _store_alert(alert: Alert) -> None:
 @app.get("/health")
 def health_check():
     return {"status": "ok"}
+
+@app.post('/api/alerts/run-scheduled')
+async def run_scheduled_alerts(db: DBSession = Depends(get_db)):
+    """Trigger the scheduling pass — retrieve all active saved searches with a cron schedule."""
+    scheduled = select_scheduled(db)
+    return {"scheduled_count": len(scheduled), "ids": [s.id for s in scheduled]}
 
 @app.post('/api/alerts/run-saved')
 async def run_saved_alerts():
