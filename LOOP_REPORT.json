@@ -823,10 +823,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "search_refinement_filters",
+   "title": "Add price_max and max_distance fields to SavedSearch model",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": false
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T08:59:27.777553",
+ "generated": "2026-07-03T09:11:13.266505",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -834,8 +868,8 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "smoke": 15,
-  "tests": 28,
-  "probe": 15
+  "smoke": 17,
+  "tests": 30,
+  "probe": 16
  }
 }

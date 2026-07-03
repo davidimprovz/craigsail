@@ -1040,3 +1040,8 @@
 - tests: 45 passed / 1 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T09:11:13.266155 — Add price_max and max_distance fields to SavedSearch model  [kept-unmerged] (9d86395)
+- why useful: These filters are the core of multi‑facet saved searches; persisting them allows alerts and exports to respect user-defined price caps and geographic limits across restarts.
+- tests: 42 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+
