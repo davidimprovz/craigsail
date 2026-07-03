@@ -1090,3 +1090,8 @@
 - tests: 42 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T10:27:05.556289 — Add deviation score calculation and detailed endpoint  [kept-unmerged] (0b7bc44)
+- why useful: Enables per‑listing deviation scores relative to city averages, a prerequisite for alert scheduling and export of trend metrics.
+- tests: 42 passed / 3 failed
+- note: no-op attempt (no write) — retrying with nudge
+
