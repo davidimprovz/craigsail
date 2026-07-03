@@ -227,10 +227,44 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "saved-search-store-unification",
+   "title": "Modify alerts runner to use DB active saved searches",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "noop": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T05:51:08.082769",
+ "generated": "2026-07-03T05:58:53.396187",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -239,6 +273,6 @@
  },
  "gate_fail_histogram": {
   "smoke": 5,
-  "tests": 2
+  "tests": 4
  }
 }

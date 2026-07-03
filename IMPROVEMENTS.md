@@ -940,3 +940,8 @@
 - tests: 37 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T05:58:53.395814 — Modify alerts runner to use DB active saved searches  [kept-unmerged] (59c87c5)
+- why useful: Ensures the scheduled alert job iterates over persisted, active saved searches instead of the now‑removed in‑memory list.
+- tests: 37 passed / 1 failed
+- note: no-op attempt (no write) — retrying with nudge
+
