@@ -4,12 +4,9 @@
  "subtasks": [
   {
    "epic": "dead-code-purge",
-   "title": "Delete literal\u2011path saved-search runner endpoint",
+   "title": "Remove run_pending_searches endpoint",
    "mode": "normal",
    "attempts": [
-    {
-     "noop": true
-    },
     {
      "gates": {
       "syntax": true,
@@ -20,38 +17,11 @@
       "probe": true,
       "smoke": false
      },
-     "critic": "PASS"
-    }
-   ],
-   "status": "MERGED",
-   "end": "merged"
-  },
-  {
-   "epic": "dead-code-purge",
-   "title": "Delete stub create\u2011saved-search endpoint",
-   "mode": "normal",
-   "attempts": [
+     "critic": "FAIL"
+    },
     {
-     "gates": {
-      "syntax": true,
-      "test_files": true,
-      "integration": true,
-      "dup_routes": true,
-      "tests": true,
-      "probe": true,
-      "smoke": true
-     },
-     "critic": "PASS"
-    }
-   ],
-   "status": "MERGED",
-   "end": "merged"
-  },
-  {
-   "epic": "dead-code-purge",
-   "title": "Delete stub run\u2011pending-searches endpoint",
-   "mode": "normal",
-   "attempts": [
+     "repeat": true
+    },
     {
      "gates": {
       "syntax": true,
@@ -66,11 +36,11 @@
     }
    ],
    "status": "kept-unmerged",
-   "end": "truncated"
+   "end": "terminated"
   }
  ],
- "mac_main": "up-to-date",
- "generated": "2026-07-03T04:29:28.142045",
+ "mac_main": "merged",
+ "generated": "2026-07-03T04:46:21.285624",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -79,14 +49,5 @@
  },
  "gate_fail_histogram": {
   "smoke": 2
- },
- "calibration": "skipped (no time)",
- "baseline_tests": [
-  34,
-  0
- ],
- "final_tests": [
-  34,
-  0
- ]
+ }
 }

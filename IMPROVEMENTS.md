@@ -900,3 +900,8 @@
 - tests: 34 passed / 0 failed
 - note: time budget hit mid-subtask
 
+## 2026-07-03T04:46:21.285281 — Remove run_pending_searches endpoint  [kept-unmerged] (dbf666b)
+- why useful: Deletes a dead-code stub that misleads users and inflates main.py, satisfying the EPIC's first deletion requirement.
+- tests: 34 passed / 0 failed
+- note: critic=FAIL
+
