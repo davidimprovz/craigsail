@@ -1245,3 +1245,8 @@
 - tests: 46 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T15:42:55.495816 — Add pure stdlib scam risk scoring function  [MERGED] (fb3d99c)
+- why useful: Provides a deterministic heuristic to flag suspicious listings without external dependencies, forming the basis for downstream scam detection.
+- tests: 49 passed / 0 failed
+- note: gates+critic passed
+

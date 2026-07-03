@@ -300,6 +300,13 @@
    "symbol": "POST /api/saved-searches/{id}/toggle",
    "sha": "1707f26",
    "ts": "2026-07-03T13:56:32.319234"
+  },
+  {
+   "name": "Add pure stdlib scam risk scoring function",
+   "epic": "scam-scoring-v2",
+   "symbol": "risk_score",
+   "sha": "7b6f0ef",
+   "ts": "2026-07-03T15:42:06.440264"
   }
  ]
 }
