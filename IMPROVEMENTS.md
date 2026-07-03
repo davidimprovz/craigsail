@@ -955,3 +955,8 @@
 - tests: 37 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T06:31:39.474270 — Persist listings on search  [kept-unmerged] (ba81c27)
+- why useful: Stores each unique listing in the database so later analytics can use real price data.
+- tests: 0 passed / 7 failed
+- note: tool-gates failed
+
