@@ -1,4 +1,4 @@
-# CraigSail Agent Run — Summary (2026-07-03T03:46:55.253945)
+# CraigSail Agent Run — Summary (2026-07-03T04:07:29.575334)
 
 - cycles: 1 | merged: 0 | kept-unmerged (review): 1
 - final tests on agent/loop: 34 passed / 0 failed
@@ -8,6 +8,11 @@
 
 ## Branch log
 ```
+d916e8b agent: ledger/log update
+1336c9b merge: owner mac-main
+34c5170 sync: owner/control cycle files
+bf01f3b Tuning: line-surgery rule for large-file edits (coder no-ops on whole-file rewrites of 682-line main.py)
+ad2ba16 agent: run summary
 82b34eb agent: ledger/log update
 0dbdd94 merge: owner mac-main
 db4478a sync: owner/control cycle files
@@ -23,11 +28,6 @@ b7b89e7 agent: ledger/log update
 32706ad agent: ledger/log update
 a986fe2 agent: ledger/log update
 b37f729 agent: ledger/log update
-4475bac merge: Integrate price_deviation into build_export_records
-94e39a0 agent attempt 1: Integrate price_deviation into build_export_records
-c4b5f12 agent: ledger/log update
-384c34d merge: Add compute_price_deviation utility function
-60ae6dc agent attempt 3: Add compute_price_deviation utility function
 ```
 
 Each improvement was gated by syntax+test-files+integration+dup-routes+tests+probe, then an adversarial critic.

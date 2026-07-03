@@ -22,12 +22,21 @@
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T04:07:27.739394",
+ "generated": "2026-07-03T04:07:29.574897",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
   "write_scope": "backend",
   "entry": "backend/app/main.py"
  },
- "gate_fail_histogram": {}
+ "gate_fail_histogram": {},
+ "calibration": "skipped (no time)",
+ "baseline_tests": [
+  34,
+  0
+ ],
+ "final_tests": [
+  34,
+  0
+ ]
 }
