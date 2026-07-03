@@ -1100,3 +1100,8 @@
 - tests: 42 passed / 3 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T10:45:42.659757 — Add throttling configuration fields to SavedSearch model  [kept-unmerged] (485c5bf)
+- why useful: Stores the timestamp of the last alert and cooldown period so the system can decide when to resend alerts, preventing duplicate or low‑relevance messages.
+- tests: 50 passed / 3 failed
+- note: tool-gates failed
+
