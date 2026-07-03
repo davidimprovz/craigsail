@@ -960,3 +960,8 @@
 - tests: 0 passed / 7 failed
 - note: tool-gates failed
 
+## 2026-07-03T06:42:06.468685 — Compute real price deviation for alerts  [kept-unmerged] (ddcd6b3)
+- why useful: Replaces the hard-coded 0.0 deviation with a true mean of persisted listings, enabling accurate analytics.
+- tests: 37 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
