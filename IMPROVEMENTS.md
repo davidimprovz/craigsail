@@ -1240,3 +1240,8 @@
 - tests: 46 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T15:35:44.013928 — Compute real price deviation for alerts  [kept-unmerged] (1370ee2)
+- why useful: Replace the hardcoded `0.0` deviation with a calculation based on persisted listings, enabling accurate analytics and preventing false‑positive alerts.
+- tests: 46 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+

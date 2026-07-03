@@ -385,10 +385,36 @@
    ],
    "status": "kept-unmerged",
    "end": "terminated"
+  },
+  {
+   "epic": "listing-store",
+   "title": "Compute real price deviation for alerts",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "noop": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "merged",
- "generated": "2026-07-03T15:26:45.460005",
+ "generated": "2026-07-03T15:35:44.014376",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -396,7 +422,7 @@
   "entry": "backend/app/main.py"
  },
  "gate_fail_histogram": {
-  "tests": 12,
+  "tests": 13,
   "smoke": 3,
   "test_files": 1,
   "probe": 1
