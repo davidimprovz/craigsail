@@ -117,7 +117,19 @@ async def list_saved_searches():
     sess = SessionLocal()
     try:
         searches = sess.query(DBSavedSearch).all()
-        return [s.dict() for s in searches]
+        saved_searches = []
+        for s in searches:
+            saved_searches.append({
+                "id": s.id,
+                "query": s.query,
+                "cities": s.cities,
+                "category": s.category,
+                "max_price": s.max_price,
+                "target_price": s.target_price,
+                "is_active": s.is_active,
+                "schedule_cron": s.schedule_cron
+            })
+        return saved_searches
     finally:
         sess.close()
 
