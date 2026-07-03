@@ -835,3 +835,8 @@
 - tests: 34 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T01:52:34.139790 — Add integration test for seeded DB  [kept-unmerged] (224b5b8)
+- why useful: Validates the full flow: a saved search with alerts is transformed into export records containing price_deviation and returned by the new endpoint, ensuring end‑to‑end correctness.
+- tests: 34 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
