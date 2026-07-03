@@ -1265,3 +1265,8 @@
 - tests: 50 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-03T16:17:09.573455 — Implement /api/reports/deals JSON endpoint  [kept-unmerged] (754bddc)
+- why useful: Provides HTTP access to exported deal records in JSON format.
+- tests: 50 passed / 2 failed
+- note: tool-gates failed
+
