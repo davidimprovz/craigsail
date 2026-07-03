@@ -1025,3 +1025,8 @@
 - tests: 44 passed / 2 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T08:29:52.483868 — Add benchmark search route skeleton  [MERGED] (4d08efe)
+- why useful: Provides a dedicated endpoint for multi‑city price benchmark searches, the entry point for later aggregation and export features.
+- tests: 45 passed / 0 failed
+- note: gates+critic passed
+

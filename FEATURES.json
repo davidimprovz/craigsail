@@ -265,6 +265,13 @@
    "symbol": "SavedSearch.deviation_target",
    "sha": "eb023d1",
    "ts": "2026-07-03T07:54:07.963479"
+  },
+  {
+   "name": "Add benchmark search route skeleton",
+   "epic": "cross_city_price_benchmark",
+   "symbol": "",
+   "sha": "4f31c46",
+   "ts": "2026-07-03T08:29:06.904562"
   }
  ]
 }
