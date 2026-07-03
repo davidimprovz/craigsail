@@ -855,3 +855,8 @@
 - tests: 34 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-03T02:42:23.645697 — Add heatmap aggregation endpoint  [kept-unmerged] (e865f6a)
+- why useful: Provides the backend API needed to retrieve aggregated listing counts and price statistics by city, category, and price range – the foundation for the interactive heatmap.
+- tests: 34 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
