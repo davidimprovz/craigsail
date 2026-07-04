@@ -1305,3 +1305,8 @@
 - tests: 51 passed / 0 failed
 - note: tool-gates failed
 
+## 2026-07-04T00:19:44.818765 — Run saved search endpoint loads from DB and executes scraper  [MERGED] (9d79d9d)
+- why useful: Ensures end‑to‑end saved search execution; fixes scraper patch target to backend.app.scraper.CraigslistScraper and ensures cities are stored as proper JSON for correct parsing.
+- tests: 53 passed / 0 failed
+- note: gates+critic passed
+

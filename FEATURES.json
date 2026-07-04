@@ -321,6 +321,13 @@
    "symbol": "/api/search/csv",
    "sha": "7b3b12c",
    "ts": "2026-07-03T17:03:17.952441"
+  },
+  {
+   "name": "Run saved search endpoint loads from DB and executes scraper",
+   "epic": "saved-search-live-run",
+   "symbol": "run_saved_search_endpoint",
+   "sha": "f9d8a7d",
+   "ts": "2026-07-04T00:19:00.713562"
   }
  ]
 }
