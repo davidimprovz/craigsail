@@ -1325,3 +1325,8 @@
 - tests: 57 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-04T00:55:39.879615 — Persist search results into ListingORM  [kept-unmerged] (7ca1174)
+- why useful: Ensures scraped listings are stored durably without breaking the search endpoint.
+- tests: 59 passed / 2 failed
+- note: time budget hit mid-subtask
+

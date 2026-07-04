@@ -209,10 +209,30 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "listing-store-v2",
+   "title": "Persist search results into ListingORM",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "truncated"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-04T00:52:26.615036",
+ "generated": "2026-07-04T00:55:39.879716",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -221,9 +241,9 @@
  },
  "gate_fail_histogram": {
   "test_files": 2,
-  "tests": 8,
+  "tests": 9,
   "probe": 2,
-  "smoke": 5
+  "smoke": 6
  },
  "epics": [
   {
