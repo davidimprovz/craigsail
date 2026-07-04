@@ -328,6 +328,13 @@
    "symbol": "run_saved_search_endpoint",
    "sha": "f9d8a7d",
    "ts": "2026-07-04T00:19:00.713562"
+  },
+  {
+   "name": "Remove obsolete SAVED_SEARCHES and SAVED_SEARCH_STORE globals",
+   "epic": "saved-search-live-run",
+   "symbol": "cleanup_globals",
+   "sha": "74e3b19",
+   "ts": "2026-07-04T00:40:37.176193"
   }
  ]
 }

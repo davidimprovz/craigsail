@@ -1315,3 +1315,8 @@
 - tests: 54 passed / 3 failed
 - note: tool-gates failed
 
+## 2026-07-04T00:41:03.354317 — Remove obsolete SAVED_SEARCHES and SAVED_SEARCH_STORE globals  [MERGED] (ff773c7)
+- why useful: Removes dead code globals to prevent accidental reuse; verifies no other modules reference them after cleanup.
+- tests: 56 passed / 0 failed
+- note: gates+critic passed
+
