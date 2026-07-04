@@ -191,7 +191,7 @@
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-04T00:41:03.354711",
+ "generated": "2026-07-04T00:41:10.581104",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -216,6 +216,12 @@
    "merged": 0,
    "total": 1,
    "composition": "n/a"
+  },
+  {
+   "epic": "saved-search-live-run",
+   "merged": 2,
+   "total": 3,
+   "composition": "ISSUES: declared symbol 'run_saved_search_endpoint' not found in backend/app/main.py"
   }
  ]
 }
