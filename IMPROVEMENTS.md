@@ -1300,3 +1300,8 @@
 - tests: 50 passed / 0 failed
 - note: no progress after escalation — stopped (branch keeps best attempt)
 
+## 2026-07-04T00:05:49.476899 — Add /api/reports/deals endpoint and test  [kept-unmerged] (88121ed)
+- why useful: Provides the required JSON reports endpoint for deals and validates its output with an integration test.
+- tests: 51 passed / 0 failed
+- note: tool-gates failed
+
