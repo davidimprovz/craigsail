@@ -10,7 +10,11 @@ client = TestClient(app, raise_server_exceptions=False)
 
 
 def _insert_saved_search(db_session, id="t-run-1", query="bike", cities='["sfbay"]'):
-    """Insert a saved search row into the test DB."""
+    """Insert a saved search row into the test DB (cleaning up any previous row first)."""
+    # Remove existing row to avoid IntegrityError on re-runs.
+    db_session.query(DBSavedSearch).filter_by(id=id).delete()
+    db_session.commit()
+
     record = DBSavedSearch(
         id=id,
         query=query,
