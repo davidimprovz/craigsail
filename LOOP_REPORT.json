@@ -119,10 +119,44 @@
    ],
    "status": "MERGED",
    "end": "merged"
+  },
+  {
+   "epic": "saved-search-live-run",
+   "title": "Run saved alerts endpoint uses active searches",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-04T00:19:44.819133",
+ "generated": "2026-07-04T00:28:21.511409",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -131,9 +165,9 @@
  },
  "gate_fail_histogram": {
   "test_files": 2,
-  "tests": 5,
+  "tests": 7,
   "probe": 2,
-  "smoke": 3
+  "smoke": 5
  },
  "epics": [
   {

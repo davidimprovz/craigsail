@@ -1310,3 +1310,8 @@
 - tests: 53 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-04T00:28:21.511280 — Run saved alerts endpoint uses active searches  [kept-unmerged] (dc03ce1)
+- why useful: Provides alerts processing from active DB searches, mirroring the pattern established in (a).
+- tests: 54 passed / 3 failed
+- note: tool-gates failed
+
