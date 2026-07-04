@@ -90,7 +90,7 @@
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-04T00:05:49.477434",
+ "generated": "2026-07-04T00:05:49.502248",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -108,6 +108,12 @@
    "epic": "surface-trim",
    "merged": 0,
    "total": 2,
+   "composition": "n/a"
+  },
+  {
+   "epic": "deals-json-route",
+   "merged": 0,
+   "total": 1,
    "composition": "n/a"
   }
  ]
