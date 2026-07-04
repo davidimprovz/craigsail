@@ -232,7 +232,7 @@
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-04T00:55:39.879716",
+ "generated": "2026-07-04T00:55:48.814032",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
@@ -263,6 +263,21 @@
    "merged": 2,
    "total": 3,
    "composition": "ISSUES: declared symbol 'run_saved_search_endpoint' not found in backend/app/main.py"
+  },
+  {
+   "epic": "listing-store-v2",
+   "merged": 1,
+   "total": 3,
+   "composition": "ISSUES: declared file missing on agent/loop: listing_orm_model"
   }
+ ],
+ "calibration": "PASS",
+ "baseline_tests": [
+  51,
+  0
+ ],
+ "final_tests": [
+  57,
+  0
  ]
 }
