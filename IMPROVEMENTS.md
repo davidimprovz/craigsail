@@ -1320,3 +1320,8 @@
 - tests: 56 passed / 0 failed
 - note: gates+critic passed
 
+## 2026-07-04T00:52:26.614512 — Define ListingORM model  [MERGED] (0deabf3)
+- why useful: Establishes persistent listing data structure required for later persistence steps.
+- tests: 57 passed / 0 failed
+- note: gates+critic passed
+
