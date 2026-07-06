@@ -1290,3 +1290,43 @@
 - tests: 51 passed / 0 failed
 - note: no-op attempt (no write) — retrying with nudge
 
+## 2026-07-03T23:40:01.818310 — Delete unused deviation_target field from SavedSearch model and its test  [kept-unmerged] (772526d)
+- why useful: Removes dead code and associated test to keep the codebase clean and maintain a green test suite.
+- tests: 50 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
+## 2026-07-03T23:51:19.265221 — Delete stub benchmark route from main.py and its test  [kept-unmerged] (73fcf6a)
+- why useful: Eliminates unused benchmark endpoint to reduce surface area and keep tests green.
+- tests: 50 passed / 0 failed
+- note: no progress after escalation — stopped (branch keeps best attempt)
+
+## 2026-07-04T00:05:49.476899 — Add /api/reports/deals endpoint and test  [kept-unmerged] (88121ed)
+- why useful: Provides the required JSON reports endpoint for deals and validates its output with an integration test.
+- tests: 51 passed / 0 failed
+- note: tool-gates failed
+
+## 2026-07-04T00:19:44.818765 — Run saved search endpoint loads from DB and executes scraper  [MERGED] (9d79d9d)
+- why useful: Ensures end‑to‑end saved search execution; fixes scraper patch target to backend.app.scraper.CraigslistScraper and ensures cities are stored as proper JSON for correct parsing.
+- tests: 53 passed / 0 failed
+- note: gates+critic passed
+
+## 2026-07-04T00:28:21.511280 — Run saved alerts endpoint uses active searches  [kept-unmerged] (dc03ce1)
+- why useful: Provides alerts processing from active DB searches, mirroring the pattern established in (a).
+- tests: 54 passed / 3 failed
+- note: tool-gates failed
+
+## 2026-07-04T00:41:03.354317 — Remove obsolete SAVED_SEARCHES and SAVED_SEARCH_STORE globals  [MERGED] (ff773c7)
+- why useful: Removes dead code globals to prevent accidental reuse; verifies no other modules reference them after cleanup.
+- tests: 56 passed / 0 failed
+- note: gates+critic passed
+
+## 2026-07-04T00:52:26.614512 — Define ListingORM model  [MERGED] (0deabf3)
+- why useful: Establishes persistent listing data structure required for later persistence steps.
+- tests: 57 passed / 0 failed
+- note: gates+critic passed
+
+## 2026-07-04T00:55:39.879615 — Persist search results into ListingORM  [kept-unmerged] (7ca1174)
+- why useful: Ensures scraped listings are stored durably without breaking the search endpoint.
+- tests: 59 passed / 2 failed
+- note: time budget hit mid-subtask
+

@@ -1,50 +1,283 @@
 {
  "task": "craigsail_improve",
- "env_v": 4,
+ "env_v": 6,
  "subtasks": [
   {
-   "epic": "db-bootstrap-and-fixtures",
-   "title": "Add engine initialization and bootstrap metadata creation in db.py",
+   "epic": "surface-trim",
+   "title": "Delete unused deviation_target field from SavedSearch model and its test",
    "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": false,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
+  },
+  {
+   "epic": "surface-trim",
+   "title": "Delete stub benchmark route from main.py and its test",
+   "mode": "normal",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": false,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "repeat": true
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
+  },
+  {
+   "epic": "deals-json-route",
+   "title": "Add /api/reports/deals endpoint and test",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": false,
+      "smoke": false
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
+  },
+  {
+   "epic": "saved-search-live-run",
+   "title": "Run saved search endpoint loads from DB and executes scraper",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "PASS"
+    }
+   ],
+   "status": "MERGED",
+   "end": "merged"
+  },
+  {
+   "epic": "saved-search-live-run",
+   "title": "Run saved alerts endpoint uses active searches",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    },
+    {
+     "repeat": true
+    },
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
+    }
+   ],
+   "status": "kept-unmerged",
+   "end": "terminated"
+  },
+  {
+   "epic": "saved-search-live-run",
+   "title": "Remove obsolete SAVED_SEARCHES and SAVED_SEARCH_STORE globals",
+   "mode": "need_new",
    "attempts": [
     {
      "noop": true
     },
     {
-     "noop": true
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": true
+     }
     },
     {
-     "noop": true
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "PASS"
+    }
+   ],
+   "status": "MERGED",
+   "end": "merged"
+  },
+  {
+   "epic": "listing-store-v2",
+   "title": "Define ListingORM model",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": true,
+      "probe": true,
+      "smoke": true
+     },
+     "critic": "PASS"
+    }
+   ],
+   "status": "MERGED",
+   "end": "merged"
+  },
+  {
+   "epic": "listing-store-v2",
+   "title": "Persist search results into ListingORM",
+   "mode": "need_new",
+   "attempts": [
+    {
+     "gates": {
+      "syntax": true,
+      "test_files": true,
+      "integration": true,
+      "dup_routes": true,
+      "tests": false,
+      "probe": true,
+      "smoke": false
+     }
     }
    ],
    "status": "kept-unmerged",
-   "end": "terminated"
+   "end": "truncated"
   }
  ],
  "mac_main": "up-to-date",
- "generated": "2026-07-03T17:29:27.468370",
+ "generated": "2026-07-04T00:55:48.814032",
  "config": {
   "lang": "python",
   "test_cmd": "python -m pytest -q",
   "write_scope": "backend",
   "entry": "backend/app/main.py"
  },
- "gate_fail_histogram": {},
+ "gate_fail_histogram": {
+  "test_files": 2,
+  "tests": 9,
+  "probe": 2,
+  "smoke": 6
+ },
  "epics": [
   {
-   "epic": "db-bootstrap-and-fixtures",
+   "epic": "surface-trim",
    "merged": 0,
-   "total": 3,
+   "total": 2,
    "composition": "n/a"
+  },
+  {
+   "epic": "deals-json-route",
+   "merged": 0,
+   "total": 1,
+   "composition": "n/a"
+  },
+  {
+   "epic": "saved-search-live-run",
+   "merged": 2,
+   "total": 3,
+   "composition": "ISSUES: declared symbol 'run_saved_search_endpoint' not found in backend/app/main.py"
+  },
+  {
+   "epic": "listing-store-v2",
+   "merged": 1,
+   "total": 3,
+   "composition": "ISSUES: declared file missing on agent/loop: listing_orm_model"
   }
  ],
- "calibration": "skipped (no time)",
+ "calibration": "PASS",
  "baseline_tests": [
   51,
   0
  ],
  "final_tests": [
-  51,
+  57,
   0
  ]
 }

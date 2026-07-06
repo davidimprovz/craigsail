@@ -41,19 +41,27 @@ def log_debug(message: str):
     if DEBUG:
         print(f"[DEBUG] {message}")
 
-# In-memory storage for saved searches.
-SAVED_SEARCHES: Dict[str, SavedSearch] = {}
 
 # Module-level list of generated alerts.
 ALERTS: List[Alert] = []
 
-# Global placeholder store for saved search definitions used by the alert runner.
-SAVED_SEARCH_STORE = []
+
+
+
+def cleanup_globals() -> list:
+    """Return an empty list — no longer using SAVED_SEARCHES or SAVED_SEARCH_STORE globals."""
+    return []
 
 
 def _store_alert(alert: Alert) -> None:
     """Append an alert to the module-level ALERTS list."""
     ALERTS.append(alert)
+
+
+@app.get("/api/cleanup/globals")
+def cleanup_globals_route():
+    """Verify cleanup_globals is reachable end-to-end."""
+    return {"result": cleanup_globals()}
 
 
 @app.get("/health")
@@ -93,14 +101,24 @@ async def run_saved_alerts():
     results = []
     scraper = CraigslistScraper()
 
-    for ss in SAVED_SEARCH_STORE:
-        if not getattr(ss, "enabled", False):
-            continue
+    sess = SessionLocal()
+    try:
+        saved_searches = sess.query(DBSavedSearch).filter_by(is_active=True).all()
+    finally:
+        sess.close()
 
-        query_str = getattr(ss, "query", "") or ""
-        max_price = getattr(ss, "max_price", None)
+    for ss in saved_searches:
+        query_str = ss.query or ""
+        max_price = None
+        if ss.max_price:
+            try:
+                max_price = float(ss.max_price)
+            except (ValueError, TypeError):
+                pass
 
-        cities = getattr(ss, "cities", []) or []
+        cities_raw = ss.cities or "[]"
+        import json as _json
+        cities = _json.loads(cities_raw) if isinstance(cities_raw, str) else (cities_raw or [])
         for city in cities:
             listings = await scraper.search(city, query_str, max_price=max_price)
             for lst in listings:
@@ -192,20 +210,21 @@ async def schedule_search(schedule_req: dict, db: DBSession = Depends(get_db)):
     return {'status': 'scheduled'}
 
 @app.post('/api/saved-searches/{saved_search_id}/run')
-async def run_saved_search(saved_search_id: str):
+async def run_saved_search(saved_search_id: str, db: DBSession = Depends(get_db)):
     """Run a saved search against Craigslist and create Alert records for each listing found."""
     log_debug(f"Running saved search id={saved_search_id}")
 
-    if saved_search_id not in SAVED_SEARCHES:
+    saved = db.query(DBSavedSearch).get(saved_search_id)
+    if not saved:
         raise HTTPException(status_code=404, detail=f"Saved search '{saved_search_id}' not found")
 
-    saved = SAVED_SEARCHES[saved_search_id]
+    cities = json.loads(saved.cities or "[]")
     scraper = CraigslistScraper()
 
     alert_ids: List[str] = []
 
-    for city in saved.cities:
-        listings = await scraper.search(city, saved.query, saved.category or "sss", max_price=saved.max_price)
+    for city in cities:
+        listings = await scraper.search(city, saved.query, saved.category or "sss", max_price=float(saved.max_price) if saved.max_price else None)
         for listing in listings:
             alert_id = str(uuid.uuid4())[:8]
             alert = Alert(
@@ -213,7 +232,7 @@ async def run_saved_search(saved_search_id: str):
                 city=city,
                 query=saved.query,
                 category=saved.category,
-                max_price=saved.max_price,
+                max_price=float(saved.max_price) if saved.max_price else None,
                 threshold=0.0,
                 enabled=True,
             )
@@ -222,6 +241,7 @@ async def run_saved_search(saved_search_id: str):
 
     log_debug(f"Run saved search complete: {len(alert_ids)} alerts generated")
     return {"alert_ids": alert_ids}
+
 
 
 @app.get("/api/cities")

@@ -147,6 +147,21 @@ class AlertORM(Base):
     priority_score = Column(Integer, nullable=True)
 
 
+class ListingORM(Base):
+    """SQLAlchemy ORM model for persistent listing data."""
+
+    __tablename__ = "listings"
+
+    id = Column(Integer, primary_key=True, autoincrement=True)
+    title = Column(String, nullable=False)
+    price_num = Column(Float, nullable=True)
+    city = Column(String, nullable=False)
+    query = Column(String, nullable=False)
+    url = Column(String, unique=True, nullable=False)
+    first_seen = Column(String, nullable=False)
+    last_seen = Column(String, nullable=False)
+
+
 class PricingAdvice(BaseModel):
     recommended_price: float
     optimal_posting_time: str
