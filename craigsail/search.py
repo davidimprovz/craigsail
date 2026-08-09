@@ -5,10 +5,31 @@ multi-city search and asset price tracking
 https://github.com/juliomalegria/python-craigslist
 """
 from pathlib import Path
-import sqlite3
 import pandas as pd
-from craigslist import CraigslistForSale as clfs
-from globals import CRAIGSLIST_CITIES, SALE_CATEGORIES, FILTER_OPTIONS
+from .globals import CRAIGSLIST_CITIES, SALE_CATEGORIES, FILTER_OPTIONS
+
+# `craigslist.base` fetches the list of all craigslist sites over the network
+# at import time. Import lazily so that importing craigsail (and running the
+# test suite) does not require network access.
+clfs = None
+
+
+def _load_clfs():
+    """
+    Import CraigslistForSale on first use. Returns the class.
+    Raises a clear error if the dependency is missing.
+    """
+    global clfs
+    if clfs is None:
+        try:
+            from craigslist import CraigslistForSale
+        except ImportError as exc:
+            raise ImportError(
+                'python-craigslist is required to fetch listings. '
+                'Install it with `pip install python-craigslist`.'
+            ) from exc
+        clfs = CraigslistForSale
+    return clfs
 
 class Search():
     """
@@ -21,27 +42,33 @@ class Search():
     """
 
     def __init__(
-        self, 
+        self,
         search_category=None,
-        data_path=None, 
-        *cities, 
-        **filters
+        data_path=None,
+        cities=None,
+        filters=None,
     ):
+        """
+        cities is a list of craigslist site slugs (e.g. ['sfbay', 'seattle']).
+        filters is a dict of python-craigslist filter options, merged over
+        the defaults below.
+        """
         assert isinstance(search_category, str), f'search_category arg should be str. Got {type(search_category)}.'
         assert isinstance(data_path, str), f'data_path must be a string. Got {type(data_path)}.'
-        assert Path(data_path).exists(), f'data_path must be a valid directory. Check and run again. {data_path}'
 
         self.FILTERS = {
-            'search_titles':True,
-            'has_image':True,
-            'bundle_duplicates':True,
+            'search_titles': True,
+            'has_image': True,
+            'bundle_duplicates': True,
         }
         self.CITIES = []
         self.CATEGORY = search_category
         self.SAVE_PATH = Path(data_path)
-        
-        if len(filters): self.add_filters(**filters)
-        if len(cities): self.update_cities(*cities)
+
+        if filters:
+            self.add_filters(**filters)
+        if cities:
+            self.update_cities(cities)
     
     def get_category(self):
         return self.CATEGORY
@@ -57,20 +84,53 @@ class Search():
         keys = set(self.FILTERS) - set(filters)
         self.FILTERS = {key: val for key,val in self.FILTERS.items() if key in keys}    
             
+    @staticmethod
+    def validate_cities(cities, strict=False):
+        """
+        Normalise a list of craigslist site slugs (strip + lowercase).
+
+        With strict=True the slugs are additionally checked against the
+        authoritative site list from python-craigslist and a ValueError is
+        raised for any that do not exist. That check costs a network request,
+        so it is opt-in and used at the CLI boundary rather than on every
+        instantiation. Checking is skipped silently if the site list cannot
+        be reached, so offline use still works.
+        """
+        assert not isinstance(cities, str), 'cities must be a list of city slugs, not a single string.'
+
+        cleaned = [str(city).strip().lower() for city in cities]
+
+        if not strict:
+            return cleaned
+
+        try:
+            from craigslist.base import ALL_SITES
+        except Exception:
+            return cleaned  # offline / dependency missing - accept as given
+
+        if not ALL_SITES:
+            return cleaned
+
+        unknown = sorted(set(cleaned) - set(ALL_SITES))
+        if unknown:
+            raise ValueError(
+                f'Unknown craigslist site(s): {unknown}. '
+                'Use the site subdomain (e.g. "sfbay", "seattle", "newyork"). '
+                'See craigsail.globals.CRAIGSLIST_CITIES for cities by state.'
+            )
+        return cleaned
+
     def add_cities(self, new_cities):
         """
+        Add cities to the existing search list.
         """
-        self.CITIES = list(set(self.CITIES) | set(new_cities))
-        
+        self.CITIES = sorted(set(self.CITIES) | set(self.validate_cities(new_cities)))
+
     def update_cities(self, new_cities):
         """
-		new_cities must be a list of 
-		cities that are available in the 
-		list of CRAIGSLIST_CITIES.
-		"""
-		# to do: add a check to make sure 
-		# city is an option in CRAIGSLIST_CITIES
-        self.CITIES = list(set(new_cities))
+        Replace the search list with new_cities.
+        """
+        self.CITIES = sorted(set(self.validate_cities(new_cities)))
 
     def remove_cities(self, cities):
         self.CITIES = list(set(self.CITIES) - set(cities))
@@ -108,9 +168,18 @@ class Search():
         concatination.
         """
         
-        attr_list = [str(x).split(':') for x in attributes]
-        attr_df = pd.DataFrame(attr_list).rename({0:'Attributes',1:'Values'}, axis=1)
-        
+        if attributes is None or (not isinstance(attributes, (list, tuple, pd.Series)) and pd.isna(attributes)):
+            return pd.DataFrame(index=[0])
+
+        # Split on the first colon only - values such as
+        # "engine hours (total):1:30" would otherwise spill into extra columns.
+        attr_list = [str(x).split(':', 1) for x in attributes]
+        attr_list = [pair for pair in attr_list if len(pair) == 2]
+        if not attr_list:
+            return pd.DataFrame(index=[0])
+
+        attr_df = pd.DataFrame(attr_list).rename({0: 'Attributes', 1: 'Values'}, axis=1)
+
         return attr_df.set_index('Attributes').T
 
     def expand_all_attributes(self, df):
@@ -120,7 +189,19 @@ class Search():
         the results in a new df.
         """
 
-        expanded = [self.expand_attributes(row) for _, row in df.iteritems()]
+        # Accept either the `attrs` Series itself or a single-column frame
+        # holding it. Each element is a list of "key:value" strings.
+        if isinstance(df, pd.DataFrame):
+            assert df.shape[1] == 1, (
+                f'expand_all_attributes expects the attrs Series or a '
+                f'single-column DataFrame. Got {df.shape[1]} columns.'
+            )
+            attrs = df.iloc[:, 0]
+        else:
+            attrs = df
+
+        # `.iteritems()` was removed in pandas 2.0; `.items()` is the successor.
+        expanded = [self.expand_attributes(row) for _, row in attrs.items()]
         expanded_df = pd.concat(expanded).reset_index(drop=True)
 
         return expanded_df
@@ -148,7 +229,8 @@ class Search():
         """
         
         results = list()
-        city_items = clfs(site=city, category=self.CATEGORY, filters=self.FILTERS)
+        search_cls = _load_clfs()
+        city_items = search_cls(site=city, category=self.CATEGORY, filters=self.FILTERS)
         for result in city_items.get_results(sort_by='newest', geotagged=True, include_details=True):
             results.append(result)
         city_df = self.convert_city_dict_to_df(city, results)
@@ -160,6 +242,7 @@ class Search():
         all_items = list()
         
         start_time = pd.to_datetime('now')
+        # to do..async with reactivex
         for city in self.CITIES:
             all_items.append(self.get_city_items(city)) # control search with filters Query 
         finish_time = pd.to_datetime('now')
@@ -176,10 +259,14 @@ class Search():
         to disk. 
         """
 
+        self.SAVE_PATH.mkdir(parents=True, exist_ok=True)
+
         today = pd.to_datetime('today').strftime('%Y-%m-%d')
-        save_path = self.SAVE_PATH.joinpath(''.join([filename, today, '.csv']))
+        save_path = self.SAVE_PATH.joinpath(f'{filename}_{today}.csv')
 
         df.to_csv(save_path, index=False)
+
+        return save_path
 
     def send_to_sqlitedb(self, df, conn, table_name):
         """
@@ -243,41 +330,41 @@ class Boats(Search):
     # to remove need for if>then.
     """
 
+    # Craigslist serves attribute names in the poster's language, so the same
+    # field arrives under several keys. Map each alias onto its canonical
+    # english column name.
+    COLUMN_ALIASES = {
+        'mfg_year': 'year manufactured',
+        'año de fabricación': 'year manufactured',
+        'condición': 'condition',
+        'horas del motor (en total)': 'engine hours (total)',
+        'marca / fabricante': 'make / manufacturer',
+        'nombre / número de modelo': 'model name / number',
+        'tipo de propulsión': 'boat_propulsion_type',
+    }
+
     def combine_city_sailboats_data(self, df, eval_cols=()):
         """
-        pass values in as tuples instead of list
+        Coalesce aliased/spanish attribute columns into their canonical
+        english counterparts, then drop the aliases. Returns a new DataFrame.
         """
 
-        # combine_cols = ['mfg_year', 'año de fabricación',
-        # 				'condición','horas del motor (en total)',
-        # 				'marca / fabricante', 'nombre / número de modelo', 
-        # 				'tipo de propulsión']
+        df = df.copy()
+        drop_cols = []
 
-        drop_cols = list()
-        for col in df.columns:
-            if col == 'mfg_year':
-                df.loc[:, 'year manufactured'] = df.loc[:, 'year manufactured'].fillna(df[col])
-                drop_cols.append(col)
-            elif col == 'año de fabricación': # merge all espanol records with english records
-                df.loc[:, 'year manufactured'] = df.loc[:, 'year manufactured'].fillna(df[col])
-                drop_cols.append(col)
-            elif col == 'condición':	
-                df.loc[:, 'condition'] = df.loc[:, 'condition'].fillna(df[col])
-                drop_cols.append(col)
-            elif col == 'horas del motor (en total)':
-                df.loc[:, 'engine hours (total)'] = df.loc[:, 'engine hours (total)'].fillna(df[col])
-                drop_cols.append(col)
-            elif col == 'marca / fabricante':
-                df.loc[:, 'make / manufacturer'] = df.loc[:, 'make / manufacturer'].fillna(df[col])
-                drop_cols.append(col)
-            elif col == 'nombre / número de modelo':
-                df.loc[:, 'model name / number'] = df.loc[:, 'model name / number'].fillna(df[col])
-                drop_cols.append(col)
-            elif col == 'tipo de propulsión':
-                df.loc[:, 'boat_propulsion_type'] = df.loc[:, 'boat_propulsion_type'].fillna(df[col])
-                drop_cols.append(col)
+        for alias, canonical in self.COLUMN_ALIASES.items():
+            if alias not in df.columns:
+                continue
 
-        return df.drop(drop_cols, axis=1) 
+            if canonical in df.columns:
+                df[canonical] = df[canonical].fillna(df[alias])
+            else:
+                # Target absent for this batch of listings - promote the alias.
+                df[canonical] = df[alias]
+
+            drop_cols.append(alias)
+
+        return df.drop(drop_cols, axis=1)
 
     def clean_city_sailboats_data(self, df, clean_up=[]):
         """
@@ -302,7 +389,13 @@ class Boats(Search):
                 df[col] = df[col].fillna(years.squeeze())
                 # df[col] = pd.to_datetime(df[col]).dt.year
             elif col == 'price': # remove all special chars
-                df[col] = df[col].str.replace('\$|,', '').astype(float)
+                # pandas 2.0 made regex=False the default for Series.str.replace
+                df[col] = (
+                    df[col].astype(str)
+                    .str.replace(r'[^\d.]', '', regex=True)
+                    .replace('', pd.NA)
+                    .astype(float)
+                )
             elif col == 'id': # id as int
                 df[col] = df[col].astype(int)
             elif col in ['datetime', 'last_updated','created']: # date as datetime

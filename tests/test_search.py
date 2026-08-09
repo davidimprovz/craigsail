@@ -44,10 +44,18 @@ def test_convert_city_dict_to_df(search_instance):
     assert 'city' in df.columns
 
 def test_expand_attributes(search_instance):
+    # expand_attributes pivots "key:value" pairs into a one-row frame whose
+    # columns are the attribute names - that is the shape expand_all_attributes
+    # concatenates onto the listings frame.
     attributes = ['attr1:value1', 'attr2:value2']
     df = search_instance.expand_attributes(attributes)
-    assert 'Attributes' in df.columns
-    assert 'Values' in df.columns
+    assert list(df.columns) == ['attr1', 'attr2']
+    assert df['attr1'].iloc[0] == 'value1'
+
+
+def test_expand_attributes_splits_on_first_colon_only(search_instance):
+    df = search_instance.expand_attributes(['engine hours (total):1:30'])
+    assert df['engine hours (total)'].iloc[0] == '1:30'
 
 def test_expand_all_attributes(search_instance):
     df = pd.DataFrame({'attrs': [['attr1:value1', 'attr2:value2']]})
@@ -77,13 +85,19 @@ def test_get_all_daily_postings(mock_to_datetime, search_instance):
     with patch.object(search_instance, 'get_city_items', return_value=pd.DataFrame({'name': ['item1']})):
         timespan, df = search_instance.get_all_daily_postings()
         assert timespan.days == 1
-        assert len(df) == 1
+        # one row per city in the fixture (city1, city2)
+        assert len(df) == 2
 
-@patch('craigsail.search.pd.DataFrame.to_csv')
-def test_save_data_as_csv(mock_to_csv, search_instance):
+def test_save_data_as_csv(tmp_path):
+    # Use a real temp dir: save_data_as_csv creates the directory, so mocking
+    # to_csv alone would leave a stray folder in the repo.
+    search = Search(search_category='test_category', data_path=str(tmp_path), cities=['city1'])
     df = pd.DataFrame({'name': ['item1']})
-    search_instance.save_data_as_csv(df, 'test_file')
-    mock_to_csv.assert_called_once()
+
+    save_path = search.save_data_as_csv(df, 'test_file')
+
+    assert save_path.exists()
+    assert pd.read_csv(save_path)['name'].iloc[0] == 'item1'
 
 @patch('craigsail.search.pd.DataFrame.to_sql')
 def test_send_to_sqlitedb(mock_to_sql, search_instance):
@@ -98,8 +112,15 @@ def test_filter_feature_space(search_instance):
     assert 'col1' in filtered_df.columns
     assert 'col2' not in filtered_df.columns
 
-@patch('craigsail.search.pd.read_csv')
-def test_merge_multiple_csvs(mock_read_csv, search_instance):
-    mock_read_csv.return_value = pd.DataFrame({'merge_col': [1], 'col1': [2]})
-    merged_df = search_instance.merge_multiple_csvs('test_path', 'merge_col')
+def test_merge_multiple_csvs(search_instance, tmp_path):
+    # Write real CSVs: mocking read_csv left the glob empty, so the function
+    # under test never actually merged anything.
+    pd.DataFrame({'merge_col': [1, 2], 'price_day1': [10, 20]}).to_csv(tmp_path / 'day1.csv', index=False)
+    pd.DataFrame({'merge_col': [1, 2], 'price_day2': [11, 19]}).to_csv(tmp_path / 'day2.csv', index=False)
+
+    merged_df = search_instance.merge_multiple_csvs(str(tmp_path), 'merge_col')
+
     assert 'merge_col' in merged_df.columns
+    assert 'price_day1' in merged_df.columns
+    assert 'price_day2' in merged_df.columns
+    assert len(merged_df) == 2
