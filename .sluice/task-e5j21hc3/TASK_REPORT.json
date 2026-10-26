@@ -1,0 +1,6 @@
+{
+ "title": "Dedupe by posting URL, not title+location",
+ "state": "started",
+ "base": "agent/task-e5j21hc3",
+ "base_sha": "a0aedcdad2df5c71520df1214869e5da7dcf62fd"
+}
