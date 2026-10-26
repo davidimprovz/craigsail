@@ -539,7 +539,17 @@ async def export_search_csv(
     log_debug(f"CSV export: City={city}, Query={query}, Category={category}, MaxPrice={max_price}")
 
     scraper = CraigslistScraper()
-    raw_results = await scraper.search(city, query, category, max_price)
+    
+    # Handle multi-city: city string might be "sfbay,sacramento,stockton"
+    # Filter empty strings
+    cities = [c.strip() for c in city.split(',') if c.strip()]
+    
+    # Run concurrent searches with max_price filter
+    tasks = [scraper.search(city, query, category, max_price=max_price) for city in cities]
+    results_list = await asyncio.gather(*tasks)
+    
+    # Flatten all results
+    raw_results = [r for rs in results_list for r in rs]
 
     # Convert each raw result into a Listing model instance (only needed fields).
     listings: List[Listing] = []
@@ -552,6 +562,9 @@ async def export_search_csv(
                 url=getattr(r, "url", "") or "",
             )
         )
+    
+    # Deduplicate listings based on URL and title (or title and location if no URL)
+    listings = _dedup_listings(listings)
 
     # Build CSV in memory
     rows = await _listings_to_csv_rows(listings)
