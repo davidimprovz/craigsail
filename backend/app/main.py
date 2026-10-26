@@ -661,15 +661,19 @@ async def forecast_route(
 
 def _dedup_listings(listings: List[Listing]) -> List[Listing]:
     """
-    Filters out duplicate listings based on the combination of title and location.
-    Preserves the first occurrence of each unique title+location pair.
+    Filters out duplicate listings based on the posting URL and title.
+    If URL is available, deduplicates based on (url, title); otherwise, falls back to (title, location).
+    Preserves the first occurrence of each unique posting.
     """
     seen = set()
     deduplicated = []
     
     for listing in listings:
-        # Create a tuple key from title and location for deduplication
-        key = (listing.title, listing.location)
+        # Create a tuple key from URL and title when URL is set, otherwise fall back to title+location
+        if listing.url:
+            key = (listing.url, listing.title)
+        else:
+            key = (listing.title, listing.location)
         
         if key not in seen:
             seen.add(key)
