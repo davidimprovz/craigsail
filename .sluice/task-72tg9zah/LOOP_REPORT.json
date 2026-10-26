@@ -1,0 +1,121 @@
+{
+ "task": "craigsail_improve",
+ "env_v": 12,
+ "subtasks": [],
+ "mac_main": "base (task mode)",
+ "session": {
+  "session": "v2",
+  "model": "huihui_ai/qwen3-coder-abliterated:30b",
+  "num_ctx": 16384,
+  "sample": 1,
+  "samples": 2,
+  "turns": 6,
+  "edits": 1,
+  "first_edit_turn": 5,
+  "peak_prompt_tokens": 7002,
+  "check_before": {
+   "rc": 1,
+   "tail": "=\n______________________ test_csv_multi_city_has_every_city ______________________\n\n    def test_csv_multi_city_has_every_city():\n        GOTO.clear()\n        client = TestClient(app, raise_server_exceptions=False)\n        with patch(\"app.scraper.async_playwright\", fake_playwright(PAGES)):\n            r = client.get(\"/api/search/csv\", params={\"city\": \"sfbay,seattle\", \"query\": \"sailboat\", \"category\": \"boo\"})\n>       assert r.status_code == 200, r.text[:300]\nE       AssertionError: Internal Server Error\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/csv_multi_city/test_csv_multi_city.py:85: AssertionError\n----------------------------- Captured stdout call -----------------------------\nNavigating to: https://sfbay,seattle.craigslist.org/search/boo?query=sailboat\n=============================== warnings summary ===============================\nbackend/app/models.py:29\n  /repo/backend/app/models.py:29: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/\n    class Listing(BaseModel):\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/csv_multi_city/test_csv_multi_city.py::test_csv_multi_city_has_every_city\n1 failed, 1 warning in 2.32s\n"
+  },
+  "failure_class": "resolved",
+  "stop_reason": "the check passes and the suite is green",
+  "handoffs": 0,
+  "minutes": 1.2,
+  "check_ok": true,
+  "suite_ok": true,
+  "traceback": false,
+  "refusals": {
+   "scope": 0,
+   "test": 0,
+   "lint": 0,
+   "args": 0,
+   "finish": 0
+  },
+  "finish_summary": null,
+  "diff_lines": 15,
+  "gates": "ok"
+ },
+ "sluice_task": {
+  "title": "CSV export searches each city of a comma list",
+  "done_when": "tests/csv_multi_city/test_csv_multi_city.py passes (every city's titles in the CSV, no comma host, a listing two cities return appears once) and `python -m pytest -q` is green (no other test may break).",
+  "base": "agent/task-72tg9zah",
+  "base_sha": "c473c3057adad5eae7c79ddc8cf13bd006cd1089",
+  "write_scope": [
+   "backend/app/main.py",
+   "tests/csv_multi_city/"
+  ],
+  "merged": 1,
+  "kept": 0,
+  "scope": {
+   "write_scope": [
+    "backend/app/main.py",
+    "tests/csv_multi_city/"
+   ],
+   "outside": [],
+   "ok": true
+  },
+  "done_check": {
+   "cmd": "python -m pytest -q",
+   "rc": 0,
+   "ok": true,
+   "tail": ".............................................................            [100%]\n=============================== warnings summary ===============================\nbackend/app/models.py:29\n  /repo/backend/app/models.py:29: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/\n    class Listing(BaseModel):\n\ntests/test_run_saved_search.py::test_run_saved_search_from_db\ntests/test_run_saved_search.py::test_run_saved_search_404\n  /repo/backend/app/main.py:217: LegacyAPIWarning: The Query.get() method is considered legacy as of the 1.x series of SQLAlchemy and becomes a legacy construct in 2.0. The method is now available as Session.get() (deprecated since: 2.0) (Background on SQLAlchemy 2.0 at: https://sqlalche.me/e/b8d9)\n    saved = db.query(DBSavedSearch).get(saved_search_id)\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n61 passed, 3 warnings in 2.74s\n"
+  },
+  "check": {
+   "cmd": "python -m pytest -q tests/csv_multi_city/test_csv_multi_city.py",
+   "rc": 0,
+   "ok": true,
+   "tail": ".                                                                        [100%]\n=============================== warnings summary ===============================\nbackend/app/models.py:29\n  /repo/backend/app/models.py:29: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/\n    class Listing(BaseModel):\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 1 warning in 2.42s\n"
+  },
+  "session": {
+   "session": "v2",
+   "model": "huihui_ai/qwen3-coder-abliterated:30b",
+   "num_ctx": 16384,
+   "sample": 1,
+   "samples": 2,
+   "turns": 6,
+   "edits": 1,
+   "first_edit_turn": 5,
+   "peak_prompt_tokens": 7002,
+   "check_before": {
+    "rc": 1,
+    "tail": "=\n______________________ test_csv_multi_city_has_every_city ______________________\n\n    def test_csv_multi_city_has_every_city():\n        GOTO.clear()\n        client = TestClient(app, raise_server_exceptions=False)\n        with patch(\"app.scraper.async_playwright\", fake_playwright(PAGES)):\n            r = client.get(\"/api/search/csv\", params={\"city\": \"sfbay,seattle\", \"query\": \"sailboat\", \"category\": \"boo\"})\n>       assert r.status_code == 200, r.text[:300]\nE       AssertionError: Internal Server Error\nE       assert 500 == 200\nE        +  where 500 = <Response [500 Internal Server Error]>.status_code\n\ntests/csv_multi_city/test_csv_multi_city.py:85: AssertionError\n----------------------------- Captured stdout call -----------------------------\nNavigating to: https://sfbay,seattle.craigslist.org/search/boo?query=sailboat\n=============================== warnings summary ===============================\nbackend/app/models.py:29\n  /repo/backend/app/models.py:29: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/\n    class Listing(BaseModel):\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n=========================== short test summary info ============================\nFAILED tests/csv_multi_city/test_csv_multi_city.py::test_csv_multi_city_has_every_city\n1 failed, 1 warning in 2.32s\n"
+   },
+   "failure_class": "resolved",
+   "stop_reason": "the check passes and the suite is green",
+   "handoffs": 0,
+   "minutes": 1.2,
+   "check_ok": true,
+   "suite_ok": true,
+   "traceback": false,
+   "check_tail": ".                                                                        [100%]\n=============================== warnings summary ===============================\nbackend/app/models.py:29\n  /repo/backend/app/models.py:29: PydanticDeprecatedSince20: Support for class-based `config` is deprecated, use ConfigDict instead. Deprecated in Pydantic V2.0 to be removed in V3.0. See Pydantic V2 Migration Guide at https://errors.pydantic.dev/2.13/migration/\n    class Listing(BaseModel):\n\n-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html\n1 passed, 1 warning in 2.43s\n",
+   "refusals": {
+    "scope": 0,
+    "test": 0,
+    "lint": 0,
+    "args": 0,
+    "finish": 0
+   },
+   "finish_summary": null,
+   "diff_lines": 15,
+   "gates": "ok"
+  },
+  "failure_class": "resolved"
+ },
+ "generated": "2026-10-26T19:16:57.210670",
+ "config": {
+  "lang": "python",
+  "test_cmd": "python -m pytest -q",
+  "write_scope": "backend",
+  "entry": "backend/app/main.py"
+ },
+ "gate_fail_histogram": {},
+ "calibration": "skipped (task mode)",
+ "baseline_tests": [
+  60,
+  0
+ ],
+ "final_tests": [
+  61,
+  0
+ ]
+}
